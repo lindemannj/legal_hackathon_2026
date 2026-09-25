@@ -63,8 +63,8 @@ export interface FallZustand {
   sichtbar: boolean;
   eigene: Record<string, EigeneBewertung>;
   verlauf: VerlaufEintrag[];
-  verfahrensart?: string;
-  beanstandung?: Beanstandung;
+  verfahrensart?: string | undefined;
+  beanstandung?: Beanstandung | undefined;
 }
 
 export interface DemoState {

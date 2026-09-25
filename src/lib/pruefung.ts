@@ -14,13 +14,13 @@ export interface Pruefergebnis {
   punkt: Pruefpunkt;
   status: PruefStatus;
   begruendung: string;
-  fundstelle?: string;
+  fundstelle?: string | undefined;
   eigen: boolean;
-  notiz?: string;
-  markerNr?: number;
+  notiz?: string | undefined;
+  markerNr?: number | undefined;
 }
 
-export type EigeneBewertung = { status: PruefStatus; notiz?: string };
+export type EigeneBewertung = { status: PruefStatus; notiz?: string | undefined };
 
 const keineAnhaltspunkte = new Set(["p6", "p13", "p14"]);
 
