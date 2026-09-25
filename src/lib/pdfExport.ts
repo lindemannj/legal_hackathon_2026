@@ -94,11 +94,9 @@ export function exportiereMarkiertesPdf(fall: Fall, ergebnisse: Pruefergebnis[])
       }
       const treffer = markierungen.find((m) => t.includes(m.text));
       if (treffer) {
-        doc.setFillColor(
-          ...(treffer.status === "mangel"
-            ? ([254, 226, 226] as const)
-            : ([254, 243, 199] as const)),
-        );
+        const farbe: [number, number, number] =
+          treffer.status === "mangel" ? [254, 226, 226] : [254, 243, 199];
+        doc.setFillColor(farbe[0], farbe[1], farbe[2]);
         doc.rect(RAND - 1, y - 4, BREITE + 2, 6, "F");
         doc.setFontSize(8);
         doc.setTextColor(120);

@@ -261,9 +261,9 @@ function PunktZeile({
 }: {
   ergebnis: Pruefergebnis;
   hervorgehoben: boolean;
-  eigeneBewertung?: PruefStatus;
-  notiz?: string;
-  onBewerten: (status: PruefStatus | null, notiz?: string) => void;
+  eigeneBewertung?: PruefStatus | undefined;
+  notiz?: string | undefined;
+  onBewerten: (status: PruefStatus | null, notiz?: string | undefined) => void;
   onImDokumentZeigen: () => void;
 }) {
   const [offen, setOffen] = useState(false);
