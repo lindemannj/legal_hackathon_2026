@@ -24,7 +24,7 @@ export function Kopfzeile({ onSimulieren }: { onSimulieren?: () => void }) {
         </Link>
         <span className="text-sm text-muted-foreground">
           {aktuellerNutzer
-            ? `${aktuellerNutzer.gericht} · ${aktuellerNutzer.spruchkoerperKurz}`
+            ? `${aktuellerNutzer.gericht} · ${aktuellerNutzer.einheiten.map((e) => e.bezeichnung).join(", ")}`
             : "Eingangsprüfung für Zivilgerichte"}
         </span>
       </div>
