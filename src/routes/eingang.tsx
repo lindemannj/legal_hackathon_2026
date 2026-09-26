@@ -4,13 +4,6 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { FallKarte } from "@/components/FallKarte";
 import { Fusszeile, Kopfzeile } from "@/components/Kopfzeile";
-import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
@@ -55,7 +48,6 @@ function Posteingang() {
   const [filter, setFilter] = useState("alle");
   const [offenerFall, setOffenerFall] = useState<string | null>(null);
   const [simulation, setSimulation] = useState<number | null>(null);
-  const [hilfeOffen, setHilfeOffen] = useState(false);
   const container = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -122,8 +114,6 @@ function Posteingang() {
         if (prev) setOffenerFall(prev.id);
       } else if (e.key === "Enter" && liste[0]) {
         setOffenerFall((o) => (o ? null : liste[0]!.id));
-      } else if (e.key === "?") {
-        setHilfeOffen(true);
       }
     }
     window.addEventListener("keydown", handler);
@@ -225,33 +215,8 @@ function Posteingang() {
           ) : null}
         </div>
 
-        <div className="mt-6">
-          <Button variant="ghost" size="sm" onClick={() => setHilfeOffen(true)}>
-            Tastaturkürzel anzeigen (?)
-          </Button>
-        </div>
       </main>
 
-      <Dialog open={hilfeOffen} onOpenChange={setHilfeOffen}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Tastaturkürzel</DialogTitle>
-          </DialogHeader>
-          <dl className="space-y-2 text-sm">
-            {[
-              ["J", "nächster Fall"],
-              ["K", "vorheriger Fall"],
-              ["Enter", "Fall auf- und zuklappen"],
-              ["?", "diese Übersicht"],
-            ].map(([taste, text]) => (
-              <div key={taste} className="flex gap-4">
-                <dt className="w-20 font-mono font-medium">{taste}</dt>
-                <dd>{text}</dd>
-              </div>
-            ))}
-          </dl>
-        </DialogContent>
-      </Dialog>
 
       <Fusszeile />
     </div>
