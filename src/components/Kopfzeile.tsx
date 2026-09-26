@@ -13,7 +13,7 @@ import {
 import { PRODUKTNAME, useDemo } from "@/context/DemoContext";
 
 export function Kopfzeile({ onSimulieren }: { onSimulieren?: () => void }) {
-  const { aktuellerNutzer, abmelden, zuruecksetzen } = useDemo();
+  const { aktuellerNutzer, abmelden, zuruecksetzen, simulationVerfuegbar } = useDemo();
   const navigate = useNavigate();
 
   return (
@@ -49,7 +49,7 @@ export function Kopfzeile({ onSimulieren }: { onSimulieren?: () => void }) {
               Meine Prüfliste
             </DropdownMenuItem>
             {onSimulieren ? (
-              <DropdownMenuItem onSelect={onSimulieren}>
+              <DropdownMenuItem onSelect={onSimulieren} disabled={!simulationVerfuegbar}>
                 Demo: neuen EGVP-Eingang simulieren
               </DropdownMenuItem>
             ) : null}

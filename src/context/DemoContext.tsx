@@ -36,6 +36,7 @@ export interface Beanstandung {
 }
 
 export interface FallZustand {
+  version: number;
   ablage: FallAblage;
   sichtbar: boolean;
   eigene: Record<string, EigeneBewertung>;
@@ -57,6 +58,7 @@ function jetzt(): string {
 
 function startZustand(fall: Fall): FallZustand {
   return {
+    version: 1,
     ablage: "eingang",
     sichtbar: !fall.nurSimulation,
     eigene: {},
@@ -68,7 +70,7 @@ function startZustand(fall: Fall): FallZustand {
       },
       {
         zeit: fall.geprueftAm,
-        text: `Automatische Vorprüfung, ${PruefService.aktive().length} Prüfpunkte ausgewertet`,
+        text: `Automatische Vorprüfung, ${fall.anzahlAusgewertet} Prüfpunkte ausgewertet`,
       },
     ],
   };
@@ -142,7 +144,7 @@ export function DemoProvider({ children }: { children: ReactNode }) {
     setState((s) => {
       const fall = FallService.fall(fallId)!;
       const alt = s.faelle[fallId] ?? startZustand(fall);
-      return { ...s, faelle: { ...s.faelle, [fallId]: { ...alt, ...änderung } } };
+      return { ...s, faelle: { ...s.faelle, [fallId]: { ...alt, ...änderung, version: (alt.version ?? 1) + 1 } } };
     });
   }, []);
 
