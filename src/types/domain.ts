@@ -89,6 +89,8 @@ export interface Fall {
   richter: string;
   regelId: string;
   regelText: string;
+  /** Kurzform für den Zuständigkeitsblock, falls in der Seed-Datei angegeben */
+  regelKurz?: string | undefined;
   klaeger: string;
   beklagte: string;
   klaegerParteien: Partei[];

@@ -222,7 +222,7 @@ export function BeanstandungDialog({
               Begründung / Hinweistext
             </Label>
             <div className="mb-1 flex items-center justify-between gap-2">
-              <p className="text-xs text-muted-foreground">Entwurf, bitte prüfen</p>
+              <p className="text-xs text-muted-foreground">KI-Entwurf, bitte prüfen</p>
               <Button
                 type="button"
                 variant="outline"

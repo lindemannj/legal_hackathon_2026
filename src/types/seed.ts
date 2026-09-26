@@ -64,8 +64,13 @@ export const seedSchema = z.object({
       gerichtId: z.string().min(1),
       einheitId: z.string().min(1),
       regelText: z.string().min(1),
+      kurzText: z.string().optional(),
+      /** kleinere Zahl = höherer Vorrang; ohne Angabe nachrangig */
+      vorrang: z.number().int().optional(),
       bedingung: z.object({
         sachgebiet: sachgebiet,
+        sachgebieteZusaetzlich: z.array(sachgebiet).optional(),
+        eingangsnummerEndziffer: z.string().regex(/^\d$/).optional(),
         beklagteAnfangsbuchstaben: z
           .string()
           .regex(/^[A-Z]-[A-Z]$/)

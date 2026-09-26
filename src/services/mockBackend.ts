@@ -169,6 +169,7 @@ const faelle: Fall[] = seed.faelle.map((f) => {
     richter: benutzerById.get(z.richterId)?.name ?? "",
     regelId: z.regelId,
     regelText: regelById.get(z.regelId)?.regelText ?? "",
+    regelKurz: regelById.get(z.regelId)?.kurzText,
     klaeger: namen(x.klaeger),
     beklagte: namen(x.beklagte),
     klaegerParteien: x.klaeger,

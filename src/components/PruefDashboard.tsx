@@ -121,7 +121,8 @@ export function PruefDashboard({
             <div className="text-sm">
               <p className="font-medium">Intern</p>
               <p>
-                {fall.einheit} nach {fall.regelText.split(" · ")[0]?.split(":")[0]}
+                {fall.regelKurz ??
+                  `${fall.einheit} nach ${fall.regelText.split(" · ")[0]?.split(":")[0]}`}
               </p>
             </div>
           </li>
