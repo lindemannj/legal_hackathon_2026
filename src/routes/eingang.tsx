@@ -4,13 +4,6 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { FallKarte } from "@/components/FallKarte";
 import { Fusszeile, Kopfzeile } from "@/components/Kopfzeile";
-import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
