@@ -1,0 +1,178 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Gericht {
+  id                 String               @id
+  art                String
+  name               String
+  bezirk             String
+  einheiten          Einheit[]
+  faelle             Fall[]
+  verfahrensregister Verfahrensregister[]
+}
+
+model Einheit {
+  id             String            @id
+  gerichtId      String
+  gericht        Gericht           @relation(fields: [gerichtId], references: [id])
+  bezeichnung    String
+  zustaendigkeit String
+  benutzer       BenutzerEinheit[]
+  gvpRegeln      GvpRegel[]
+  faelle         Fall[]
+}
+
+model Benutzer {
+  id              String            @id
+  kennung         String            @unique
+  name            String
+  amtsbezeichnung String
+  rolle           String
+  demoKonto       Boolean           @default(false)
+  passwortHash    String
+  einheiten       BenutzerEinheit[]
+  faelle          Fall[]
+}
+
+model BenutzerEinheit {
+  benutzerId String
+  einheitId  String
+  benutzer   Benutzer @relation(fields: [benutzerId], references: [id])
+  einheit    Einheit  @relation(fields: [einheitId], references: [id])
+
+  @@id([benutzerId, einheitId])
+}
+
+model GvpRegel {
+  id           String   @id
+  gerichtId    String
+  einheitId    String
+  einheit      Einheit  @relation(fields: [einheitId], references: [id])
+  regelText    String
+  bedingung    String
+  prioritaet   Int      @default(0)
+  turnusGruppe String?
+  faelle       Fall[]
+}
+
+model TurnusZaehler {
+  turnusGruppe String @id
+  position     Int    @default(0)
+}
+
+model Merkmal {
+  id          String     @id
+  nr          Int
+  kategorie   String
+  titel       String
+  norm        String
+  quelle      String
+  beschreibung String
+  gerichte    String
+  platzhalter Boolean
+  aktiv       Boolean
+  ergebnisse  Ergebnis[]
+}
+
+model Fall {
+  id                 String           @id
+  version            Int              @default(1)
+  gerichtId          String
+  gericht            Gericht          @relation(fields: [gerichtId], references: [id])
+  einheitId          String
+  einheit            Einheit          @relation(fields: [einheitId], references: [id])
+  richterId          String
+  richter            Benutzer         @relation(fields: [richterId], references: [id])
+  regelId            String?
+  regel              GvpRegel?        @relation(fields: [regelId], references: [id])
+  vorlaeufigesAz     String
+  eingangAm          String
+  uebermittlungsweg  String
+  kostenvorschuss    String
+  bearbeitungsstatus String           @default("eingang")
+  nurSimulation      Boolean          @default(false)
+  xjustizXml         String
+  extraktion         String?
+  auswertungStatus   String           @default("ausstehend")
+  ausgewertetAm      String?
+  regelwerkVersion   String?
+  modellVersion      String?
+  dokumente          Dokument[]
+  ergebnisse         Ergebnis[]
+  entscheidung       Entscheidung?
+  verlauf            VerlaufEintrag[]
+}
+
+model Dokument {
+  id     String  @id
+  fallId String
+  fall   Fall    @relation(fields: [fallId], references: [id])
+  typ    String
+  name   String
+  seiten Int
+  text   String?
+}
+
+model Ergebnis {
+  id         String  @id @default(cuid())
+  fallId     String
+  fall       Fall    @relation(fields: [fallId], references: [id])
+  merkmalId  String
+  merkmal    Merkmal @relation(fields: [merkmalId], references: [id])
+  status     String
+  relevanz   String?
+  text       String
+  grundlage  String?
+  fundstellen String
+  bewertung  String?
+
+  @@unique([fallId, merkmalId])
+}
+
+model Entscheidung {
+  id              String   @id @default(cuid())
+  fallId          String   @unique
+  fall            Fall     @relation(fields: [fallId], references: [id])
+  art             String
+  clientRequestId String   @unique
+  hinweisIds      String?
+  text            String?
+  am              String
+}
+
+model VerlaufEintrag {
+  id     String @id @default(cuid())
+  fallId String
+  fall   Fall   @relation(fields: [fallId], references: [id])
+  typ    String
+  text   String
+  am     String
+}
+
+model Verfahrensregister {
+  az           String   @id
+  gerichtId    String
+  gericht      Gericht  @relation(fields: [gerichtId], references: [id])
+  parteien     String
+  status       String
+  zugestelltAm String?
+}
+
+model LlmAufruf {
+  id            String   @id @default(cuid())
+  hash          String
+  promptVersion String
+  modell        String
+  tokensEin     Int
+  tokensAus     Int
+  antwort       String
+  am            DateTime @default(now())
+
+  @@index([hash, promptVersion])
+}
