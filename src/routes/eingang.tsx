@@ -222,33 +222,8 @@ function Posteingang() {
           ) : null}
         </div>
 
-        <div className="mt-6">
-          <Button variant="ghost" size="sm" onClick={() => setHilfeOffen(true)}>
-            Tastaturkürzel anzeigen (?)
-          </Button>
-        </div>
       </main>
 
-      <Dialog open={hilfeOffen} onOpenChange={setHilfeOffen}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Tastaturkürzel</DialogTitle>
-          </DialogHeader>
-          <dl className="space-y-2 text-sm">
-            {[
-              ["J", "nächster Fall"],
-              ["K", "vorheriger Fall"],
-              ["Enter", "Fall auf- und zuklappen"],
-              ["?", "diese Übersicht"],
-            ].map(([taste, text]) => (
-              <div key={taste} className="flex gap-4">
-                <dt className="w-20 font-mono font-medium">{taste}</dt>
-                <dd>{text}</dd>
-              </div>
-            ))}
-          </dl>
-        </DialogContent>
-      </Dialog>
 
       <Fusszeile />
     </div>
