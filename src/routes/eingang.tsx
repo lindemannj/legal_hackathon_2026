@@ -55,7 +55,6 @@ function Posteingang() {
   const [filter, setFilter] = useState("alle");
   const [offenerFall, setOffenerFall] = useState<string | null>(null);
   const [simulation, setSimulation] = useState<number | null>(null);
-  const [hilfeOffen, setHilfeOffen] = useState(false);
   const container = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
