@@ -57,8 +57,8 @@ export function PruefDashboard({
   const sachlich = sachlicheZustaendigkeit(fall.streitwert, fall.sachgebiet);
   const oertlich = oertlicheZustaendigkeit(fall.ortBeklagte, fall.gerichtstyp);
   const sk = spruchkoerperById(fall.spruchkoerperId);
-  const sachlichBefund = ergebnisse.find((e) => e.punkt.id === "p8")!;
-  const oertlichBefund = ergebnisse.find((e) => e.punkt.id === "p9")!;
+  const sachlichBefund = ergebnisse.find((e) => e.punkt.id === "m-008")!;
+  const oertlichBefund = ergebnisse.find((e) => e.punkt.id === "m-009")!;
 
   const kopfText =
     bilanz.gesamtStatus === "ok"

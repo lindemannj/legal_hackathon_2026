@@ -131,7 +131,7 @@ export function BeanstandungDialog({
     [ergebnisse],
   );
   const zustaendigkeitsmangel = auffaellige.some(
-    (e) => (e.punkt.id === "p8" || e.punkt.id === "p9") && e.status === "mangel",
+    (e) => (e.punkt.id === "m-008" || e.punkt.id === "m-009") && e.status === "mangel",
   );
 
   const [gewaehlt, setGewaehlt] = useState<string[]>([]);
