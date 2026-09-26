@@ -77,10 +77,3 @@ export function Kopfzeile({ onSimulieren }: { onSimulieren?: () => void }) {
   );
 }
 
-export function Fusszeile() {
-  return (
-    <footer className="px-6 py-6 text-center text-xs text-muted-foreground">
-      Prototyp · fiktive Demo-Daten
-    </footer>
-  );
-}

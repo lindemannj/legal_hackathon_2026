@@ -1,7 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 
-import { Fusszeile, Kopfzeile } from "@/components/Kopfzeile";
+import { Kopfzeile } from "@/components/Kopfzeile";
 import { QuelleBadge } from "@/components/StatusAnzeige";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -118,7 +118,6 @@ function Einstellungen() {
           <Button type="submit">Eigenen Prüfpunkt hinzufügen</Button>
         </form>
       </main>
-      <Fusszeile />
     </div>
   );
 }
