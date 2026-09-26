@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "gerichte": [
     {
-      "id": "ag-köln",
+      "id": "ag-koeln",
       "art": "AG",
       "name": "Amtsgericht Köln",
       "bezirk": "Köln"
     },
     {
-      "id": "lg-köln",
+      "id": "lg-koeln",
       "art": "LG",
       "name": "Landgericht Köln",
       "bezirk": "Köln"
@@ -41,31 +41,31 @@
   "einheiten": [
     {
       "id": "ag-koeln-abt-118",
-      "gerichtId": "ag-köln",
+      "gerichtId": "ag-koeln",
       "bezeichnung": "Zivilabteilung 118",
       "zustaendigkeit": "Wohnraummietsachen"
     },
     {
       "id": "ag-koeln-abt-142",
-      "gerichtId": "ag-köln",
+      "gerichtId": "ag-koeln",
       "bezeichnung": "Zivilabteilung 142",
       "zustaendigkeit": "Allgemeine Zivilsachen, erstgenannte beklagte Partei A bis K"
     },
     {
       "id": "ag-koeln-abt-143",
-      "gerichtId": "ag-köln",
+      "gerichtId": "ag-koeln",
       "bezeichnung": "Zivilabteilung 143",
       "zustaendigkeit": "Allgemeine Zivilsachen, erstgenannte beklagte Partei L bis Z"
     },
     {
       "id": "lg-koeln-zk-5",
-      "gerichtId": "lg-köln",
+      "gerichtId": "lg-koeln",
       "bezeichnung": "5. Zivilkammer",
       "zustaendigkeit": "Allgemeine Zivilsachen im Turnus"
     },
     {
       "id": "lg-koeln-zk-25",
-      "gerichtId": "lg-köln",
+      "gerichtId": "lg-koeln",
       "bezeichnung": "25. Zivilkammer",
       "zustaendigkeit": "Streitigkeiten aus Heilbehandlungen"
     }
@@ -130,7 +130,7 @@
   "gvpRegeln": [
     {
       "id": "agk-2026-3-1",
-      "gerichtId": "ag-köln",
+      "gerichtId": "ag-koeln",
       "einheitId": "ag-koeln-abt-118",
       "regelText": "GVP 2026, § 3 Abs. 1: Streitigkeiten aus Wohnraummietverhältnissen werden der Abteilung 118 zugewiesen.",
       "bedingung": {
@@ -139,7 +139,7 @@
     },
     {
       "id": "agk-2026-4-2",
-      "gerichtId": "ag-köln",
+      "gerichtId": "ag-koeln",
       "einheitId": "ag-koeln-abt-142",
       "regelText": "GVP 2026, § 4 Abs. 2: Allgemeine Zivilsachen, bei denen der Anfangsbuchstabe der erstgenannten beklagten Partei in den Bereich A bis K fällt, werden der Abteilung 142 zugewiesen.",
       "bedingung": {
@@ -149,7 +149,7 @@
     },
     {
       "id": "agk-2026-4-3",
-      "gerichtId": "ag-köln",
+      "gerichtId": "ag-koeln",
       "einheitId": "ag-koeln-abt-143",
       "regelText": "GVP 2026, § 4 Abs. 3: Allgemeine Zivilsachen, bei denen der Anfangsbuchstabe der erstgenannten beklagten Partei in den Bereich L bis Z fällt, werden der Abteilung 143 zugewiesen.",
       "bedingung": {
@@ -159,7 +159,7 @@
     },
     {
       "id": "lgk-2026-2-1",
-      "gerichtId": "lg-köln",
+      "gerichtId": "lg-koeln",
       "einheitId": "lg-koeln-zk-5",
       "regelText": "GVP 2026, § 2 Abs. 1: Allgemeine Zivilsachen werden den Zivilkammern im Turnus zugewiesen; das Verfahren entfällt auf die 5. Zivilkammer (Berichterstatter Wendt).",
       "bedingung": {
@@ -168,7 +168,7 @@
     },
     {
       "id": "lgk-2026-2-4",
-      "gerichtId": "lg-köln",
+      "gerichtId": "lg-koeln",
       "einheitId": "lg-koeln-zk-25",
       "regelText": "GVP 2026, § 2 Abs. 4: Streitigkeiten aus Heilbehandlungen werden der 25. Zivilkammer zugewiesen.",
       "bedingung": {
@@ -1687,7 +1687,7 @@
   "faelle": [
     {
       "id": "fall-0001",
-      "gerichtId": "ag-köln",
+      "gerichtId": "ag-koeln",
       "nurSimulation": false,
       "eingang": {
         "eingangAm": "2026-09-25T09:42:00",
@@ -1770,7 +1770,7 @@
     },
     {
       "id": "fall-0002",
-      "gerichtId": "ag-köln",
+      "gerichtId": "ag-koeln",
       "nurSimulation": false,
       "eingang": {
         "eingangAm": "2026-09-25T08:15:00",
@@ -1870,7 +1870,7 @@
     },
     {
       "id": "fall-0003",
-      "gerichtId": "ag-köln",
+      "gerichtId": "ag-koeln",
       "nurSimulation": false,
       "eingang": {
         "eingangAm": "2026-09-24T16:10:00",
@@ -1972,7 +1972,7 @@
     },
     {
       "id": "fall-0004",
-      "gerichtId": "ag-köln",
+      "gerichtId": "ag-koeln",
       "nurSimulation": false,
       "eingang": {
         "eingangAm": "2026-09-24T11:05:00",
@@ -2067,7 +2067,7 @@
     },
     {
       "id": "fall-0005",
-      "gerichtId": "lg-köln",
+      "gerichtId": "lg-koeln",
       "nurSimulation": false,
       "eingang": {
         "eingangAm": "2026-09-25T08:50:00",
@@ -2169,7 +2169,7 @@
     },
     {
       "id": "fall-0006",
-      "gerichtId": "lg-köln",
+      "gerichtId": "lg-koeln",
       "nurSimulation": false,
       "eingang": {
         "eingangAm": "2026-09-24T14:22:00",
@@ -2289,7 +2289,7 @@
     },
     {
       "id": "fall-0007",
-      "gerichtId": "ag-köln",
+      "gerichtId": "ag-koeln",
       "nurSimulation": true,
       "eingang": {
         "eingangAm": "2026-09-25T10:05:00",
