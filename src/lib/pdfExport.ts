@@ -60,7 +60,6 @@ export function exportiereMarkiertesPdf(fall: Fall, ergebnisse: Pruefergebnis[])
       5,
     );
     zeile(e.begruendung, 10, "normal", 5);
-    if (e.notiz) zeile(`Notiz: ${e.notiz}`, 9);
     y += 2;
   }
 

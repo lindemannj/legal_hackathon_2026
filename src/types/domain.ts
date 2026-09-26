@@ -158,7 +158,7 @@ export const statusLabel: Record<PruefStatus, string> = {
 
 export const quelleLabel: Record<Quelle, string> = {
   regel: "Regel",
-  ki: "KI-Hinweis",
+  ki: "Hinweis",
   manuell: "Manuell",
 };
 
