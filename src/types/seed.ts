@@ -18,8 +18,19 @@ const sachgebiet = z.enum([
   "vergabe",
 ]);
 
+const partei = z.object({
+  name: z.string().min(1),
+  art: z.enum(["natuerlich", "juristisch"]),
+  anschrift: z.string().optional(),
+  vertretenDurch: z.string().optional(),
+});
+
 export const seedSchema = z.object({
   schemaVersion: z.literal(1),
+  meta: z.object({
+    regelwerkVersion: z.string().min(1),
+    modellVersion: z.string().min(1),
+  }),
   gerichte: z.array(
     z.object({
       id: z.string().min(1),
@@ -79,6 +90,7 @@ export const seedSchema = z.object({
   verfahrensregister: z.array(
     z.object({
       az: z.string().min(1),
+      gerichtId: z.string().min(1),
       parteien: z.string().min(1),
       status: z.string().min(1),
       zugestelltAm: z.string().optional(),
@@ -88,40 +100,39 @@ export const seedSchema = z.object({
     z.object({
       id: z.string().min(1),
       gerichtId: z.string().min(1),
+      vorlaeufigesAz: z.string().min(1),
       nurSimulation: z.boolean().default(false),
       eingang: z.object({
         eingangAm: z.string().min(1),
         uebermittlungsweg: z.string().min(1),
-        aktenzeichen: z.string().min(1),
-        angaben: z.object({
-          klaeger: z.string().min(1),
-          beklagte: z.string().min(1),
-          ortBeklagte: z.string().min(1),
-          gegenstand: z.string().min(1),
-          sachgebiet: sachgebiet,
-          streitwert: z.number().nonnegative(),
-          streitwertXJustiz: z.number().nonnegative().optional(),
-          prozessbevollmaechtigte: z.string().nullable(),
-          kostenvorschuss: z.enum(["bezahlt", "offen"]),
-        }),
-        klageschriftText: z.string().min(1),
+        kostenvorschuss: z.enum(["bezahlt", "offen"]),
         xjustizXml: z.string(),
-        xjustizFelder: z.array(
-          z.object({
-            label: z.string(),
-            wert: z.string(),
-            abweichung: z.boolean().optional(),
+        dokumente: z
+          .array(
+            z.object({
+              id: z.string().min(1),
+              typ: z.enum(["klageschrift", "anlage"]),
+              name: z.string().min(1),
+              seiten: z.number().int().nonnegative(),
+              text: z.string().optional(),
+            }),
+          )
+          .refine((d) => d.some((x) => x.typ === "klageschrift" && x.text), {
+            message: "Klageschrift mit text fehlt",
           }),
-        ),
-        anlagen: z.array(
-          z.object({
-            bezeichnung: z.string(),
-            titel: z.string(),
-            seiten: z.number().int().nonnegative(),
-          }),
-        ),
       }),
       erwartet: z.object({
+        extraktion: z.object({
+          klaeger: z.array(partei).min(1),
+          beklagte: z.array(partei).min(1),
+          sachgebiet: sachgebiet,
+          streitwertCent: z.number().int().nonnegative(),
+          streitwertXJustizCent: z.number().int().nonnegative().optional(),
+          gegenstand: z.string().optional(),
+          prozessbevollmaechtigter: z.string().nullable().optional(),
+        }),
+        xjustizFelder: z.record(z.string()),
+        xjustizAbweichungen: z.array(z.string()).default([]),
         zuweisung: z.object({
           einheitId: z.string().min(1),
           richterId: z.string().min(1),
@@ -136,10 +147,14 @@ export const seedSchema = z.object({
               relevanz: z.enum(["hoch", "mittel", "niedrig"]).optional(),
               text: z.string(),
               grundlage: z.string().optional(),
-              fundstellen: z.array(z.object({ zitat: z.string() })).default([]),
+              fundstellen: z
+                .array(z.object({ dokumentId: z.string().min(1), zitat: z.string() }))
+                .default([]),
+              verweisAz: z.string().optional(),
             }),
           ),
         }),
+        formulierungsvorschlag: z.string(),
       }),
     }),
   ),
