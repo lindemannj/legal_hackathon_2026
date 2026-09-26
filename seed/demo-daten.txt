@@ -1,0 +1,2404 @@
+{
+  "schemaVersion": 1,
+  "gerichte": [
+    {
+      "id": "ag-köln",
+      "art": "AG",
+      "name": "Amtsgericht Köln",
+      "bezirk": "Köln"
+    },
+    {
+      "id": "lg-köln",
+      "art": "LG",
+      "name": "Landgericht Köln",
+      "bezirk": "Köln"
+    },
+    {
+      "id": "ag-bonn",
+      "art": "AG",
+      "name": "Amtsgericht Bonn",
+      "bezirk": "Bonn"
+    },
+    {
+      "id": "lg-bonn",
+      "art": "LG",
+      "name": "Landgericht Bonn",
+      "bezirk": "Bonn"
+    },
+    {
+      "id": "ag-muenchen",
+      "art": "AG",
+      "name": "Amtsgericht München",
+      "bezirk": "München"
+    },
+    {
+      "id": "lg-muenchen",
+      "art": "LG",
+      "name": "Landgericht München I",
+      "bezirk": "München"
+    }
+  ],
+  "einheiten": [
+    {
+      "id": "ag-koeln-abt-118",
+      "gerichtId": "ag-köln",
+      "bezeichnung": "Zivilabteilung 118",
+      "zustaendigkeit": "Wohnraummietsachen"
+    },
+    {
+      "id": "ag-koeln-abt-142",
+      "gerichtId": "ag-köln",
+      "bezeichnung": "Zivilabteilung 142",
+      "zustaendigkeit": "Allgemeine Zivilsachen, erstgenannte beklagte Partei A bis K"
+    },
+    {
+      "id": "ag-koeln-abt-143",
+      "gerichtId": "ag-köln",
+      "bezeichnung": "Zivilabteilung 143",
+      "zustaendigkeit": "Allgemeine Zivilsachen, erstgenannte beklagte Partei L bis Z"
+    },
+    {
+      "id": "lg-koeln-zk-5",
+      "gerichtId": "lg-köln",
+      "bezeichnung": "5. Zivilkammer",
+      "zustaendigkeit": "Allgemeine Zivilsachen im Turnus"
+    },
+    {
+      "id": "lg-koeln-zk-25",
+      "gerichtId": "lg-köln",
+      "bezeichnung": "25. Zivilkammer",
+      "zustaendigkeit": "Streitigkeiten aus Heilbehandlungen"
+    }
+  ],
+  "benutzer": [
+    {
+      "id": "richter-brenner",
+      "kennung": "k.brenner",
+      "name": "Klaus Brenner",
+      "amtsbezeichnung": "Richter am Amtsgericht",
+      "rolle": "richter",
+      "einheitIds": [
+        "ag-koeln-abt-118"
+      ],
+      "demoKonto": false
+    },
+    {
+      "id": "richterin-hoffmann",
+      "kennung": "j.hoffmann",
+      "name": "Dr. Julia Hoffmann",
+      "amtsbezeichnung": "Richterin am Amtsgericht",
+      "rolle": "richter",
+      "einheitIds": [
+        "ag-koeln-abt-142"
+      ],
+      "demoKonto": true
+    },
+    {
+      "id": "richterin-albers",
+      "kennung": "m.albers",
+      "name": "Mira Albers",
+      "amtsbezeichnung": "Richterin am Amtsgericht",
+      "rolle": "richter",
+      "einheitIds": [
+        "ag-koeln-abt-143"
+      ],
+      "demoKonto": false
+    },
+    {
+      "id": "richter-wendt",
+      "kennung": "t.wendt",
+      "name": "Tobias Wendt",
+      "amtsbezeichnung": "Richter am Landgericht",
+      "rolle": "richter",
+      "einheitIds": [
+        "lg-koeln-zk-5"
+      ],
+      "demoKonto": true
+    },
+    {
+      "id": "richter-osterloh",
+      "kennung": "f.osterloh",
+      "name": "Frank Osterloh",
+      "amtsbezeichnung": "Vorsitzender Richter am Landgericht",
+      "rolle": "richter",
+      "einheitIds": [
+        "lg-koeln-zk-25"
+      ],
+      "demoKonto": false
+    }
+  ],
+  "gvpRegeln": [
+    {
+      "id": "agk-2026-3-1",
+      "gerichtId": "ag-köln",
+      "einheitId": "ag-koeln-abt-118",
+      "regelText": "GVP 2026, § 3 Abs. 1: Streitigkeiten aus Wohnraummietverhältnissen werden der Abteilung 118 zugewiesen.",
+      "bedingung": {
+        "sachgebiet": "wohnraummiete"
+      }
+    },
+    {
+      "id": "agk-2026-4-2",
+      "gerichtId": "ag-köln",
+      "einheitId": "ag-koeln-abt-142",
+      "regelText": "GVP 2026, § 4 Abs. 2: Allgemeine Zivilsachen, bei denen der Anfangsbuchstabe der erstgenannten beklagten Partei in den Bereich A bis K fällt, werden der Abteilung 142 zugewiesen.",
+      "bedingung": {
+        "sachgebiet": "allgemein",
+        "beklagteAnfangsbuchstaben": "A-K"
+      }
+    },
+    {
+      "id": "agk-2026-4-3",
+      "gerichtId": "ag-köln",
+      "einheitId": "ag-koeln-abt-143",
+      "regelText": "GVP 2026, § 4 Abs. 3: Allgemeine Zivilsachen, bei denen der Anfangsbuchstabe der erstgenannten beklagten Partei in den Bereich L bis Z fällt, werden der Abteilung 143 zugewiesen.",
+      "bedingung": {
+        "sachgebiet": "allgemein",
+        "beklagteAnfangsbuchstaben": "L-Z"
+      }
+    },
+    {
+      "id": "lgk-2026-2-1",
+      "gerichtId": "lg-köln",
+      "einheitId": "lg-koeln-zk-5",
+      "regelText": "GVP 2026, § 2 Abs. 1: Allgemeine Zivilsachen werden den Zivilkammern im Turnus zugewiesen; das Verfahren entfällt auf die 5. Zivilkammer (Berichterstatter Wendt).",
+      "bedingung": {
+        "sachgebiet": "allgemein"
+      }
+    },
+    {
+      "id": "lgk-2026-2-4",
+      "gerichtId": "lg-köln",
+      "einheitId": "lg-koeln-zk-25",
+      "regelText": "GVP 2026, § 2 Abs. 4: Streitigkeiten aus Heilbehandlungen werden der 25. Zivilkammer zugewiesen.",
+      "bedingung": {
+        "sachgebiet": "heilbehandlung"
+      }
+    }
+  ],
+  "merkmale": [
+    {
+      "id": "m-001",
+      "nr": 1,
+      "kategorie": "A",
+      "titel": "Bezeichnung der Parteien und des Gerichts",
+      "norm": "§ 253 Abs. 2 Nr. 1 ZPO",
+      "quelle": "regel",
+      "beschreibung": "Die Klageschrift muss das angerufene Gericht sowie die Parteien mit ladungsfähiger Anschrift und gesetzlicher Vertretung eindeutig bezeichnen.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-002",
+      "nr": 2,
+      "kategorie": "A",
+      "titel": "Bestimmter Klageantrag",
+      "norm": "§ 253 Abs. 2 Nr. 2 ZPO",
+      "quelle": "ki",
+      "beschreibung": "Der Klageantrag muss so bestimmt sein, dass er Grundlage eines vollstreckungsfähigen Titels sein kann.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-003",
+      "nr": 3,
+      "kategorie": "A",
+      "titel": "Angabe von Gegenstand und Grund des Anspruchs (Klagegrund)",
+      "norm": "§ 253 Abs. 2 Nr. 2 ZPO",
+      "quelle": "ki",
+      "beschreibung": "Der Lebenssachverhalt, aus dem der Anspruch hergeleitet wird, muss erkennbar und individualisierbar dargestellt sein.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-004",
+      "nr": 4,
+      "kategorie": "A",
+      "titel": "Klageerhebung durch Rechtsanwalt im Anwaltsprozess",
+      "norm": "§ 78 ZPO",
+      "quelle": "regel",
+      "beschreibung": "Vor den Landgerichten müssen sich die Parteien durch einen Rechtsanwalt vertreten lassen.",
+      "gerichte": [
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-005",
+      "nr": 5,
+      "kategorie": "A",
+      "titel": "Klageänderung oder Klageerweiterung",
+      "norm": "§§ 263, 264 ZPO",
+      "quelle": "manuell",
+      "beschreibung": "Bei Änderung oder Erweiterung der Klage ist deren Zulässigkeit zu prüfen. Beim Eingang einer Klage regelmäßig nicht anwendbar.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-006",
+      "nr": 6,
+      "kategorie": "B",
+      "titel": "Deutsche Gerichtsbarkeit",
+      "norm": "§§ 18-20 GVG",
+      "quelle": "regel",
+      "beschreibung": "Die Parteien dürfen nicht von der deutschen Gerichtsbarkeit befreit sein (Immunität).",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-007",
+      "nr": 7,
+      "kategorie": "B",
+      "titel": "Zulässigkeit des Rechtswegs",
+      "norm": "§ 13 GVG",
+      "quelle": "ki",
+      "beschreibung": "Für bürgerliche Rechtsstreitigkeiten ist der ordentliche Rechtsweg eröffnet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-008",
+      "nr": 8,
+      "kategorie": "B",
+      "titel": "Sachliche Zuständigkeit",
+      "norm": "§§ 23, 71 GVG, §§ 38-40 ZPO",
+      "quelle": "regel",
+      "beschreibung": "Die sachliche Zuständigkeit richtet sich nach Streitwert und Sachgebiet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-009",
+      "nr": 9,
+      "kategorie": "B",
+      "titel": "Örtliche Zuständigkeit",
+      "norm": "§§ 12 ff. ZPO",
+      "quelle": "regel",
+      "beschreibung": "Maßgeblich ist der allgemeine Gerichtsstand der beklagten Partei, soweit kein besonderer Gerichtsstand greift.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-010",
+      "nr": 10,
+      "kategorie": "C",
+      "titel": "Parteifähigkeit",
+      "norm": "§ 50 ZPO",
+      "quelle": "regel",
+      "beschreibung": "Parteifähig ist, wer rechtsfähig ist; für Gesellschaften gelten Sonderregeln.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-011",
+      "nr": 11,
+      "kategorie": "C",
+      "titel": "Prozessfähigkeit und ordnungsgemäße Vertretung",
+      "norm": "§§ 51, 52 ZPO",
+      "quelle": "ki",
+      "beschreibung": "Die Parteien müssen prozessfähig oder ordnungsgemäß gesetzlich vertreten sein.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-012",
+      "nr": 12,
+      "kategorie": "C",
+      "titel": "Prozessführungsbefugnis",
+      "norm": "§ 51 Abs. 1 ZPO",
+      "quelle": "ki",
+      "beschreibung": "Die klagende Partei muss befugt sein, das behauptete Recht im eigenen Namen geltend zu machen.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-013",
+      "nr": 13,
+      "kategorie": "D",
+      "titel": "Keine anderweitige Rechtshängigkeit",
+      "norm": "§ 261 Abs. 3 Nr. 1 ZPO",
+      "quelle": "regel",
+      "beschreibung": "Abgleich mit dem Verfahrensregister: derselbe Streitgegenstand darf nicht bereits rechtshängig sein.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-014",
+      "nr": 14,
+      "kategorie": "D",
+      "titel": "Keine entgegenstehende Rechtskraft",
+      "norm": "§ 322 ZPO",
+      "quelle": "regel",
+      "beschreibung": "Abgleich mit dem Verfahrensregister: über denselben Streitgegenstand darf nicht bereits rechtskräftig entschieden sein.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-015",
+      "nr": 15,
+      "kategorie": "E",
+      "titel": "Allgemeines Rechtsschutzbedürfnis",
+      "norm": "Allgemeine Sachurteilsvoraussetzung",
+      "quelle": "ki",
+      "beschreibung": "Bei Leistungsklagen regelmäßig gegeben; Anhaltspunkte für einen einfacheren Weg sind zu prüfen.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-016",
+      "nr": 16,
+      "kategorie": "F",
+      "titel": "Zulässigkeit der Klagehäufung",
+      "norm": "§ 260 ZPO",
+      "quelle": "regel",
+      "beschreibung": "Mehrere Ansprüche können verbunden werden, wenn dasselbe Gericht zuständig und dieselbe Prozessart statthaft ist. Die sachliche Zuständigkeit kann sich aus den zusammengerechneten Anträgen ergeben (§ 5 ZPO).",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-017",
+      "nr": 17,
+      "kategorie": "G",
+      "titel": "Sicherer Übermittlungsweg oder qualifizierte elektronische Signatur",
+      "norm": "§ 130a Abs. 3 ZPO",
+      "quelle": "regel",
+      "beschreibung": "Das elektronische Dokument muss signiert oder auf einem sicheren Übermittlungsweg eingereicht sein.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-018",
+      "nr": 18,
+      "kategorie": "G",
+      "titel": "Nutzungspflicht des elektronischen Rechtsverkehrs für Anwälte",
+      "norm": "§ 130d ZPO",
+      "quelle": "regel",
+      "beschreibung": "Rechtsanwältinnen und Rechtsanwälte müssen vorbereitende Schriftsätze elektronisch übermitteln.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-019",
+      "nr": 19,
+      "kategorie": "G",
+      "titel": "XJustiz-Datensatz vorhanden und stimmig mit der Klageschrift",
+      "norm": "§ 2 Abs. 3 ERVV",
+      "quelle": "regel",
+      "beschreibung": "Dem Schriftsatz ist ein strukturierter Datensatz beizufügen; dessen Angaben werden mit der Klageschrift abgeglichen.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-020",
+      "nr": 20,
+      "kategorie": "G",
+      "titel": "Ladungsfähige Anschrift der beklagten Partei",
+      "norm": "§ 253 Abs. 2 Nr. 1 ZPO",
+      "quelle": "regel",
+      "beschreibung": "Für die Zustellung ist eine ladungsfähige Anschrift erforderlich.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-021",
+      "nr": 21,
+      "kategorie": "G",
+      "titel": "Streitwertangabe, falls kein bezifferter Geldbetrag",
+      "norm": "§ 253 Abs. 3 Nr. 2 ZPO",
+      "quelle": "regel",
+      "beschreibung": "Ist der Streitgegenstand kein bestimmter Geldbetrag, soll der Wert angegeben werden.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-022",
+      "nr": 22,
+      "kategorie": "G",
+      "titel": "Angaben zur außergerichtlichen Konfliktbeilegung",
+      "norm": "§ 253 Abs. 3 Nr. 1 ZPO",
+      "quelle": "ki",
+      "beschreibung": "Sollvorschrift: Angabe, ob dem Verfahren ein Mediations- oder Schlichtungsversuch vorausging. Verstoß führt nicht zur Unzulässigkeit, daher höchstens Hinweis.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-023",
+      "nr": 23,
+      "kategorie": "G",
+      "titel": "Äußerung zur Entscheidung durch den Einzelrichter",
+      "norm": "§ 253 Abs. 3 Nr. 3 ZPO",
+      "quelle": "regel",
+      "beschreibung": "Die Klageschrift soll eine Äußerung dazu enthalten, ob einer Entscheidung durch den Einzelrichter entgegengetreten wird.",
+      "gerichte": [
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-024",
+      "nr": 24,
+      "kategorie": "G",
+      "titel": "Gerichtskostenvorschuss eingezahlt",
+      "norm": "§ 12 Abs. 1 GKG",
+      "quelle": "regel",
+      "beschreibung": "Die Klage wird erst nach Zahlung des Vorschusses zugestellt. Offener Vorschuss ist kein Zulässigkeitsmangel.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-025",
+      "nr": 25,
+      "kategorie": "G",
+      "titel": "Obligatorische Streitschlichtung nach Landesrecht",
+      "norm": "§ 15a EGZPO",
+      "quelle": "ki",
+      "beschreibung": "In bestimmten Streitigkeiten ist vor Klageerhebung ein Schlichtungsversuch durchzuführen; die Bescheinigung ist vorzulegen.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": false,
+      "aktiv": true
+    },
+    {
+      "id": "m-026",
+      "nr": 26,
+      "kategorie": "A",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-027",
+      "nr": 27,
+      "kategorie": "B",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-028",
+      "nr": 28,
+      "kategorie": "C",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-029",
+      "nr": 29,
+      "kategorie": "D",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-030",
+      "nr": 30,
+      "kategorie": "E",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-031",
+      "nr": 31,
+      "kategorie": "F",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-032",
+      "nr": 32,
+      "kategorie": "G",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-033",
+      "nr": 33,
+      "kategorie": "A",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-034",
+      "nr": 34,
+      "kategorie": "B",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-035",
+      "nr": 35,
+      "kategorie": "C",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-036",
+      "nr": 36,
+      "kategorie": "D",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-037",
+      "nr": 37,
+      "kategorie": "E",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-038",
+      "nr": 38,
+      "kategorie": "F",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-039",
+      "nr": 39,
+      "kategorie": "G",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-040",
+      "nr": 40,
+      "kategorie": "A",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-041",
+      "nr": 41,
+      "kategorie": "B",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-042",
+      "nr": 42,
+      "kategorie": "C",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-043",
+      "nr": 43,
+      "kategorie": "D",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-044",
+      "nr": 44,
+      "kategorie": "E",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-045",
+      "nr": 45,
+      "kategorie": "F",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-046",
+      "nr": 46,
+      "kategorie": "G",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-047",
+      "nr": 47,
+      "kategorie": "A",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-048",
+      "nr": 48,
+      "kategorie": "B",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-049",
+      "nr": 49,
+      "kategorie": "C",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-050",
+      "nr": 50,
+      "kategorie": "D",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-051",
+      "nr": 51,
+      "kategorie": "E",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-052",
+      "nr": 52,
+      "kategorie": "F",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-053",
+      "nr": 53,
+      "kategorie": "G",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-054",
+      "nr": 54,
+      "kategorie": "A",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-055",
+      "nr": 55,
+      "kategorie": "B",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-056",
+      "nr": 56,
+      "kategorie": "C",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-057",
+      "nr": 57,
+      "kategorie": "D",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-058",
+      "nr": 58,
+      "kategorie": "E",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-059",
+      "nr": 59,
+      "kategorie": "F",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-060",
+      "nr": 60,
+      "kategorie": "G",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-061",
+      "nr": 61,
+      "kategorie": "A",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-062",
+      "nr": 62,
+      "kategorie": "B",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-063",
+      "nr": 63,
+      "kategorie": "C",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-064",
+      "nr": 64,
+      "kategorie": "D",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-065",
+      "nr": 65,
+      "kategorie": "E",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-066",
+      "nr": 66,
+      "kategorie": "F",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-067",
+      "nr": 67,
+      "kategorie": "G",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-068",
+      "nr": 68,
+      "kategorie": "A",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-069",
+      "nr": 69,
+      "kategorie": "B",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-070",
+      "nr": 70,
+      "kategorie": "C",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-071",
+      "nr": 71,
+      "kategorie": "D",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-072",
+      "nr": 72,
+      "kategorie": "E",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-073",
+      "nr": 73,
+      "kategorie": "F",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-074",
+      "nr": 74,
+      "kategorie": "G",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-075",
+      "nr": 75,
+      "kategorie": "A",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-076",
+      "nr": 76,
+      "kategorie": "B",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-077",
+      "nr": 77,
+      "kategorie": "C",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-078",
+      "nr": 78,
+      "kategorie": "D",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-079",
+      "nr": 79,
+      "kategorie": "E",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-080",
+      "nr": 80,
+      "kategorie": "F",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-081",
+      "nr": 81,
+      "kategorie": "G",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-082",
+      "nr": 82,
+      "kategorie": "A",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-083",
+      "nr": 83,
+      "kategorie": "B",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-084",
+      "nr": 84,
+      "kategorie": "C",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-085",
+      "nr": 85,
+      "kategorie": "D",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-086",
+      "nr": 86,
+      "kategorie": "E",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-087",
+      "nr": 87,
+      "kategorie": "F",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-088",
+      "nr": 88,
+      "kategorie": "G",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-089",
+      "nr": 89,
+      "kategorie": "A",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-090",
+      "nr": 90,
+      "kategorie": "B",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-091",
+      "nr": 91,
+      "kategorie": "C",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-092",
+      "nr": 92,
+      "kategorie": "D",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-093",
+      "nr": 93,
+      "kategorie": "E",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-094",
+      "nr": 94,
+      "kategorie": "F",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-095",
+      "nr": 95,
+      "kategorie": "G",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-096",
+      "nr": 96,
+      "kategorie": "A",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-097",
+      "nr": 97,
+      "kategorie": "B",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-098",
+      "nr": 98,
+      "kategorie": "C",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-099",
+      "nr": 99,
+      "kategorie": "D",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    },
+    {
+      "id": "m-100",
+      "nr": 100,
+      "kategorie": "E",
+      "titel": "Prüfpunkt in Vorbereitung",
+      "norm": "—",
+      "quelle": "regel",
+      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "platzhalter": true,
+      "aktiv": false
+    }
+  ],
+  "verfahrensregister": [
+    {
+      "az": "142 C 1187/26",
+      "parteien": "Petersen ./. Heinrichs",
+      "status": "rechtshängig",
+      "zugestelltAm": "2026-09-09"
+    }
+  ],
+  "faelle": [
+    {
+      "id": "fall-0001",
+      "gerichtId": "ag-köln",
+      "nurSimulation": false,
+      "eingang": {
+        "eingangAm": "2026-09-25T09:42:00",
+        "uebermittlungsweg": "beA",
+        "aktenzeichen": "142 C 1234/26",
+        "angaben": {
+          "klaeger": "Sabine Schneider",
+          "beklagte": "Baumarkt Kessler GmbH",
+          "ortBeklagte": "Köln",
+          "gegenstand": "Rückzahlung des Kaufpreises nach Rücktritt",
+          "sachgebiet": "allgemein",
+          "streitwert": 3480,
+          "prozessbevollmaechtigte": "Rechtsanwältin Lea Brückner, Hohenstaufenring 44, 50674 Köln",
+          "kostenvorschuss": "bezahlt"
+        },
+        "klageschriftText": "An das\nAmtsgericht Köln\nLuxemburger Straße 101\n50939 Köln\n\nKlage\n\nder Frau Sabine Schneider, Lindenthalgürtel 18, 50935 Köln,\n– Klägerin –\n\nProzessbevollmächtigte: Rechtsanwältin Lea Brückner, Hohenstaufenring 44, 50674 Köln\n\ngegen\n\ndie Baumarkt Kessler GmbH, vertreten durch den Geschäftsführer Hendrik Kessler, Industriestraße 7, 50735 Köln,\n– Beklagte –\n\nwegen Rückzahlung des Kaufpreises nach Rücktritt vom Kaufvertrag\n\nVorläufiger Streitwert: 3.480,00 €\n\nNamens und in Vollmacht der Klägerin erheben wir Klage und werden beantragen:\n\n1. Die Beklagte wird verurteilt, an die Klägerin 3.480,00 € nebst Zinsen in Höhe von fünf Prozentpunkten über dem Basiszinssatz seit dem 14.08.2026 zu zahlen.\n2. Die Beklagte trägt die Kosten des Rechtsstreits.\n\nBegründung:\n\nDie Klägerin erwarb bei der Beklagten am 12.05.2026 eine Gartenholz-Terrassenkonstruktion zum Preis von 3.480,00 €.\nBeweis: Anlage K1 (Rechnung vom 12.05.2026)\n\nBereits sechs Wochen nach dem Aufbau zeigten sich an sämtlichen Dielen durchgehende Risse und großflächiger Pilzbefall. Das Material war entgegen der Produktbeschreibung nicht kesseldruckimprägniert. Die Klägerin setzte der Beklagten mit Schreiben vom 30.07.2026 eine Frist zur Nacherfüllung bis zum 13.08.2026.\nBeweis: Anlage K2 (Mahnschreiben vom 30.07.2026)\n\nDie Beklagte ließ die Frist fruchtlos verstreichen. Mit Schreiben vom 14.08.2026 erklärte die Klägerin den Rücktritt vom Kaufvertrag. Der Anspruch folgt aus §§ 437 Nr. 2, 323, 346 Abs. 1 BGB. Die Ware steht zur Abholung bereit.\n\nAngaben nach § 253 Abs. 3 ZPO: Ein Güteversuch vor einer Schlichtungsstelle wurde unternommen und ist am 02.09.2026 ohne Einigung geblieben. Der Streitwert wird mit 3.480,00 € angegeben.\n\nKöln, 24.09.2026\n\nLea Brückner\nRechtsanwältin",
+        "xjustizXml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xjustiz:nachricht.gds.uebermittlungSchriftgutobjekte\n    xmlns:xjustiz=\"http://www.xjustiz.de\" version=\"3.5.1\">\n  <nachrichtenkopf>\n    <erstellungszeitpunkt>2026-09-25T09:42:11</erstellungszeitpunkt>\n    <empfaenger>Amtsgericht Köln</empfaenger>\n    <uebermittlungsweg>beA</uebermittlungsweg>\n  </nachrichtenkopf>\n  <fachdaten>\n    <verfahrensdaten>\n      <aktenzeichen.vorlaeufig>142 C 1234/26</aktenzeichen.vorlaeufig>\n      <sachgebiet>Kaufrecht</sachgebiet>\n      <streitwert einheit=\"EUR\">3480.00</streitwert>\n    </verfahrensdaten>\n    <beteiligter rolle=\"Klaeger\">\n      <bezeichnung>Sabine Schneider</bezeichnung>\n    </beteiligter>\n    <beteiligter rolle=\"Beklagter\">\n      <bezeichnung>Baumarkt Kessler GmbH</bezeichnung>\n    </beteiligter>\n  </fachdaten>\n</xjustiz:nachricht.gds.uebermittlungSchriftgutobjekte>",
+        "xjustizFelder": [
+          {
+            "label": "Absender",
+            "wert": "RAin Lea Brückner (beA-Postfach)"
+          },
+          {
+            "label": "Übermittlungsweg",
+            "wert": "beA, § 130a Abs. 4 Nr. 2 ZPO"
+          },
+          {
+            "label": "Gericht",
+            "wert": "Amtsgericht Köln"
+          },
+          {
+            "label": "Klagepartei",
+            "wert": "Sabine Schneider"
+          },
+          {
+            "label": "Anschrift Klagepartei",
+            "wert": "Lindenthalgürtel 18, 50935 Köln"
+          },
+          {
+            "label": "Beklagte Partei",
+            "wert": "Baumarkt Kessler GmbH"
+          },
+          {
+            "label": "Anschrift beklagte Partei",
+            "wert": "Industriestraße 7, 50735 Köln"
+          },
+          {
+            "label": "Streitwert",
+            "wert": "3.480,00 €"
+          },
+          {
+            "label": "Sachgebiet",
+            "wert": "Kaufrecht / allgemeine Zivilsache"
+          }
+        ],
+        "anlagen": [
+          {
+            "bezeichnung": "K1",
+            "titel": "Rechnung vom 12.05.2026",
+            "seiten": 2
+          },
+          {
+            "bezeichnung": "K2",
+            "titel": "Mahnschreiben vom 30.07.2026",
+            "seiten": 1
+          }
+        ]
+      },
+      "erwartet": {
+        "zuweisung": {
+          "einheitId": "ag-koeln-abt-142",
+          "richterId": "richterin-hoffmann",
+          "regelId": "agk-2026-4-2"
+        },
+        "auswertung": {
+          "geprueftAm": "2026-09-25T09:43:00",
+          "ergebnisse": []
+        }
+      }
+    },
+    {
+      "id": "fall-0002",
+      "gerichtId": "ag-köln",
+      "nurSimulation": false,
+      "eingang": {
+        "eingangAm": "2026-09-25T08:15:00",
+        "uebermittlungsweg": "beA",
+        "aktenzeichen": "142 C 1235/26",
+        "angaben": {
+          "klaeger": "Autohaus Lindner GmbH",
+          "beklagte": "Markus Engel",
+          "ortBeklagte": "Köln",
+          "gegenstand": "Werklohn für Reparaturarbeiten",
+          "sachgebiet": "allgemein",
+          "streitwert": 14250,
+          "prozessbevollmaechtigte": "Rechtsanwalt Dr. Ansgar Pohl, Rudolfplatz 3, 50674 Köln",
+          "kostenvorschuss": "bezahlt"
+        },
+        "klageschriftText": "An das\nAmtsgericht Köln\nLuxemburger Straße 101\n50939 Köln\n\nKlage\n\nder Autohaus Lindner GmbH, vertreten durch den Geschäftsführer Peter Lindner, Bonner Straße 210, 50968 Köln,\n– Klägerin –\n\nProzessbevollmächtigter: Rechtsanwalt Dr. Ansgar Pohl, Rudolfplatz 3, 50674 Köln\n\ngegen\n\nHerrn Markus Engel, Aachener Straße 512, 50933 Köln,\n– Beklagter –\n\nwegen Werklohnforderung aus einem Reparaturvertrag\n\nVorläufiger Streitwert: 14.250,00 €\n\nNamens und in Vollmacht der Klägerin erheben wir Klage und werden beantragen:\n\n1. Der Beklagte wird verurteilt, an die Klägerin 14.250,00 € nebst Zinsen in Höhe von neun Prozentpunkten über dem Basiszinssatz seit dem 05.09.2026 zu zahlen.\n2. Der Beklagte trägt die Kosten des Rechtsstreits.\n\nBegründung:\n\nDer Beklagte beauftragte die Klägerin am 03.07.2026 mit der Instandsetzung des Motors und des Getriebes seines Fahrzeugs. Grundlage war ein schriftlicher Kostenvoranschlag, den der Beklagte gegenzeichnete.\nBeweis: Anlage K1 (Reparaturauftrag vom 03.07.2026)\n\nDie Klägerin führte die Arbeiten vollständig aus und stellte das Fahrzeug am 21.08.2026 fertig. Die Rechnung über 14.250,00 € ist dem Beklagten am 22.08.2026 zugegangen.\nBeweis: Anlage K2 (Rechnung vom 22.08.2026)\n\nTrotz Mahnung vom 04.09.2026 leistete der Beklagte keine Zahlung. Einwendungen gegen Umfang und Qualität der Arbeiten hat er nicht erhoben. Der Anspruch folgt aus § 631 Abs. 1 BGB, der Zinsanspruch aus §§ 286, 288 Abs. 2 BGB.\nBeweis: Anlage K3 (Mahnung vom 04.09.2026)\n\nAngaben nach § 253 Abs. 3 ZPO: Ein Mediations- oder Schlichtungsverfahren wurde nicht durchgeführt, da der Beklagte auf Schreiben der Klägerin nicht reagiert hat.\n\nKöln, 24.09.2026\n\nDr. Ansgar Pohl\nRechtsanwalt",
+        "xjustizXml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xjustiz:nachricht.gds.uebermittlungSchriftgutobjekte\n    xmlns:xjustiz=\"http://www.xjustiz.de\" version=\"3.5.1\">\n  <nachrichtenkopf>\n    <erstellungszeitpunkt>2026-09-25T09:42:11</erstellungszeitpunkt>\n    <empfaenger>Amtsgericht Köln</empfaenger>\n    <uebermittlungsweg>beA</uebermittlungsweg>\n  </nachrichtenkopf>\n  <fachdaten>\n    <verfahrensdaten>\n      <aktenzeichen.vorlaeufig>142 C 1235/26</aktenzeichen.vorlaeufig>\n      <sachgebiet>Werkvertragsrecht</sachgebiet>\n      <streitwert einheit=\"EUR\">14250.00</streitwert>\n    </verfahrensdaten>\n    <beteiligter rolle=\"Klaeger\">\n      <bezeichnung>Autohaus Lindner GmbH</bezeichnung>\n    </beteiligter>\n    <beteiligter rolle=\"Beklagter\">\n      <bezeichnung>Markus Engel</bezeichnung>\n    </beteiligter>\n  </fachdaten>\n</xjustiz:nachricht.gds.uebermittlungSchriftgutobjekte>",
+        "xjustizFelder": [
+          {
+            "label": "Absender",
+            "wert": "RA Dr. Ansgar Pohl (beA-Postfach)"
+          },
+          {
+            "label": "Übermittlungsweg",
+            "wert": "beA, § 130a Abs. 4 Nr. 2 ZPO"
+          },
+          {
+            "label": "Gericht",
+            "wert": "Amtsgericht Köln"
+          },
+          {
+            "label": "Klagepartei",
+            "wert": "Autohaus Lindner GmbH"
+          },
+          {
+            "label": "Anschrift Klagepartei",
+            "wert": "Bonner Straße 210, 50968 Köln"
+          },
+          {
+            "label": "Beklagte Partei",
+            "wert": "Markus Engel"
+          },
+          {
+            "label": "Anschrift beklagte Partei",
+            "wert": "Aachener Straße 512, 50933 Köln"
+          },
+          {
+            "label": "Streitwert",
+            "wert": "14.250,00 €"
+          },
+          {
+            "label": "Sachgebiet",
+            "wert": "Werkvertragsrecht / allgemeine Zivilsache"
+          }
+        ],
+        "anlagen": [
+          {
+            "bezeichnung": "K1",
+            "titel": "Reparaturauftrag vom 03.07.2026",
+            "seiten": 2
+          },
+          {
+            "bezeichnung": "K2",
+            "titel": "Rechnung vom 22.08.2026",
+            "seiten": 3
+          },
+          {
+            "bezeichnung": "K3",
+            "titel": "Mahnung vom 04.09.2026",
+            "seiten": 1
+          }
+        ]
+      },
+      "erwartet": {
+        "zuweisung": {
+          "einheitId": "ag-koeln-abt-142",
+          "richterId": "richterin-hoffmann",
+          "regelId": "agk-2026-4-2"
+        },
+        "auswertung": {
+          "geprueftAm": "2026-09-25T08:16:00",
+          "ergebnisse": [
+            {
+              "merkmalId": "m-008",
+              "status": "mangel",
+              "relevanz": "hoch",
+              "text": "Streitwert 14.250,00 € übersteigt 10.000 € (§ 23 Nr. 1 GVG). Zuständig ist das Landgericht Köln (§ 71 Abs. 1 GVG).",
+              "fundstellen": [
+                {
+                  "zitat": "14.250,00 €"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "fall-0003",
+      "gerichtId": "ag-köln",
+      "nurSimulation": false,
+      "eingang": {
+        "eingangAm": "2026-09-24T16:10:00",
+        "uebermittlungsweg": "Mein Justizpostfach",
+        "aktenzeichen": "142 C 1236/26",
+        "angaben": {
+          "klaeger": "Thomas Brandt",
+          "beklagte": "Florian Aigner",
+          "ortBeklagte": "München",
+          "gegenstand": "Rückzahlung eines Privatdarlehens",
+          "sachgebiet": "allgemein",
+          "streitwert": 2000,
+          "prozessbevollmaechtigte": null,
+          "kostenvorschuss": "offen"
+        },
+        "klageschriftText": "An das\nAmtsgericht Köln\nLuxemburger Straße 101\n50939 Köln\n\nKlage\n\ndes Herrn Thomas Brandt, Venloer Straße 301, 50823 Köln,\n– Kläger, handelnd in eigener Sache –\n\ngegen\n\nHerrn Florian Aigner, Kaiserplatz 6, 80802 München,\n– Beklagter –\n\nwegen Rückzahlung eines Privatdarlehens\n\nVorläufiger Streitwert: 2.000,00 €\n\nIch erhebe Klage und werde beantragen:\n\n1. Der Beklagte wird verurteilt, an den Kläger 2.000,00 € nebst Zinsen in Höhe von fünf Prozentpunkten über dem Basiszinssatz seit dem 01.08.2026 zu zahlen.\n2. Der Beklagte trägt die Kosten des Rechtsstreits.\n\nBegründung:\n\nDer Kläger und der Beklagte kennen sich aus einem gemeinsamen Sportverein. Am 15.01.2026 gewährte der Kläger dem Beklagten ein Darlehen über 2.000,00 €, das dieser zur Anschaffung eines Gebrauchtwagens verwendete. Die Auszahlung erfolgte per Überweisung.\nBeweis: Anlage K1 (Kontoauszug vom 15.01.2026)\n\nDie Parteien vereinbarten schriftlich per Textnachricht eine Rückzahlung in einer Summe bis zum 31.07.2026.\nBeweis: Anlage K2 (Nachrichtenverlauf vom 15.01.2026)\n\nDer Beklagte zahlte bis heute nichts zurück. Auf die Zahlungserinnerung des Klägers vom 10.08.2026 reagierte er nicht. Der Anspruch folgt aus § 488 Abs. 1 Satz 2 BGB.\n\nAngaben nach § 253 Abs. 3 ZPO: Der Kläger hat den Beklagten mehrfach telefonisch zur gütlichen Beilegung aufgefordert. Ein förmliches Schlichtungsverfahren fand nicht statt. Der Streitwert wird mit 2.000,00 € angegeben.\n\nKöln, 24.09.2026\n\nThomas Brandt",
+        "xjustizXml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xjustiz:nachricht.gds.uebermittlungSchriftgutobjekte\n    xmlns:xjustiz=\"http://www.xjustiz.de\" version=\"3.5.1\">\n  <nachrichtenkopf>\n    <erstellungszeitpunkt>2026-09-25T09:42:11</erstellungszeitpunkt>\n    <empfaenger>Amtsgericht Köln</empfaenger>\n    <uebermittlungsweg>MJP</uebermittlungsweg>\n  </nachrichtenkopf>\n  <fachdaten>\n    <verfahrensdaten>\n      <aktenzeichen.vorlaeufig>142 C 1236/26</aktenzeichen.vorlaeufig>\n      <sachgebiet>Darlehensrecht</sachgebiet>\n      <streitwert einheit=\"EUR\">2000.00</streitwert>\n    </verfahrensdaten>\n    <beteiligter rolle=\"Klaeger\">\n      <bezeichnung>Thomas Brandt</bezeichnung>\n    </beteiligter>\n    <beteiligter rolle=\"Beklagter\">\n      <bezeichnung>Florian Aigner</bezeichnung>\n    </beteiligter>\n  </fachdaten>\n</xjustiz:nachricht.gds.uebermittlungSchriftgutobjekte>",
+        "xjustizFelder": [
+          {
+            "label": "Absender",
+            "wert": "Thomas Brandt (Mein Justizpostfach)"
+          },
+          {
+            "label": "Übermittlungsweg",
+            "wert": "Mein Justizpostfach, § 130a Abs. 4 Nr. 4 ZPO"
+          },
+          {
+            "label": "Gericht",
+            "wert": "Amtsgericht Köln"
+          },
+          {
+            "label": "Klagepartei",
+            "wert": "Thomas Brandt"
+          },
+          {
+            "label": "Anschrift Klagepartei",
+            "wert": "Venloer Straße 301, 50823 Köln"
+          },
+          {
+            "label": "Beklagte Partei",
+            "wert": "Florian Aigner"
+          },
+          {
+            "label": "Anschrift beklagte Partei",
+            "wert": "Kaiserplatz 6, 80802 München"
+          },
+          {
+            "label": "Streitwert",
+            "wert": "2.000,00 €"
+          },
+          {
+            "label": "Sachgebiet",
+            "wert": "Darlehensrecht / allgemeine Zivilsache"
+          }
+        ],
+        "anlagen": [
+          {
+            "bezeichnung": "K1",
+            "titel": "Kontoauszug vom 15.01.2026",
+            "seiten": 1
+          },
+          {
+            "bezeichnung": "K2",
+            "titel": "Nachrichtenverlauf vom 15.01.2026",
+            "seiten": 2
+          }
+        ]
+      },
+      "erwartet": {
+        "zuweisung": {
+          "einheitId": "ag-koeln-abt-142",
+          "richterId": "richterin-hoffmann",
+          "regelId": "agk-2026-4-2"
+        },
+        "auswertung": {
+          "geprueftAm": "2026-09-24T16:11:00",
+          "ergebnisse": [
+            {
+              "merkmalId": "m-009",
+              "status": "mangel",
+              "relevanz": "hoch",
+              "text": "Wohnsitz des Beklagten in München (§§ 12, 13 ZPO), kein besonderer Gerichtsstand in Köln ersichtlich.",
+              "fundstellen": [
+                {
+                  "zitat": "80802 München"
+                }
+              ]
+            },
+            {
+              "merkmalId": "m-024",
+              "status": "offen",
+              "relevanz": "mittel",
+              "text": "Der Gerichtskostenvorschuss ist noch nicht eingegangen. Die Zustellung erfolgt nach Eingang (§ 12 Abs. 1 GKG).",
+              "fundstellen": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "fall-0004",
+      "gerichtId": "ag-köln",
+      "nurSimulation": false,
+      "eingang": {
+        "eingangAm": "2026-09-24T11:05:00",
+        "uebermittlungsweg": "beA",
+        "aktenzeichen": "142 C 1237/26",
+        "angaben": {
+          "klaeger": "Nils Petersen",
+          "beklagte": "Anna Heinrichs",
+          "ortBeklagte": "Köln",
+          "gegenstand": "Schadensersatz nach Fahrradunfall",
+          "sachgebiet": "allgemein",
+          "streitwert": 1850,
+          "prozessbevollmaechtigte": "Rechtsanwalt Simon Kreuzer, Neumarkt 12, 50667 Köln",
+          "kostenvorschuss": "bezahlt"
+        },
+        "klageschriftText": "An das\nAmtsgericht Köln\nLuxemburger Straße 101\n50939 Köln\n\nKlage\n\ndes Herrn Nils Petersen, Sudermanstraße 9, 50670 Köln,\n– Kläger –\n\nProzessbevollmächtigter: Rechtsanwalt Simon Kreuzer, Neumarkt 12, 50667 Köln\n\ngegen\n\nFrau Anna Heinrichs, Eifelplatz 2, 50677 Köln,\n– Beklagte –\n\nwegen Schadensersatz aus einem Verkehrsunfall\n\nVorläufiger Streitwert: 1.850,00 €\n\nNamens und in Vollmacht des Klägers erheben wir Klage und werden beantragen:\n\n1. Die Beklagte wird verurteilt, an den Kläger Schadensersatz in Höhe von 1.850,00 € nebst Zinsen in Höhe von fünf Prozentpunkten über dem Basiszinssatz seit dem 20.08.2026 zu zahlen.\n2. Die Beklagte trägt die Kosten des Rechtsstreits.\n\nBegründung:\n\nAm 05.08.2026 kam es auf dem Radweg der Sudermanstraße in Köln zu einer Kollision zwischen den Fahrrädern der Parteien. Die Beklagte wechselte ohne Handzeichen und ohne Rückschau die Fahrspur und stieß mit dem Vorderrad des Klägers zusammen.\nBeweis: Anlage K1 (Unfallmitteilung der Polizei vom 05.08.2026)\n\nAm Fahrrad des Klägers entstand ein Sachschaden von 1.640,00 €; hinzu kommen 210,00 € für beschädigte Kleidung und Schutzausrüstung.\nBeweis: Anlage K2 (Kostenvoranschlag der Fahrradwerkstatt)\n\nDie Beklagte wies eine Haftung mit Schreiben vom 19.08.2026 zurück. Der Anspruch folgt aus § 823 Abs. 1 BGB in Verbindung mit § 9 Abs. 1 StVO.\n\nAngaben nach § 253 Abs. 3 ZPO: Ein Schlichtungsversuch wurde von der Beklagten abgelehnt. Der Streitwert wird mit 1.850,00 € angegeben.\n\nKöln, 23.09.2026\n\nSimon Kreuzer\nRechtsanwalt",
+        "xjustizXml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xjustiz:nachricht.gds.uebermittlungSchriftgutobjekte\n    xmlns:xjustiz=\"http://www.xjustiz.de\" version=\"3.5.1\">\n  <nachrichtenkopf>\n    <erstellungszeitpunkt>2026-09-25T09:42:11</erstellungszeitpunkt>\n    <empfaenger>Amtsgericht Köln</empfaenger>\n    <uebermittlungsweg>beA</uebermittlungsweg>\n  </nachrichtenkopf>\n  <fachdaten>\n    <verfahrensdaten>\n      <aktenzeichen.vorlaeufig>142 C 1237/26</aktenzeichen.vorlaeufig>\n      <sachgebiet>Verkehrsunfall</sachgebiet>\n      <streitwert einheit=\"EUR\">1850.00</streitwert>\n    </verfahrensdaten>\n    <beteiligter rolle=\"Klaeger\">\n      <bezeichnung>Nils Petersen</bezeichnung>\n    </beteiligter>\n    <beteiligter rolle=\"Beklagter\">\n      <bezeichnung>Anna Heinrichs</bezeichnung>\n    </beteiligter>\n  </fachdaten>\n</xjustiz:nachricht.gds.uebermittlungSchriftgutobjekte>",
+        "xjustizFelder": [
+          {
+            "label": "Absender",
+            "wert": "RA Simon Kreuzer (beA-Postfach)"
+          },
+          {
+            "label": "Übermittlungsweg",
+            "wert": "beA, § 130a Abs. 4 Nr. 2 ZPO"
+          },
+          {
+            "label": "Gericht",
+            "wert": "Amtsgericht Köln"
+          },
+          {
+            "label": "Klagepartei",
+            "wert": "Nils Petersen"
+          },
+          {
+            "label": "Anschrift Klagepartei",
+            "wert": "Sudermanstraße 9, 50670 Köln"
+          },
+          {
+            "label": "Beklagte Partei",
+            "wert": "Anna Heinrichs"
+          },
+          {
+            "label": "Anschrift beklagte Partei",
+            "wert": "Eifelplatz 2, 50677 Köln"
+          },
+          {
+            "label": "Streitwert",
+            "wert": "1.850,00 €"
+          },
+          {
+            "label": "Sachgebiet",
+            "wert": "Verkehrsunfall / allgemeine Zivilsache"
+          }
+        ],
+        "anlagen": [
+          {
+            "bezeichnung": "K1",
+            "titel": "Unfallmitteilung der Polizei",
+            "seiten": 3
+          },
+          {
+            "bezeichnung": "K2",
+            "titel": "Kostenvoranschlag Fahrradwerkstatt",
+            "seiten": 1
+          }
+        ]
+      },
+      "erwartet": {
+        "zuweisung": {
+          "einheitId": "ag-koeln-abt-142",
+          "richterId": "richterin-hoffmann",
+          "regelId": "agk-2026-4-2"
+        },
+        "auswertung": {
+          "geprueftAm": "2026-09-24T11:06:00",
+          "ergebnisse": [
+            {
+              "merkmalId": "m-013",
+              "status": "mangel",
+              "relevanz": "hoch",
+              "text": "Identischer Streitgegenstand bereits rechtshängig unter 142 C 1187/26.",
+              "fundstellen": [
+                {
+                  "zitat": "Schadensersatz in Höhe von 1.850,00 €"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "fall-0005",
+      "gerichtId": "lg-köln",
+      "nurSimulation": false,
+      "eingang": {
+        "eingangAm": "2026-09-25T08:50:00",
+        "uebermittlungsweg": "beA",
+        "aktenzeichen": "5 O 311/26",
+        "angaben": {
+          "klaeger": "Eheleute Krämer",
+          "beklagte": "Dieter Olbrich",
+          "ortBeklagte": "Köln",
+          "gegenstand": "Beseitigung überhängender Äste und Kostenerstattung",
+          "sachgebiet": "nachbarrecht",
+          "streitwert": 12500,
+          "prozessbevollmaechtigte": "Rechtsanwältin Carla Neuhaus, Gereonshof 5, 50670 Köln",
+          "kostenvorschuss": "bezahlt"
+        },
+        "klageschriftText": "An das\nLandgericht Köln\nLuxemburger Straße 101\n50939 Köln\n\nKlage\n\nder Eheleute Renate und Jürgen Krämer, Am Buschweg 14, 50999 Köln,\n– Kläger –\n\nProzessbevollmächtigte: Rechtsanwältin Carla Neuhaus, Gereonshof 5, 50670 Köln\n\ngegen\n\nHerrn Dieter Olbrich, Am Buschweg 16, 50999 Köln,\n– Beklagter –\n\nwegen nachbarrechtlicher Ansprüche auf Beseitigung von Überhang\n\nVorläufiger Streitwert: 12.500,00 €\n\nNamens und in Vollmacht der Kläger erheben wir Klage und werden beantragen:\n\n1. Der Beklagte wird verurteilt, die auf das Grundstück der Kläger überhängenden Äste seiner drei Grenzpappeln bis zur Grundstücksgrenze zurückzuschneiden.\n2. Der Beklagte wird verurteilt, an die Kläger 4.200,00 € für bereits angefallene Beseitigungs- und Gutachterkosten zu zahlen.\n3. Der Beklagte trägt die Kosten des Rechtsstreits.\n\nBegründung:\n\nDie Parteien sind Eigentümer unmittelbar benachbarter Grundstücke. Von den drei Grenzpappeln des Beklagten ragen seit mindestens zwei Jahren Äste bis zu vier Meter weit auf das Grundstück der Kläger.\nBeweis: Anlage K1 (Lichtbilder vom 12.06.2026)\n\nDie überhängenden Äste beeinträchtigen die Nutzung der Terrasse erheblich und haben im Frühjahr 2026 zu Dachschäden am Gartenhaus geführt.\nBeweis: Anlage K2 (Gutachten des Sachverständigen Dipl.-Ing. Rauch)\n\nDie Kläger setzten dem Beklagten mit Schreiben vom 01.07.2026 eine Frist zur Beseitigung des Überhangs bis zum 15.08.2026. Der Beklagte reagierte nicht. Der Anspruch folgt aus § 1004 Abs. 1 BGB, § 910 BGB sowie § 47 NachbG NRW.\n\nAngaben nach § 253 Abs. 3 ZPO: Der Streitwert wird mit 12.500,00 € angegeben. Einer Entscheidung durch den Einzelrichter wird nicht entgegengetreten.\n\nKöln, 24.09.2026\n\nCarla Neuhaus\nRechtsanwältin",
+        "xjustizXml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xjustiz:nachricht.gds.uebermittlungSchriftgutobjekte\n    xmlns:xjustiz=\"http://www.xjustiz.de\" version=\"3.5.1\">\n  <nachrichtenkopf>\n    <erstellungszeitpunkt>2026-09-25T09:42:11</erstellungszeitpunkt>\n    <empfaenger>Landgericht Köln</empfaenger>\n    <uebermittlungsweg>beA</uebermittlungsweg>\n  </nachrichtenkopf>\n  <fachdaten>\n    <verfahrensdaten>\n      <aktenzeichen.vorlaeufig>5 O 311/26</aktenzeichen.vorlaeufig>\n      <sachgebiet>Nachbarrecht</sachgebiet>\n      <streitwert einheit=\"EUR\">12500.00</streitwert>\n    </verfahrensdaten>\n    <beteiligter rolle=\"Klaeger\">\n      <bezeichnung>Renate und Jürgen Krämer</bezeichnung>\n    </beteiligter>\n    <beteiligter rolle=\"Beklagter\">\n      <bezeichnung>Dieter Olbrich</bezeichnung>\n    </beteiligter>\n  </fachdaten>\n</xjustiz:nachricht.gds.uebermittlungSchriftgutobjekte>",
+        "xjustizFelder": [
+          {
+            "label": "Absender",
+            "wert": "RAin Carla Neuhaus (beA-Postfach)"
+          },
+          {
+            "label": "Übermittlungsweg",
+            "wert": "beA, § 130a Abs. 4 Nr. 2 ZPO"
+          },
+          {
+            "label": "Gericht",
+            "wert": "Landgericht Köln"
+          },
+          {
+            "label": "Klagepartei",
+            "wert": "Renate und Jürgen Krämer"
+          },
+          {
+            "label": "Anschrift Klagepartei",
+            "wert": "Am Buschweg 14, 50999 Köln"
+          },
+          {
+            "label": "Beklagte Partei",
+            "wert": "Dieter Olbrich"
+          },
+          {
+            "label": "Anschrift beklagte Partei",
+            "wert": "Am Buschweg 16, 50999 Köln"
+          },
+          {
+            "label": "Streitwert",
+            "wert": "12.500,00 €"
+          },
+          {
+            "label": "Sachgebiet",
+            "wert": "Nachbarrecht"
+          }
+        ],
+        "anlagen": [
+          {
+            "bezeichnung": "K1",
+            "titel": "Lichtbilder vom 12.06.2026",
+            "seiten": 6
+          },
+          {
+            "bezeichnung": "K2",
+            "titel": "Gutachten Dipl.-Ing. Rauch",
+            "seiten": 14
+          }
+        ]
+      },
+      "erwartet": {
+        "zuweisung": {
+          "einheitId": "lg-koeln-zk-5",
+          "richterId": "richter-wendt",
+          "regelId": "lgk-2026-2-1"
+        },
+        "auswertung": {
+          "geprueftAm": "2026-09-25T08:51:00",
+          "ergebnisse": [
+            {
+              "merkmalId": "m-008",
+              "status": "mangel",
+              "relevanz": "hoch",
+              "text": "Nachbarrechtliche Streitigkeit, seit 01.01.2026 unabhängig vom Streitwert beim Amtsgericht (§ 23 Nr. 2 e GVG).",
+              "fundstellen": [
+                {
+                  "zitat": "überhängenden Äste"
+                }
+              ]
+            },
+            {
+              "merkmalId": "m-025",
+              "status": "pruefen",
+              "relevanz": "mittel",
+              "text": "Keine Bescheinigung über ein Schlichtungsverfahren beigefügt (§ 15a EGZPO).",
+              "fundstellen": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "fall-0006",
+      "gerichtId": "lg-köln",
+      "nurSimulation": false,
+      "eingang": {
+        "eingangAm": "2026-09-24T14:22:00",
+        "uebermittlungsweg": "Mein Justizpostfach",
+        "aktenzeichen": "5 O 312/26",
+        "angaben": {
+          "klaeger": "Herbert Vogt",
+          "beklagte": "Sanitär Reuter GmbH",
+          "ortBeklagte": "Köln",
+          "gegenstand": "Schadensersatz nach Wasserschaden",
+          "sachgebiet": "allgemein",
+          "streitwert": 25000,
+          "prozessbevollmaechtigte": null,
+          "kostenvorschuss": "offen"
+        },
+        "klageschriftText": "An das\nLandgericht Köln\nLuxemburger Straße 101\n50939 Köln\n\nKlage\n\ndes Herrn Herbert Vogt, Rösrather Straße 88, 51107 Köln,\n– Kläger, handelnd in eigener Sache –\n\ngegen\n\ndie Sanitär Reuter GmbH, vertreten durch den Geschäftsführer Olaf Reuter, Frankfurter Straße 140, 51065 Köln,\n– Beklagte –\n\nwegen Schadensersatz nach einem Wasserschaden\n\nVorläufig geschätzter Streitwert: 25.000,00 €\n\nIch erhebe Klage und werde beantragen:\n\n1. Die Beklagte wird verurteilt, an den Kläger einen angemessenen Schadensersatz zu zahlen.\n2. Die Beklagte trägt die Kosten des Rechtsstreits.\n\nBegründung:\n\nDie Beklagte erneuerte im Auftrag des Klägers am 18.05.2026 die Wasserleitungen im Badezimmer seines Einfamilienhauses. Bei der Montage wurde eine Presskupplung nicht ordnungsgemäß verpresst.\nBeweis: Anlage K1 (Auftragsbestätigung vom 04.05.2026)\n\nIn der Nacht zum 02.06.2026 löste sich die Verbindung. Wasser lief über mehrere Stunden in das Erdgeschoss und in den Keller. Betroffen sind Parkett, Trockenbauwände sowie eingelagerte Möbel.\nBeweis: Anlage K2 (Lichtbilder und Schadensaufnahme der Versicherung)\n\nDie Beklagte bestreitet einen Montagefehler. Der Kläger kann den Schaden derzeit nicht abschließend beziffern, da die Trocknung noch andauert und das Gutachten der Versicherung aussteht. Der Anspruch folgt aus §§ 280 Abs. 1, 634 Nr. 4 BGB.\n\nAngaben nach § 253 Abs. 3 ZPO: Ein Schlichtungsverfahren wurde nicht durchgeführt. Der Streitwert wird vorläufig geschätzt.\n\nKöln, 24.09.2026\n\nHerbert Vogt",
+        "xjustizXml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xjustiz:nachricht.gds.uebermittlungSchriftgutobjekte\n    xmlns:xjustiz=\"http://www.xjustiz.de\" version=\"3.5.1\">\n  <nachrichtenkopf>\n    <erstellungszeitpunkt>2026-09-25T09:42:11</erstellungszeitpunkt>\n    <empfaenger>Landgericht Köln</empfaenger>\n    <uebermittlungsweg>MJP</uebermittlungsweg>\n  </nachrichtenkopf>\n  <fachdaten>\n    <verfahrensdaten>\n      <aktenzeichen.vorlaeufig>5 O 312/26</aktenzeichen.vorlaeufig>\n      <sachgebiet>Werkvertragsrecht</sachgebiet>\n      <streitwert einheit=\"EUR\">25000.00</streitwert>\n    </verfahrensdaten>\n    <beteiligter rolle=\"Klaeger\">\n      <bezeichnung>Herbert Vogt</bezeichnung>\n    </beteiligter>\n    <beteiligter rolle=\"Beklagter\">\n      <bezeichnung>Sanitär Reuter GmbH</bezeichnung>\n    </beteiligter>\n  </fachdaten>\n</xjustiz:nachricht.gds.uebermittlungSchriftgutobjekte>",
+        "xjustizFelder": [
+          {
+            "label": "Absender",
+            "wert": "Herbert Vogt (Mein Justizpostfach)"
+          },
+          {
+            "label": "Übermittlungsweg",
+            "wert": "Mein Justizpostfach, § 130a Abs. 4 Nr. 4 ZPO"
+          },
+          {
+            "label": "Gericht",
+            "wert": "Landgericht Köln"
+          },
+          {
+            "label": "Klagepartei",
+            "wert": "Herbert Vogt"
+          },
+          {
+            "label": "Anschrift Klagepartei",
+            "wert": "Rösrather Straße 88, 51107 Köln"
+          },
+          {
+            "label": "Beklagte Partei",
+            "wert": "Sanitär Reuter GmbH"
+          },
+          {
+            "label": "Anschrift beklagte Partei",
+            "wert": "Frankfurter Straße 140, 51065 Köln"
+          },
+          {
+            "label": "Streitwert",
+            "wert": "25.000,00 € (geschätzt)"
+          },
+          {
+            "label": "Sachgebiet",
+            "wert": "Werkvertragsrecht / allgemeine Zivilsache"
+          }
+        ],
+        "anlagen": [
+          {
+            "bezeichnung": "K1",
+            "titel": "Auftragsbestätigung vom 04.05.2026",
+            "seiten": 1
+          },
+          {
+            "bezeichnung": "K2",
+            "titel": "Lichtbilder und Schadensaufnahme",
+            "seiten": 9
+          }
+        ]
+      },
+      "erwartet": {
+        "zuweisung": {
+          "einheitId": "lg-koeln-zk-5",
+          "richterId": "richter-wendt",
+          "regelId": "lgk-2026-2-1"
+        },
+        "auswertung": {
+          "geprueftAm": "2026-09-24T14:23:00",
+          "ergebnisse": [
+            {
+              "merkmalId": "m-004",
+              "status": "mangel",
+              "relevanz": "hoch",
+              "text": "Vor dem Landgericht besteht Anwaltszwang (§ 78 Abs. 1 ZPO). Die Klage ist von der Partei selbst eingereicht.",
+              "fundstellen": [
+                {
+                  "zitat": "handelnd in eigener Sache"
+                }
+              ]
+            },
+            {
+              "merkmalId": "m-002",
+              "status": "pruefen",
+              "relevanz": "mittel",
+              "text": "Antrag nicht beziffert, keine Größenordnung angegeben. Ein bestimmter Klageantrag ist Voraussetzung eines vollstreckungsfähigen Titels.",
+              "fundstellen": [
+                {
+                  "zitat": "einen angemessenen Schadensersatz zu zahlen"
+                }
+              ]
+            },
+            {
+              "merkmalId": "m-023",
+              "status": "pruefen",
+              "relevanz": "mittel",
+              "text": "Eine Äußerung zur Entscheidung durch den Einzelrichter fehlt (§ 253 Abs. 3 Nr. 3 ZPO, Sollvorschrift).",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "m-024",
+              "status": "offen",
+              "relevanz": "mittel",
+              "text": "Der Gerichtskostenvorschuss ist noch nicht eingegangen (§ 12 Abs. 1 GKG).",
+              "fundstellen": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "fall-0007",
+      "gerichtId": "ag-köln",
+      "nurSimulation": true,
+      "eingang": {
+        "eingangAm": "2026-09-25T10:05:00",
+        "uebermittlungsweg": "beA",
+        "aktenzeichen": "142 C 1240/26",
+        "angaben": {
+          "klaeger": "Immobilien Rhein GmbH",
+          "beklagte": "Gebäudereinigung Falk GmbH",
+          "ortBeklagte": "Köln",
+          "gegenstand": "Rückforderung überzahlter Rechnungen",
+          "sachgebiet": "allgemein",
+          "streitwert": 48000,
+          "streitwertXJustiz": 4800,
+          "prozessbevollmaechtigte": "Rechtsanwalt Björn Haseloff, Habsburgerring 2, 50674 Köln",
+          "kostenvorschuss": "bezahlt"
+        },
+        "klageschriftText": "An das\nAmtsgericht Köln\nLuxemburger Straße 101\n50939 Köln\n\nKlage\n\nder Immobilien Rhein GmbH, vertreten durch den Geschäftsführer Robert Sassen, Rheinauhafen 11, 50678 Köln,\n– Klägerin –\n\nProzessbevollmächtigter: Rechtsanwalt Björn Haseloff, Habsburgerring 2, 50674 Köln\n\ngegen\n\ndie Gebäudereinigung Falk GmbH, vertreten durch die Geschäftsführerin Sonja Falk, Vogelsanger Straße 320, 50827 Köln,\n– Beklagte –\n\nwegen Rückforderung überzahlter Rechnungsbeträge\n\nVorläufiger Streitwert: 48.000,00 €\n\nNamens und in Vollmacht der Klägerin erheben wir Klage und werden beantragen:\n\n1. Die Beklagte wird verurteilt, an die Klägerin 48.000,00 € nebst Zinsen in Höhe von neun Prozentpunkten über dem Basiszinssatz seit dem 12.09.2026 zu zahlen.\n2. Die Beklagte trägt die Kosten des Rechtsstreits.\n\nBegründung:\n\nDie Parteien verband von 2023 bis 2026 ein Rahmenvertrag über die Unterhaltsreinigung von elf Wohnanlagen der Klägerin. Abgerechnet wurde monatlich nach vertraglich festgelegten Quadratmeterpreisen.\nBeweis: Anlage K1 (Rahmenvertrag vom 01.03.2023)\n\nEine interne Prüfung der Klägerin ergab, dass die Beklagte über 24 Monate hinweg Flächen abgerechnet hat, die nicht Vertragsgegenstand waren, sowie Zuschläge, die vertraglich nicht vorgesehen sind. Die Überzahlung beträgt insgesamt 48.000,00 €.\nBeweis: Anlage K2 (Abrechnungsübersicht der Klägerin)\n\nDie Klägerin forderte die Beklagte mit Schreiben vom 28.08.2026 zur Rückzahlung bis zum 11.09.2026 auf. Die Beklagte lehnte ab. Der Anspruch folgt aus § 812 Abs. 1 Satz 1 Alt. 1 BGB.\nBeweis: Anlage K3 (Schreiben vom 28.08.2026)\n\nAngaben nach § 253 Abs. 3 ZPO: Ein Schlichtungsversuch ist am 15.09.2026 gescheitert. Der Streitwert wird mit 48.000,00 € angegeben.\n\nKöln, 25.09.2026\n\nBjörn Haseloff\nRechtsanwalt",
+        "xjustizXml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xjustiz:nachricht.gds.uebermittlungSchriftgutobjekte\n    xmlns:xjustiz=\"http://www.xjustiz.de\" version=\"3.5.1\">\n  <nachrichtenkopf>\n    <erstellungszeitpunkt>2026-09-25T09:42:11</erstellungszeitpunkt>\n    <empfaenger>Amtsgericht Köln</empfaenger>\n    <uebermittlungsweg>beA</uebermittlungsweg>\n  </nachrichtenkopf>\n  <fachdaten>\n    <verfahrensdaten>\n      <aktenzeichen.vorlaeufig>142 C 1240/26</aktenzeichen.vorlaeufig>\n      <sachgebiet>Bereicherungsrecht</sachgebiet>\n      <streitwert einheit=\"EUR\">4800.00</streitwert>\n    </verfahrensdaten>\n    <beteiligter rolle=\"Klaeger\">\n      <bezeichnung>Immobilien Rhein GmbH</bezeichnung>\n    </beteiligter>\n    <beteiligter rolle=\"Beklagter\">\n      <bezeichnung>Gebäudereinigung Falk GmbH</bezeichnung>\n    </beteiligter>\n  </fachdaten>\n</xjustiz:nachricht.gds.uebermittlungSchriftgutobjekte>",
+        "xjustizFelder": [
+          {
+            "label": "Absender",
+            "wert": "RA Björn Haseloff (beA-Postfach)"
+          },
+          {
+            "label": "Übermittlungsweg",
+            "wert": "beA, § 130a Abs. 4 Nr. 2 ZPO"
+          },
+          {
+            "label": "Gericht",
+            "wert": "Amtsgericht Köln"
+          },
+          {
+            "label": "Klagepartei",
+            "wert": "Immobilien Rhein GmbH"
+          },
+          {
+            "label": "Anschrift Klagepartei",
+            "wert": "Rheinauhafen 11, 50678 Köln"
+          },
+          {
+            "label": "Beklagte Partei",
+            "wert": "Gebäudereinigung Falk GmbH"
+          },
+          {
+            "label": "Anschrift beklagte Partei",
+            "wert": "Vogelsanger Straße 320, 50827 Köln"
+          },
+          {
+            "label": "Streitwert",
+            "wert": "4.800,00 €",
+            "abweichung": true
+          },
+          {
+            "label": "Sachgebiet",
+            "wert": "Bereicherungsrecht / allgemeine Zivilsache"
+          }
+        ],
+        "anlagen": [
+          {
+            "bezeichnung": "K1",
+            "titel": "Rahmenvertrag vom 01.03.2023",
+            "seiten": 11
+          },
+          {
+            "bezeichnung": "K2",
+            "titel": "Abrechnungsübersicht",
+            "seiten": 24
+          },
+          {
+            "bezeichnung": "K3",
+            "titel": "Schreiben vom 28.08.2026",
+            "seiten": 2
+          }
+        ]
+      },
+      "erwartet": {
+        "zuweisung": {
+          "einheitId": "ag-koeln-abt-142",
+          "richterId": "richterin-hoffmann",
+          "regelId": "agk-2026-4-2"
+        },
+        "auswertung": {
+          "geprueftAm": "2026-09-25T10:06:00",
+          "ergebnisse": [
+            {
+              "merkmalId": "m-019",
+              "status": "pruefen",
+              "relevanz": "mittel",
+              "text": "Streitwert im XJustiz-Datensatz (4.800,00 €) weicht vom Antrag (48.000,00 €) ab.",
+              "fundstellen": [
+                {
+                  "zitat": "48.000,00 €"
+                }
+              ]
+            },
+            {
+              "merkmalId": "m-008",
+              "status": "mangel",
+              "relevanz": "hoch",
+              "text": "Nach dem Klageantrag ist das Landgericht zuständig (§ 71 Abs. 1 GVG).",
+              "fundstellen": [
+                {
+                  "zitat": "48.000,00 €"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
