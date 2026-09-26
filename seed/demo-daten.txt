@@ -182,1502 +182,244 @@
   ],
   "merkmale": [
     {
-      "id": "m-001",
+      "id": "L01",
       "nr": 1,
-      "kategorie": "A",
-      "titel": "Bezeichnung der Parteien und des Gerichts",
-      "norm": "§ 253 Abs. 2 Nr. 1 ZPO",
-      "quelle": "regel",
-      "beschreibung": "Die Klageschrift muss das angerufene Gericht sowie die Parteien mit ladungsfähiger Anschrift und gesetzlicher Vertretung eindeutig bezeichnen.",
+      "kategorie": "allgemein",
+      "titel": "Ordnungsgemäße Klageerhebung",
+      "norm": "§§ 253 ff., 78 ZPO",
+      "quelle": "ki",
+      "beschreibung": "Form und Inhalt der Klageschrift, bestimmter Antrag, Klagegrund, Anwaltszwang, Äußerung zum Einzelrichter.",
       "gerichte": [
         "AG",
         "LG"
       ],
-      "platzhalter": false,
+      "nurAufRuege": false,
       "aktiv": true
     },
     {
-      "id": "m-002",
+      "id": "L02",
       "nr": 2,
-      "kategorie": "A",
-      "titel": "Bestimmter Klageantrag",
-      "norm": "§ 253 Abs. 2 Nr. 2 ZPO",
-      "quelle": "ki",
-      "beschreibung": "Der Klageantrag muss so bestimmt sein, dass er Grundlage eines vollstreckungsfähigen Titels sein kann.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": false,
-      "aktiv": true
-    },
-    {
-      "id": "m-003",
-      "nr": 3,
-      "kategorie": "A",
-      "titel": "Angabe von Gegenstand und Grund des Anspruchs (Klagegrund)",
-      "norm": "§ 253 Abs. 2 Nr. 2 ZPO",
-      "quelle": "ki",
-      "beschreibung": "Der Lebenssachverhalt, aus dem der Anspruch hergeleitet wird, muss erkennbar und individualisierbar dargestellt sein.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": false,
-      "aktiv": true
-    },
-    {
-      "id": "m-004",
-      "nr": 4,
-      "kategorie": "A",
-      "titel": "Klageerhebung durch Rechtsanwalt im Anwaltsprozess",
-      "norm": "§ 78 ZPO",
-      "quelle": "regel",
-      "beschreibung": "Vor den Landgerichten müssen sich die Parteien durch einen Rechtsanwalt vertreten lassen.",
-      "gerichte": [
-        "LG"
-      ],
-      "platzhalter": false,
-      "aktiv": true
-    },
-    {
-      "id": "m-005",
-      "nr": 5,
-      "kategorie": "A",
-      "titel": "Klageänderung oder Klageerweiterung",
-      "norm": "§§ 263, 264 ZPO",
-      "quelle": "manuell",
-      "beschreibung": "Bei Änderung oder Erweiterung der Klage ist deren Zulässigkeit zu prüfen. Beim Eingang einer Klage regelmäßig nicht anwendbar.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": false,
-      "aktiv": true
-    },
-    {
-      "id": "m-006",
-      "nr": 6,
-      "kategorie": "B",
+      "kategorie": "allgemein",
       "titel": "Deutsche Gerichtsbarkeit",
       "norm": "§§ 18-20 GVG",
       "quelle": "regel",
-      "beschreibung": "Die Parteien dürfen nicht von der deutschen Gerichtsbarkeit befreit sein (Immunität).",
+      "beschreibung": "Keine Exterritorialität oder Immunität der Parteien.",
       "gerichte": [
         "AG",
         "LG"
       ],
-      "platzhalter": false,
+      "nurAufRuege": false,
       "aktiv": true
     },
     {
-      "id": "m-007",
-      "nr": 7,
-      "kategorie": "B",
+      "id": "L03",
+      "nr": 3,
+      "kategorie": "allgemein",
       "titel": "Zulässigkeit des Rechtswegs",
       "norm": "§ 13 GVG",
       "quelle": "ki",
-      "beschreibung": "Für bürgerliche Rechtsstreitigkeiten ist der ordentliche Rechtsweg eröffnet.",
+      "beschreibung": "Bürgerliche Rechtsstreitigkeit vor den ordentlichen Gerichten.",
       "gerichte": [
         "AG",
         "LG"
       ],
-      "platzhalter": false,
+      "nurAufRuege": false,
       "aktiv": true
     },
     {
-      "id": "m-008",
-      "nr": 8,
-      "kategorie": "B",
-      "titel": "Sachliche Zuständigkeit",
-      "norm": "§§ 23, 71 GVG, §§ 38-40 ZPO",
+      "id": "L04",
+      "nr": 4,
+      "kategorie": "allgemein",
+      "titel": "Internationale Zuständigkeit",
+      "norm": "z. B. Brüssel Ia-VO",
       "quelle": "regel",
-      "beschreibung": "Die sachliche Zuständigkeit richtet sich nach Streitwert und Sachgebiet.",
+      "beschreibung": "Bei Auslandsbezug: Zuständigkeit deutscher Gerichte.",
       "gerichte": [
         "AG",
         "LG"
       ],
-      "platzhalter": false,
+      "nurAufRuege": false,
       "aktiv": true
     },
     {
-      "id": "m-009",
-      "nr": 9,
-      "kategorie": "B",
+      "id": "L05",
+      "nr": 5,
+      "kategorie": "allgemein",
+      "titel": "Sachliche Zuständigkeit",
+      "norm": "§ 1 ZPO i. V. m. §§ 23, 71 GVG",
+      "quelle": "regel",
+      "beschreibung": "Amts- oder Landgericht nach Streitwert und Sachgebiet.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "nurAufRuege": false,
+      "aktiv": true
+    },
+    {
+      "id": "L06",
+      "nr": 6,
+      "kategorie": "allgemein",
       "titel": "Örtliche Zuständigkeit",
       "norm": "§§ 12 ff. ZPO",
       "quelle": "regel",
-      "beschreibung": "Maßgeblich ist der allgemeine Gerichtsstand der beklagten Partei, soweit kein besonderer Gerichtsstand greift.",
+      "beschreibung": "Gerichtsstand nach Wohnsitz, Sitz oder besonderem Gerichtsstand.",
       "gerichte": [
         "AG",
         "LG"
       ],
-      "platzhalter": false,
+      "nurAufRuege": false,
       "aktiv": true
     },
     {
-      "id": "m-010",
-      "nr": 10,
-      "kategorie": "C",
+      "id": "L07",
+      "nr": 7,
+      "kategorie": "allgemein",
+      "titel": "Funktionelle Zuständigkeit",
+      "norm": "",
+      "quelle": "regel",
+      "beschreibung": "Zuständiger Spruchkörper und Rechtspflegeorgan.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "nurAufRuege": false,
+      "aktiv": true
+    },
+    {
+      "id": "L08",
+      "nr": 8,
+      "kategorie": "allgemein",
       "titel": "Parteifähigkeit",
       "norm": "§ 50 ZPO",
       "quelle": "regel",
-      "beschreibung": "Parteifähig ist, wer rechtsfähig ist; für Gesellschaften gelten Sonderregeln.",
+      "beschreibung": "Rechtsfähigkeit der Parteien.",
       "gerichte": [
         "AG",
         "LG"
       ],
-      "platzhalter": false,
+      "nurAufRuege": false,
       "aktiv": true
     },
     {
-      "id": "m-011",
-      "nr": 11,
-      "kategorie": "C",
-      "titel": "Prozessfähigkeit und ordnungsgemäße Vertretung",
-      "norm": "§§ 51, 52 ZPO",
+      "id": "L09",
+      "nr": 9,
+      "kategorie": "allgemein",
+      "titel": "Prozessfähigkeit, gesetzliche Vertretung",
+      "norm": "§§ 51 ff. ZPO",
       "quelle": "ki",
-      "beschreibung": "Die Parteien müssen prozessfähig oder ordnungsgemäß gesetzlich vertreten sein.",
+      "beschreibung": "Prozessfähigkeit und ordnungsgemäße gesetzliche Vertretung.",
       "gerichte": [
         "AG",
         "LG"
       ],
-      "platzhalter": false,
+      "nurAufRuege": false,
       "aktiv": true
     },
     {
-      "id": "m-012",
-      "nr": 12,
-      "kategorie": "C",
+      "id": "L10",
+      "nr": 10,
+      "kategorie": "allgemein",
       "titel": "Prozessführungsbefugnis",
-      "norm": "§ 51 Abs. 1 ZPO",
+      "norm": "",
       "quelle": "ki",
-      "beschreibung": "Die klagende Partei muss befugt sein, das behauptete Recht im eigenen Namen geltend zu machen.",
+      "beschreibung": "Befugnis, das Recht im eigenen Namen geltend zu machen.",
       "gerichte": [
         "AG",
         "LG"
       ],
-      "platzhalter": false,
+      "nurAufRuege": false,
       "aktiv": true
     },
     {
-      "id": "m-013",
-      "nr": 13,
-      "kategorie": "D",
-      "titel": "Keine anderweitige Rechtshängigkeit",
+      "id": "L11",
+      "nr": 11,
+      "kategorie": "allgemein",
+      "titel": "Klagbarkeit des geltend gemachten Anspruchs",
+      "norm": "",
+      "quelle": "ki",
+      "beschreibung": "Kein unvollkommener oder vertraglich ausgeschlossener Anspruch.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "nurAufRuege": false,
+      "aktiv": true
+    },
+    {
+      "id": "L12",
+      "nr": 12,
+      "kategorie": "allgemein",
+      "titel": "Fehlende anderweitige Rechtshängigkeit",
       "norm": "§ 261 Abs. 3 Nr. 1 ZPO",
       "quelle": "regel",
-      "beschreibung": "Abgleich mit dem Verfahrensregister: derselbe Streitgegenstand darf nicht bereits rechtshängig sein.",
+      "beschreibung": "Derselbe Streitgegenstand ist nicht bereits anhängig.",
       "gerichte": [
         "AG",
         "LG"
       ],
-      "platzhalter": false,
+      "nurAufRuege": false,
       "aktiv": true
     },
     {
-      "id": "m-014",
+      "id": "L13",
+      "nr": 13,
+      "kategorie": "hindernis",
+      "titel": "Fehlendes Schlichtungsverfahren",
+      "norm": "§ 15a EGZPO i. V. m. Landesrecht (z. B. GüSchlG NRW)",
+      "quelle": "ki",
+      "beschreibung": "Obligatorisches Schlichtungsverfahren nach Landesrecht.",
+      "gerichte": [
+        "AG",
+        "LG"
+      ],
+      "nurAufRuege": false,
+      "aktiv": true
+    },
+    {
+      "id": "L14",
       "nr": 14,
-      "kategorie": "D",
-      "titel": "Keine entgegenstehende Rechtskraft",
-      "norm": "§ 322 ZPO",
-      "quelle": "regel",
-      "beschreibung": "Abgleich mit dem Verfahrensregister: über denselben Streitgegenstand darf nicht bereits rechtskräftig entschieden sein.",
+      "kategorie": "hindernis",
+      "titel": "Schiedseinrede",
+      "norm": "§ 1032 Abs. 1 ZPO",
+      "quelle": "ki",
+      "beschreibung": "Nur auf Rüge der beklagten Partei.",
       "gerichte": [
         "AG",
         "LG"
       ],
-      "platzhalter": false,
+      "nurAufRuege": true,
       "aktiv": true
     },
     {
-      "id": "m-015",
+      "id": "L15",
       "nr": 15,
-      "kategorie": "E",
-      "titel": "Allgemeines Rechtsschutzbedürfnis",
-      "norm": "Allgemeine Sachurteilsvoraussetzung",
-      "quelle": "ki",
-      "beschreibung": "Bei Leistungsklagen regelmäßig gegeben; Anhaltspunkte für einen einfacheren Weg sind zu prüfen.",
+      "kategorie": "hindernis",
+      "titel": "Kostenerstattung aus Vorprozess",
+      "norm": "§ 269 Abs. 6 ZPO",
+      "quelle": "regel",
+      "beschreibung": "Nur auf Rüge der beklagten Partei.",
       "gerichte": [
         "AG",
         "LG"
       ],
-      "platzhalter": false,
+      "nurAufRuege": true,
       "aktiv": true
     },
     {
-      "id": "m-016",
+      "id": "L16",
       "nr": 16,
-      "kategorie": "F",
-      "titel": "Zulässigkeit der Klagehäufung",
-      "norm": "§ 260 ZPO",
+      "kategorie": "hindernis",
+      "titel": "Ausländersicherheit",
+      "norm": "§ 110 ZPO",
       "quelle": "regel",
-      "beschreibung": "Mehrere Ansprüche können verbunden werden, wenn dasselbe Gericht zuständig und dieselbe Prozessart statthaft ist. Die sachliche Zuständigkeit kann sich aus den zusammengerechneten Anträgen ergeben (§ 5 ZPO).",
+      "beschreibung": "Nur auf Rüge der beklagten Partei.",
       "gerichte": [
         "AG",
         "LG"
       ],
-      "platzhalter": false,
+      "nurAufRuege": true,
       "aktiv": true
-    },
-    {
-      "id": "m-017",
-      "nr": 17,
-      "kategorie": "G",
-      "titel": "Sicherer Übermittlungsweg oder qualifizierte elektronische Signatur",
-      "norm": "§ 130a Abs. 3 ZPO",
-      "quelle": "regel",
-      "beschreibung": "Das elektronische Dokument muss signiert oder auf einem sicheren Übermittlungsweg eingereicht sein.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": false,
-      "aktiv": true
-    },
-    {
-      "id": "m-018",
-      "nr": 18,
-      "kategorie": "G",
-      "titel": "Nutzungspflicht des elektronischen Rechtsverkehrs für Anwälte",
-      "norm": "§ 130d ZPO",
-      "quelle": "regel",
-      "beschreibung": "Rechtsanwältinnen und Rechtsanwälte müssen vorbereitende Schriftsätze elektronisch übermitteln.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": false,
-      "aktiv": true
-    },
-    {
-      "id": "m-019",
-      "nr": 19,
-      "kategorie": "G",
-      "titel": "XJustiz-Datensatz vorhanden und stimmig mit der Klageschrift",
-      "norm": "§ 2 Abs. 3 ERVV",
-      "quelle": "regel",
-      "beschreibung": "Dem Schriftsatz ist ein strukturierter Datensatz beizufügen; dessen Angaben werden mit der Klageschrift abgeglichen.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": false,
-      "aktiv": true
-    },
-    {
-      "id": "m-020",
-      "nr": 20,
-      "kategorie": "G",
-      "titel": "Ladungsfähige Anschrift der beklagten Partei",
-      "norm": "§ 253 Abs. 2 Nr. 1 ZPO",
-      "quelle": "regel",
-      "beschreibung": "Für die Zustellung ist eine ladungsfähige Anschrift erforderlich.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": false,
-      "aktiv": true
-    },
-    {
-      "id": "m-021",
-      "nr": 21,
-      "kategorie": "G",
-      "titel": "Streitwertangabe, falls kein bezifferter Geldbetrag",
-      "norm": "§ 253 Abs. 3 Nr. 2 ZPO",
-      "quelle": "regel",
-      "beschreibung": "Ist der Streitgegenstand kein bestimmter Geldbetrag, soll der Wert angegeben werden.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": false,
-      "aktiv": true
-    },
-    {
-      "id": "m-022",
-      "nr": 22,
-      "kategorie": "G",
-      "titel": "Angaben zur außergerichtlichen Konfliktbeilegung",
-      "norm": "§ 253 Abs. 3 Nr. 1 ZPO",
-      "quelle": "ki",
-      "beschreibung": "Sollvorschrift: Angabe, ob dem Verfahren ein Mediations- oder Schlichtungsversuch vorausging. Verstoß führt nicht zur Unzulässigkeit, daher höchstens Hinweis.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": false,
-      "aktiv": true
-    },
-    {
-      "id": "m-023",
-      "nr": 23,
-      "kategorie": "G",
-      "titel": "Äußerung zur Entscheidung durch den Einzelrichter",
-      "norm": "§ 253 Abs. 3 Nr. 3 ZPO",
-      "quelle": "regel",
-      "beschreibung": "Die Klageschrift soll eine Äußerung dazu enthalten, ob einer Entscheidung durch den Einzelrichter entgegengetreten wird.",
-      "gerichte": [
-        "LG"
-      ],
-      "platzhalter": false,
-      "aktiv": true
-    },
-    {
-      "id": "m-024",
-      "nr": 24,
-      "kategorie": "G",
-      "titel": "Gerichtskostenvorschuss eingezahlt",
-      "norm": "§ 12 Abs. 1 GKG",
-      "quelle": "regel",
-      "beschreibung": "Die Klage wird erst nach Zahlung des Vorschusses zugestellt. Offener Vorschuss ist kein Zulässigkeitsmangel.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": false,
-      "aktiv": true
-    },
-    {
-      "id": "m-025",
-      "nr": 25,
-      "kategorie": "G",
-      "titel": "Obligatorische Streitschlichtung nach Landesrecht",
-      "norm": "§ 15a EGZPO",
-      "quelle": "ki",
-      "beschreibung": "In bestimmten Streitigkeiten ist vor Klageerhebung ein Schlichtungsversuch durchzuführen; die Bescheinigung ist vorzulegen.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": false,
-      "aktiv": true
-    },
-    {
-      "id": "m-026",
-      "nr": 26,
-      "kategorie": "A",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-027",
-      "nr": 27,
-      "kategorie": "B",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-028",
-      "nr": 28,
-      "kategorie": "C",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-029",
-      "nr": 29,
-      "kategorie": "D",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-030",
-      "nr": 30,
-      "kategorie": "E",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-031",
-      "nr": 31,
-      "kategorie": "F",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-032",
-      "nr": 32,
-      "kategorie": "G",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-033",
-      "nr": 33,
-      "kategorie": "A",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-034",
-      "nr": 34,
-      "kategorie": "B",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-035",
-      "nr": 35,
-      "kategorie": "C",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-036",
-      "nr": 36,
-      "kategorie": "D",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-037",
-      "nr": 37,
-      "kategorie": "E",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-038",
-      "nr": 38,
-      "kategorie": "F",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-039",
-      "nr": 39,
-      "kategorie": "G",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-040",
-      "nr": 40,
-      "kategorie": "A",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-041",
-      "nr": 41,
-      "kategorie": "B",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-042",
-      "nr": 42,
-      "kategorie": "C",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-043",
-      "nr": 43,
-      "kategorie": "D",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-044",
-      "nr": 44,
-      "kategorie": "E",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-045",
-      "nr": 45,
-      "kategorie": "F",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-046",
-      "nr": 46,
-      "kategorie": "G",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-047",
-      "nr": 47,
-      "kategorie": "A",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-048",
-      "nr": 48,
-      "kategorie": "B",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-049",
-      "nr": 49,
-      "kategorie": "C",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-050",
-      "nr": 50,
-      "kategorie": "D",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-051",
-      "nr": 51,
-      "kategorie": "E",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-052",
-      "nr": 52,
-      "kategorie": "F",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-053",
-      "nr": 53,
-      "kategorie": "G",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-054",
-      "nr": 54,
-      "kategorie": "A",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-055",
-      "nr": 55,
-      "kategorie": "B",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-056",
-      "nr": 56,
-      "kategorie": "C",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-057",
-      "nr": 57,
-      "kategorie": "D",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-058",
-      "nr": 58,
-      "kategorie": "E",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-059",
-      "nr": 59,
-      "kategorie": "F",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-060",
-      "nr": 60,
-      "kategorie": "G",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-061",
-      "nr": 61,
-      "kategorie": "A",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-062",
-      "nr": 62,
-      "kategorie": "B",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-063",
-      "nr": 63,
-      "kategorie": "C",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-064",
-      "nr": 64,
-      "kategorie": "D",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-065",
-      "nr": 65,
-      "kategorie": "E",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-066",
-      "nr": 66,
-      "kategorie": "F",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-067",
-      "nr": 67,
-      "kategorie": "G",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-068",
-      "nr": 68,
-      "kategorie": "A",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-069",
-      "nr": 69,
-      "kategorie": "B",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-070",
-      "nr": 70,
-      "kategorie": "C",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-071",
-      "nr": 71,
-      "kategorie": "D",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-072",
-      "nr": 72,
-      "kategorie": "E",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-073",
-      "nr": 73,
-      "kategorie": "F",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-074",
-      "nr": 74,
-      "kategorie": "G",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-075",
-      "nr": 75,
-      "kategorie": "A",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-076",
-      "nr": 76,
-      "kategorie": "B",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-077",
-      "nr": 77,
-      "kategorie": "C",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-078",
-      "nr": 78,
-      "kategorie": "D",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-079",
-      "nr": 79,
-      "kategorie": "E",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-080",
-      "nr": 80,
-      "kategorie": "F",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-081",
-      "nr": 81,
-      "kategorie": "G",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-082",
-      "nr": 82,
-      "kategorie": "A",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-083",
-      "nr": 83,
-      "kategorie": "B",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-084",
-      "nr": 84,
-      "kategorie": "C",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-085",
-      "nr": 85,
-      "kategorie": "D",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-086",
-      "nr": 86,
-      "kategorie": "E",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-087",
-      "nr": 87,
-      "kategorie": "F",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-088",
-      "nr": 88,
-      "kategorie": "G",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-089",
-      "nr": 89,
-      "kategorie": "A",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-090",
-      "nr": 90,
-      "kategorie": "B",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-091",
-      "nr": 91,
-      "kategorie": "C",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-092",
-      "nr": 92,
-      "kategorie": "D",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-093",
-      "nr": 93,
-      "kategorie": "E",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-094",
-      "nr": 94,
-      "kategorie": "F",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-095",
-      "nr": 95,
-      "kategorie": "G",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-096",
-      "nr": 96,
-      "kategorie": "A",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-097",
-      "nr": 97,
-      "kategorie": "B",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-098",
-      "nr": 98,
-      "kategorie": "C",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-099",
-      "nr": 99,
-      "kategorie": "D",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
-    },
-    {
-      "id": "m-100",
-      "nr": 100,
-      "kategorie": "E",
-      "titel": "Prüfpunkt in Vorbereitung",
-      "norm": "—",
-      "quelle": "regel",
-      "beschreibung": "Dieser Prüfpunkt ist im Prototyp noch nicht hinterlegt und wird nicht ausgewertet.",
-      "gerichte": [
-        "AG",
-        "LG"
-      ],
-      "platzhalter": true,
-      "aktiv": false
     }
   ],
   "verfahrensregister": [
@@ -1764,47 +506,14 @@
           "geprueftAm": "2026-09-25T09:43:00",
           "ergebnisse": [
             {
-              "merkmalId": "m-001",
+              "merkmalId": "L01",
               "status": "erfuellt",
+              "text": "Die Klageschrift enthält Parteien, Gericht, bestimmten Antrag und Klagegrund; keine Auffälligkeiten zu Form und Vertretung.",
               "relevanz": "niedrig",
-              "text": "Gericht, Parteien und gesetzliche Vertretung sind vollständig bezeichnet (Sabine Schneider ./. Baumarkt Kessler GmbH).",
-              "grundlage": "Regelprüfung",
               "fundstellen": []
             },
             {
-              "merkmalId": "m-002",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Der Klageantrag ist beziffert und vollstreckungsfähig formuliert.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-003",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Der Lebenssachverhalt ist mit Datum, Beteiligten und Beweisangeboten individualisiert dargestellt.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-004",
-              "status": "nicht_anwendbar",
-              "relevanz": "niedrig",
-              "text": "Dieser Prüfpunkt gilt nur vor dem Landgericht.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-005",
-              "status": "nicht_anwendbar",
-              "relevanz": "niedrig",
-              "text": "Beim Eingang der Klage nicht anwendbar.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-006",
+              "merkmalId": "L02",
               "status": "keine_anhaltspunkte",
               "relevanz": "niedrig",
               "text": "Keine Anhaltspunkte für eine Befreiung von der deutschen Gerichtsbarkeit.",
@@ -1812,7 +521,7 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-007",
+              "merkmalId": "L03",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Bürgerliche Rechtsstreitigkeit, der ordentliche Rechtsweg ist eröffnet (§ 13 GVG).",
@@ -1820,7 +529,14 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-008",
+              "merkmalId": "L04",
+              "status": "keine_anhaltspunkte",
+              "text": "Kein Auslandsbezug erkennbar.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L05",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Amtsgericht zuständig, Streitwert 3.480,00 € bis 10.000 € (§ 23 Nr. 1 GVG).",
@@ -1828,7 +544,7 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-009",
+              "merkmalId": "L06",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Amtsgericht Köln, allgemeiner Gerichtsstand der beklagten Partei in Köln (§§ 12, 13, 17 ZPO).",
@@ -1836,7 +552,14 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-010",
+              "merkmalId": "L07",
+              "status": "erfuellt",
+              "text": "Erstinstanzliche Zivilsache; zugewiesener Spruchkörper funktionell zuständig.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L08",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Beide Parteien sind parteifähig (§ 50 ZPO).",
@@ -1844,7 +567,7 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-011",
+              "merkmalId": "L09",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Keine Anhaltspunkte für fehlende Prozessfähigkeit; juristische Personen sind ordnungsgemäß vertreten.",
@@ -1852,7 +575,7 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-012",
+              "merkmalId": "L10",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Die klagende Partei macht ein eigenes Recht im eigenen Namen geltend.",
@@ -1860,7 +583,14 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-013",
+              "merkmalId": "L11",
+              "status": "keine_anhaltspunkte",
+              "text": "Keine Anhaltspunkte für einen nicht klagbaren Anspruch.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L12",
               "status": "keine_anhaltspunkte",
               "relevanz": "niedrig",
               "text": "Abgleich mit dem Verfahrensregister ohne Treffer.",
@@ -1868,99 +598,32 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-014",
-              "status": "keine_anhaltspunkte",
-              "relevanz": "niedrig",
-              "text": "Abgleich mit dem Verfahrensregister ohne rechtskräftige Entscheidung zum selben Streitgegenstand.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-015",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Leistungsklage, Rechtsschutzbedürfnis regelmäßig gegeben.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-016",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Die geltend gemachten Ansprüche können verbunden werden (§ 260 ZPO).",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-017",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Eingang über beA, sicherer Übermittlungsweg (§ 130a Abs. 3 ZPO).",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-018",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Anwaltlicher Schriftsatz elektronisch übermittelt (§ 130d ZPO).",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-019",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "XJustiz-Datensatz vorhanden, Angaben stimmen mit der Klageschrift überein.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-020",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Ladungsfähige Anschrift der beklagten Partei ist angegeben.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-021",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Streitwert mit 3.480,00 € angegeben.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-022",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Angaben zur außergerichtlichen Konfliktbeilegung sind enthalten.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-023",
-              "status": "nicht_anwendbar",
-              "relevanz": "niedrig",
-              "text": "Dieser Prüfpunkt gilt nur vor dem Landgericht.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-024",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Der Gerichtskostenvorschuss ist eingegangen.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-025",
+              "merkmalId": "L13",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Keine Anhaltspunkte für eine obligatorische Streitschlichtung nach Landesrecht.",
               "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L14",
+              "status": "keine_anhaltspunkte",
+              "text": "Nur auf Rüge zu prüfen; keine Anhaltspunkte für eine Schiedsvereinbarung.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L15",
+              "status": "keine_anhaltspunkte",
+              "text": "Nur auf Rüge zu prüfen; kein Vorprozess bekannt.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L16",
+              "status": "keine_anhaltspunkte",
+              "text": "Nur auf Rüge zu prüfen; Klagepartei mit Sitz im Inland.",
+              "relevanz": "niedrig",
               "fundstellen": []
             }
           ]
@@ -2048,47 +711,14 @@
           "geprueftAm": "2026-09-25T08:16:00",
           "ergebnisse": [
             {
-              "merkmalId": "m-001",
+              "merkmalId": "L01",
               "status": "erfuellt",
+              "text": "Die Klageschrift enthält Parteien, Gericht, bestimmten Antrag und Klagegrund; keine Auffälligkeiten zu Form und Vertretung.",
               "relevanz": "niedrig",
-              "text": "Gericht, Parteien und gesetzliche Vertretung sind vollständig bezeichnet (Autohaus Lindner GmbH ./. Markus Engel).",
-              "grundlage": "Regelprüfung",
               "fundstellen": []
             },
             {
-              "merkmalId": "m-002",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Der Klageantrag ist beziffert und vollstreckungsfähig formuliert.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-003",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Der Lebenssachverhalt ist mit Datum, Beteiligten und Beweisangeboten individualisiert dargestellt.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-004",
-              "status": "nicht_anwendbar",
-              "relevanz": "niedrig",
-              "text": "Dieser Prüfpunkt gilt nur vor dem Landgericht.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-005",
-              "status": "nicht_anwendbar",
-              "relevanz": "niedrig",
-              "text": "Beim Eingang der Klage nicht anwendbar.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-006",
+              "merkmalId": "L02",
               "status": "keine_anhaltspunkte",
               "relevanz": "niedrig",
               "text": "Keine Anhaltspunkte für eine Befreiung von der deutschen Gerichtsbarkeit.",
@@ -2096,7 +726,7 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-007",
+              "merkmalId": "L03",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Bürgerliche Rechtsstreitigkeit, der ordentliche Rechtsweg ist eröffnet (§ 13 GVG).",
@@ -2104,20 +734,27 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-008",
+              "merkmalId": "L04",
+              "status": "keine_anhaltspunkte",
+              "text": "Kein Auslandsbezug erkennbar.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L05",
               "status": "mangel",
-              "relevanz": "hoch",
               "text": "Streitwert 14.250,00 € übersteigt 10.000 € (§ 23 Nr. 1 GVG). Zuständig ist das Landgericht Köln (§ 71 Abs. 1 GVG).",
-              "grundlage": "laut Klageschrift",
               "fundstellen": [
                 {
                   "dokumentId": "fall-0002-klageschrift",
                   "zitat": "14.250,00 €"
                 }
-              ]
+              ],
+              "relevanz": "hoch",
+              "grundlage": "laut Klageschrift"
             },
             {
-              "merkmalId": "m-009",
+              "merkmalId": "L06",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Amtsgericht Köln, allgemeiner Gerichtsstand der beklagten Partei in Köln (§§ 12, 13, 17 ZPO).",
@@ -2125,7 +762,14 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-010",
+              "merkmalId": "L07",
+              "status": "erfuellt",
+              "text": "Erstinstanzliche Zivilsache; zugewiesener Spruchkörper funktionell zuständig.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L08",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Beide Parteien sind parteifähig (§ 50 ZPO).",
@@ -2133,7 +777,7 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-011",
+              "merkmalId": "L09",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Keine Anhaltspunkte für fehlende Prozessfähigkeit; juristische Personen sind ordnungsgemäß vertreten.",
@@ -2141,7 +785,7 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-012",
+              "merkmalId": "L10",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Die klagende Partei macht ein eigenes Recht im eigenen Namen geltend.",
@@ -2149,7 +793,14 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-013",
+              "merkmalId": "L11",
+              "status": "keine_anhaltspunkte",
+              "text": "Keine Anhaltspunkte für einen nicht klagbaren Anspruch.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L12",
               "status": "keine_anhaltspunkte",
               "relevanz": "niedrig",
               "text": "Abgleich mit dem Verfahrensregister ohne Treffer.",
@@ -2157,99 +808,32 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-014",
-              "status": "keine_anhaltspunkte",
-              "relevanz": "niedrig",
-              "text": "Abgleich mit dem Verfahrensregister ohne rechtskräftige Entscheidung zum selben Streitgegenstand.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-015",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Leistungsklage, Rechtsschutzbedürfnis regelmäßig gegeben.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-016",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Die geltend gemachten Ansprüche können verbunden werden (§ 260 ZPO).",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-017",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Eingang über beA, sicherer Übermittlungsweg (§ 130a Abs. 3 ZPO).",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-018",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Anwaltlicher Schriftsatz elektronisch übermittelt (§ 130d ZPO).",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-019",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "XJustiz-Datensatz vorhanden, Angaben stimmen mit der Klageschrift überein.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-020",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Ladungsfähige Anschrift der beklagten Partei ist angegeben.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-021",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Streitwert mit 14.250,00 € angegeben.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-022",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Angaben zur außergerichtlichen Konfliktbeilegung sind enthalten.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-023",
-              "status": "nicht_anwendbar",
-              "relevanz": "niedrig",
-              "text": "Dieser Prüfpunkt gilt nur vor dem Landgericht.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-024",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Der Gerichtskostenvorschuss ist eingegangen.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-025",
+              "merkmalId": "L13",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Keine Anhaltspunkte für eine obligatorische Streitschlichtung nach Landesrecht.",
               "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L14",
+              "status": "keine_anhaltspunkte",
+              "text": "Nur auf Rüge zu prüfen; keine Anhaltspunkte für eine Schiedsvereinbarung.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L15",
+              "status": "keine_anhaltspunkte",
+              "text": "Nur auf Rüge zu prüfen; kein Vorprozess bekannt.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L16",
+              "status": "keine_anhaltspunkte",
+              "text": "Nur auf Rüge zu prüfen; Klagepartei mit Sitz im Inland.",
+              "relevanz": "niedrig",
               "fundstellen": []
             }
           ]
@@ -2331,47 +915,14 @@
           "geprueftAm": "2026-09-24T16:11:00",
           "ergebnisse": [
             {
-              "merkmalId": "m-001",
+              "merkmalId": "L01",
               "status": "erfuellt",
+              "text": "Die Klageschrift enthält Parteien, Gericht, bestimmten Antrag und Klagegrund; keine Auffälligkeiten zu Form und Vertretung.",
               "relevanz": "niedrig",
-              "text": "Gericht, Parteien und gesetzliche Vertretung sind vollständig bezeichnet (Thomas Brandt ./. Florian Aigner).",
-              "grundlage": "Regelprüfung",
               "fundstellen": []
             },
             {
-              "merkmalId": "m-002",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Der Klageantrag ist beziffert und vollstreckungsfähig formuliert.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-003",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Der Lebenssachverhalt ist mit Datum, Beteiligten und Beweisangeboten individualisiert dargestellt.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-004",
-              "status": "nicht_anwendbar",
-              "relevanz": "niedrig",
-              "text": "Dieser Prüfpunkt gilt nur vor dem Landgericht.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-005",
-              "status": "nicht_anwendbar",
-              "relevanz": "niedrig",
-              "text": "Beim Eingang der Klage nicht anwendbar.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-006",
+              "merkmalId": "L02",
               "status": "keine_anhaltspunkte",
               "relevanz": "niedrig",
               "text": "Keine Anhaltspunkte für eine Befreiung von der deutschen Gerichtsbarkeit.",
@@ -2379,7 +930,7 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-007",
+              "merkmalId": "L03",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Bürgerliche Rechtsstreitigkeit, der ordentliche Rechtsweg ist eröffnet (§ 13 GVG).",
@@ -2387,7 +938,14 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-008",
+              "merkmalId": "L04",
+              "status": "keine_anhaltspunkte",
+              "text": "Kein Auslandsbezug erkennbar.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L05",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Amtsgericht zuständig, Streitwert 2.000,00 € bis 10.000 € (§ 23 Nr. 1 GVG).",
@@ -2395,20 +953,27 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-009",
+              "merkmalId": "L06",
               "status": "mangel",
-              "relevanz": "hoch",
               "text": "Wohnsitz des Beklagten in München (§§ 12, 13 ZPO), kein besonderer Gerichtsstand in Köln ersichtlich.",
-              "grundlage": "laut Klageschrift",
               "fundstellen": [
                 {
                   "dokumentId": "fall-0003-klageschrift",
                   "zitat": "80802 München"
                 }
-              ]
+              ],
+              "relevanz": "hoch",
+              "grundlage": "laut Klageschrift"
             },
             {
-              "merkmalId": "m-010",
+              "merkmalId": "L07",
+              "status": "erfuellt",
+              "text": "Erstinstanzliche Zivilsache; zugewiesener Spruchkörper funktionell zuständig.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L08",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Beide Parteien sind parteifähig (§ 50 ZPO).",
@@ -2416,7 +981,7 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-011",
+              "merkmalId": "L09",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Keine Anhaltspunkte für fehlende Prozessfähigkeit; juristische Personen sind ordnungsgemäß vertreten.",
@@ -2424,7 +989,7 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-012",
+              "merkmalId": "L10",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Die klagende Partei macht ein eigenes Recht im eigenen Namen geltend.",
@@ -2432,7 +997,14 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-013",
+              "merkmalId": "L11",
+              "status": "keine_anhaltspunkte",
+              "text": "Keine Anhaltspunkte für einen nicht klagbaren Anspruch.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L12",
               "status": "keine_anhaltspunkte",
               "relevanz": "niedrig",
               "text": "Abgleich mit dem Verfahrensregister ohne Treffer.",
@@ -2440,99 +1012,32 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-014",
-              "status": "keine_anhaltspunkte",
-              "relevanz": "niedrig",
-              "text": "Abgleich mit dem Verfahrensregister ohne rechtskräftige Entscheidung zum selben Streitgegenstand.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-015",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Leistungsklage, Rechtsschutzbedürfnis regelmäßig gegeben.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-016",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Die geltend gemachten Ansprüche können verbunden werden (§ 260 ZPO).",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-017",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Eingang über Mein Justizpostfach, sicherer Übermittlungsweg (§ 130a Abs. 3 ZPO).",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-018",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Keine anwaltliche Vertretung, die Nutzungspflicht gilt nicht.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-019",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "XJustiz-Datensatz vorhanden, Angaben stimmen mit der Klageschrift überein.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-020",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Ladungsfähige Anschrift der beklagten Partei ist angegeben.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-021",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Streitwert mit 2.000,00 € angegeben.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-022",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Angaben zur außergerichtlichen Konfliktbeilegung sind enthalten.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-023",
-              "status": "nicht_anwendbar",
-              "relevanz": "niedrig",
-              "text": "Dieser Prüfpunkt gilt nur vor dem Landgericht.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-024",
-              "status": "offen",
-              "relevanz": "mittel",
-              "text": "Der Gerichtskostenvorschuss ist noch nicht eingegangen. Die Zustellung erfolgt nach Eingang (§ 12 Abs. 1 GKG).",
-              "grundlage": "laut Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-025",
+              "merkmalId": "L13",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Keine Anhaltspunkte für eine obligatorische Streitschlichtung nach Landesrecht.",
               "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L14",
+              "status": "keine_anhaltspunkte",
+              "text": "Nur auf Rüge zu prüfen; keine Anhaltspunkte für eine Schiedsvereinbarung.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L15",
+              "status": "keine_anhaltspunkte",
+              "text": "Nur auf Rüge zu prüfen; kein Vorprozess bekannt.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L16",
+              "status": "keine_anhaltspunkte",
+              "text": "Nur auf Rüge zu prüfen; Klagepartei mit Sitz im Inland.",
+              "relevanz": "niedrig",
               "fundstellen": []
             }
           ]
@@ -2614,47 +1119,14 @@
           "geprueftAm": "2026-09-24T11:06:00",
           "ergebnisse": [
             {
-              "merkmalId": "m-001",
+              "merkmalId": "L01",
               "status": "erfuellt",
+              "text": "Die Klageschrift enthält Parteien, Gericht, bestimmten Antrag und Klagegrund; keine Auffälligkeiten zu Form und Vertretung.",
               "relevanz": "niedrig",
-              "text": "Gericht, Parteien und gesetzliche Vertretung sind vollständig bezeichnet (Nils Petersen ./. Anna Heinrichs).",
-              "grundlage": "Regelprüfung",
               "fundstellen": []
             },
             {
-              "merkmalId": "m-002",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Der Klageantrag ist beziffert und vollstreckungsfähig formuliert.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-003",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Der Lebenssachverhalt ist mit Datum, Beteiligten und Beweisangeboten individualisiert dargestellt.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-004",
-              "status": "nicht_anwendbar",
-              "relevanz": "niedrig",
-              "text": "Dieser Prüfpunkt gilt nur vor dem Landgericht.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-005",
-              "status": "nicht_anwendbar",
-              "relevanz": "niedrig",
-              "text": "Beim Eingang der Klage nicht anwendbar.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-006",
+              "merkmalId": "L02",
               "status": "keine_anhaltspunkte",
               "relevanz": "niedrig",
               "text": "Keine Anhaltspunkte für eine Befreiung von der deutschen Gerichtsbarkeit.",
@@ -2662,7 +1134,7 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-007",
+              "merkmalId": "L03",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Bürgerliche Rechtsstreitigkeit, der ordentliche Rechtsweg ist eröffnet (§ 13 GVG).",
@@ -2670,7 +1142,14 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-008",
+              "merkmalId": "L04",
+              "status": "keine_anhaltspunkte",
+              "text": "Kein Auslandsbezug erkennbar.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L05",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Amtsgericht zuständig, Streitwert 1.850,00 € bis 10.000 € (§ 23 Nr. 1 GVG).",
@@ -2678,7 +1157,7 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-009",
+              "merkmalId": "L06",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Amtsgericht Köln, allgemeiner Gerichtsstand der beklagten Partei in Köln (§§ 12, 13, 17 ZPO).",
@@ -2686,7 +1165,14 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-010",
+              "merkmalId": "L07",
+              "status": "erfuellt",
+              "text": "Erstinstanzliche Zivilsache; zugewiesener Spruchkörper funktionell zuständig.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L08",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Beide Parteien sind parteifähig (§ 50 ZPO).",
@@ -2694,7 +1180,7 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-011",
+              "merkmalId": "L09",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Keine Anhaltspunkte für fehlende Prozessfähigkeit; juristische Personen sind ordnungsgemäß vertreten.",
@@ -2702,7 +1188,7 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-012",
+              "merkmalId": "L10",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Die klagende Partei macht ein eigenes Recht im eigenen Namen geltend.",
@@ -2710,113 +1196,53 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-013",
+              "merkmalId": "L11",
+              "status": "keine_anhaltspunkte",
+              "text": "Keine Anhaltspunkte für einen nicht klagbaren Anspruch.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L12",
               "status": "mangel",
-              "relevanz": "hoch",
               "text": "Identischer Streitgegenstand bereits rechtshängig unter 142 C 1187/26.",
-              "grundlage": "laut Klageschrift",
               "fundstellen": [
                 {
                   "dokumentId": "fall-0004-klageschrift",
                   "zitat": "Schadensersatz in Höhe von 1.850,00 €"
                 }
               ],
+              "relevanz": "hoch",
+              "grundlage": "laut Klageschrift",
               "verweisAz": "142 C 1187/26"
             },
             {
-              "merkmalId": "m-014",
-              "status": "keine_anhaltspunkte",
-              "relevanz": "niedrig",
-              "text": "Abgleich mit dem Verfahrensregister ohne rechtskräftige Entscheidung zum selben Streitgegenstand.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-015",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Leistungsklage, Rechtsschutzbedürfnis regelmäßig gegeben.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-016",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Die geltend gemachten Ansprüche können verbunden werden (§ 260 ZPO).",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-017",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Eingang über beA, sicherer Übermittlungsweg (§ 130a Abs. 3 ZPO).",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-018",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Anwaltlicher Schriftsatz elektronisch übermittelt (§ 130d ZPO).",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-019",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "XJustiz-Datensatz vorhanden, Angaben stimmen mit der Klageschrift überein.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-020",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Ladungsfähige Anschrift der beklagten Partei ist angegeben.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-021",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Streitwert mit 1.850,00 € angegeben.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-022",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Angaben zur außergerichtlichen Konfliktbeilegung sind enthalten.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-023",
-              "status": "nicht_anwendbar",
-              "relevanz": "niedrig",
-              "text": "Dieser Prüfpunkt gilt nur vor dem Landgericht.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-024",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Der Gerichtskostenvorschuss ist eingegangen.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-025",
+              "merkmalId": "L13",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Keine Anhaltspunkte für eine obligatorische Streitschlichtung nach Landesrecht.",
               "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L14",
+              "status": "keine_anhaltspunkte",
+              "text": "Nur auf Rüge zu prüfen; keine Anhaltspunkte für eine Schiedsvereinbarung.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L15",
+              "status": "keine_anhaltspunkte",
+              "text": "Nur auf Rüge zu prüfen; kein Vorprozess bekannt.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L16",
+              "status": "keine_anhaltspunkte",
+              "text": "Nur auf Rüge zu prüfen; Klagepartei mit Sitz im Inland.",
+              "relevanz": "niedrig",
               "fundstellen": []
             }
           ]
@@ -2898,47 +1324,14 @@
           "geprueftAm": "2026-09-25T08:51:00",
           "ergebnisse": [
             {
-              "merkmalId": "m-001",
+              "merkmalId": "L01",
               "status": "erfuellt",
+              "text": "Die Klageschrift enthält Parteien, Gericht, bestimmten Antrag und Klagegrund; keine Auffälligkeiten zu Form und Vertretung.",
               "relevanz": "niedrig",
-              "text": "Gericht, Parteien und gesetzliche Vertretung sind vollständig bezeichnet (Eheleute Krämer ./. Dieter Olbrich).",
-              "grundlage": "Regelprüfung",
               "fundstellen": []
             },
             {
-              "merkmalId": "m-002",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Der Klageantrag ist beziffert und vollstreckungsfähig formuliert.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-003",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Der Lebenssachverhalt ist mit Datum, Beteiligten und Beweisangeboten individualisiert dargestellt.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-004",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Die Klage ist durch eine zugelassene Rechtsanwältin bzw. einen zugelassenen Rechtsanwalt erhoben.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-005",
-              "status": "nicht_anwendbar",
-              "relevanz": "niedrig",
-              "text": "Beim Eingang der Klage nicht anwendbar.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-006",
+              "merkmalId": "L02",
               "status": "keine_anhaltspunkte",
               "relevanz": "niedrig",
               "text": "Keine Anhaltspunkte für eine Befreiung von der deutschen Gerichtsbarkeit.",
@@ -2946,7 +1339,7 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-007",
+              "merkmalId": "L03",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Bürgerliche Rechtsstreitigkeit, der ordentliche Rechtsweg ist eröffnet (§ 13 GVG).",
@@ -2954,20 +1347,27 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-008",
+              "merkmalId": "L04",
+              "status": "keine_anhaltspunkte",
+              "text": "Kein Auslandsbezug erkennbar.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L05",
               "status": "mangel",
-              "relevanz": "hoch",
               "text": "Nachbarrechtliche Streitigkeit, seit 01.01.2026 unabhängig vom Streitwert beim Amtsgericht (§ 23 Nr. 2 e GVG).",
-              "grundlage": "laut Klageschrift",
               "fundstellen": [
                 {
                   "dokumentId": "fall-0005-klageschrift",
                   "zitat": "überhängenden Äste"
                 }
-              ]
+              ],
+              "relevanz": "hoch",
+              "grundlage": "laut Klageschrift"
             },
             {
-              "merkmalId": "m-009",
+              "merkmalId": "L06",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Landgericht Köln, allgemeiner Gerichtsstand der beklagten Partei in Köln (§§ 12, 13, 17 ZPO).",
@@ -2975,7 +1375,14 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-010",
+              "merkmalId": "L07",
+              "status": "erfuellt",
+              "text": "Erstinstanzliche Zivilsache; zugewiesener Spruchkörper funktionell zuständig.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L08",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Beide Parteien sind parteifähig (§ 50 ZPO).",
@@ -2983,7 +1390,7 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-011",
+              "merkmalId": "L09",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Keine Anhaltspunkte für fehlende Prozessfähigkeit; juristische Personen sind ordnungsgemäß vertreten.",
@@ -2991,7 +1398,7 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-012",
+              "merkmalId": "L10",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Die klagende Partei macht ein eigenes Recht im eigenen Namen geltend.",
@@ -2999,7 +1406,14 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-013",
+              "merkmalId": "L11",
+              "status": "keine_anhaltspunkte",
+              "text": "Keine Anhaltspunkte für einen nicht klagbaren Anspruch.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L12",
               "status": "keine_anhaltspunkte",
               "relevanz": "niedrig",
               "text": "Abgleich mit dem Verfahrensregister ohne Treffer.",
@@ -3007,99 +1421,32 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-014",
-              "status": "keine_anhaltspunkte",
-              "relevanz": "niedrig",
-              "text": "Abgleich mit dem Verfahrensregister ohne rechtskräftige Entscheidung zum selben Streitgegenstand.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-015",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Leistungsklage, Rechtsschutzbedürfnis regelmäßig gegeben.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-016",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Die geltend gemachten Ansprüche können verbunden werden (§ 260 ZPO).",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-017",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Eingang über beA, sicherer Übermittlungsweg (§ 130a Abs. 3 ZPO).",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-018",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Anwaltlicher Schriftsatz elektronisch übermittelt (§ 130d ZPO).",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-019",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "XJustiz-Datensatz vorhanden, Angaben stimmen mit der Klageschrift überein.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-020",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Ladungsfähige Anschrift der beklagten Partei ist angegeben.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-021",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Streitwert mit 12.500,00 € angegeben.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-022",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Angaben zur außergerichtlichen Konfliktbeilegung sind enthalten.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-023",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Eine Äußerung zur Entscheidung durch den Einzelrichter ist enthalten.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-024",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Der Gerichtskostenvorschuss ist eingegangen.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-025",
+              "merkmalId": "L13",
               "status": "pruefen",
-              "relevanz": "mittel",
               "text": "Keine Bescheinigung über ein Schlichtungsverfahren beigefügt (§ 15a EGZPO).",
-              "grundlage": "laut Klageschrift",
+              "fundstellen": [],
+              "relevanz": "mittel",
+              "grundlage": "laut Klageschrift"
+            },
+            {
+              "merkmalId": "L14",
+              "status": "keine_anhaltspunkte",
+              "text": "Nur auf Rüge zu prüfen; keine Anhaltspunkte für eine Schiedsvereinbarung.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L15",
+              "status": "keine_anhaltspunkte",
+              "text": "Nur auf Rüge zu prüfen; kein Vorprozess bekannt.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L16",
+              "status": "keine_anhaltspunkte",
+              "text": "Nur auf Rüge zu prüfen; Klagepartei mit Sitz im Inland.",
+              "relevanz": "niedrig",
               "fundstellen": []
             }
           ]
@@ -3181,57 +1528,24 @@
           "geprueftAm": "2026-09-24T14:23:00",
           "ergebnisse": [
             {
-              "merkmalId": "m-001",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Gericht, Parteien und gesetzliche Vertretung sind vollständig bezeichnet (Herbert Vogt ./. Sanitär Reuter GmbH).",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-002",
-              "status": "pruefen",
-              "relevanz": "mittel",
-              "text": "Antrag nicht beziffert, keine Größenordnung angegeben. Ein bestimmter Klageantrag ist Voraussetzung eines vollstreckungsfähigen Titels.",
-              "grundlage": "laut Klageschrift",
+              "merkmalId": "L01",
+              "status": "mangel",
+              "text": "Antrag nicht beziffert, keine Größenordnung angegeben. Ein bestimmter Klageantrag ist Voraussetzung eines vollstreckungsfähigen Titels. Vor dem Landgericht besteht Anwaltszwang (§ 78 Abs. 1 ZPO). Die Klage ist von der Partei selbst eingereicht. Eine Äußerung zur Entscheidung durch den Einzelrichter fehlt (§ 253 Abs. 3 Nr. 3 ZPO, Sollvorschrift).",
               "fundstellen": [
                 {
                   "dokumentId": "fall-0006-klageschrift",
                   "zitat": "einen angemessenen Schadensersatz zu zahlen"
-                }
-              ]
-            },
-            {
-              "merkmalId": "m-003",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Der Lebenssachverhalt ist mit Datum, Beteiligten und Beweisangeboten individualisiert dargestellt.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-004",
-              "status": "mangel",
-              "relevanz": "hoch",
-              "text": "Vor dem Landgericht besteht Anwaltszwang (§ 78 Abs. 1 ZPO). Die Klage ist von der Partei selbst eingereicht.",
-              "grundlage": "laut Klageschrift",
-              "fundstellen": [
+                },
                 {
                   "dokumentId": "fall-0006-klageschrift",
                   "zitat": "handelnd in eigener Sache"
                 }
-              ]
+              ],
+              "relevanz": "hoch",
+              "grundlage": "laut Klageschrift"
             },
             {
-              "merkmalId": "m-005",
-              "status": "nicht_anwendbar",
-              "relevanz": "niedrig",
-              "text": "Beim Eingang der Klage nicht anwendbar.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-006",
+              "merkmalId": "L02",
               "status": "keine_anhaltspunkte",
               "relevanz": "niedrig",
               "text": "Keine Anhaltspunkte für eine Befreiung von der deutschen Gerichtsbarkeit.",
@@ -3239,7 +1553,7 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-007",
+              "merkmalId": "L03",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Bürgerliche Rechtsstreitigkeit, der ordentliche Rechtsweg ist eröffnet (§ 13 GVG).",
@@ -3247,7 +1561,14 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-008",
+              "merkmalId": "L04",
+              "status": "keine_anhaltspunkte",
+              "text": "Kein Auslandsbezug erkennbar.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L05",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Landgericht zuständig, Streitwert 25.000,00 € übersteigt 10.000 € (§ 71 Abs. 1 GVG).",
@@ -3255,7 +1576,7 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-009",
+              "merkmalId": "L06",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Landgericht Köln, allgemeiner Gerichtsstand der beklagten Partei in Köln (§§ 12, 13, 17 ZPO).",
@@ -3263,7 +1584,14 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-010",
+              "merkmalId": "L07",
+              "status": "erfuellt",
+              "text": "Erstinstanzliche Zivilsache; zugewiesener Spruchkörper funktionell zuständig.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L08",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Beide Parteien sind parteifähig (§ 50 ZPO).",
@@ -3271,7 +1599,7 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-011",
+              "merkmalId": "L09",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Keine Anhaltspunkte für fehlende Prozessfähigkeit; juristische Personen sind ordnungsgemäß vertreten.",
@@ -3279,7 +1607,7 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-012",
+              "merkmalId": "L10",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Die klagende Partei macht ein eigenes Recht im eigenen Namen geltend.",
@@ -3287,7 +1615,14 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-013",
+              "merkmalId": "L11",
+              "status": "keine_anhaltspunkte",
+              "text": "Keine Anhaltspunkte für einen nicht klagbaren Anspruch.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L12",
               "status": "keine_anhaltspunkte",
               "relevanz": "niedrig",
               "text": "Abgleich mit dem Verfahrensregister ohne Treffer.",
@@ -3295,99 +1630,32 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-014",
-              "status": "keine_anhaltspunkte",
-              "relevanz": "niedrig",
-              "text": "Abgleich mit dem Verfahrensregister ohne rechtskräftige Entscheidung zum selben Streitgegenstand.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-015",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Leistungsklage, Rechtsschutzbedürfnis regelmäßig gegeben.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-016",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Die geltend gemachten Ansprüche können verbunden werden (§ 260 ZPO).",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-017",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Eingang über Mein Justizpostfach, sicherer Übermittlungsweg (§ 130a Abs. 3 ZPO).",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-018",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Keine anwaltliche Vertretung, die Nutzungspflicht gilt nicht.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-019",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "XJustiz-Datensatz vorhanden, Angaben stimmen mit der Klageschrift überein.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-020",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Ladungsfähige Anschrift der beklagten Partei ist angegeben.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-021",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Streitwert mit 25.000,00 € angegeben.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-022",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Angaben zur außergerichtlichen Konfliktbeilegung sind enthalten.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-023",
-              "status": "pruefen",
-              "relevanz": "mittel",
-              "text": "Eine Äußerung zur Entscheidung durch den Einzelrichter fehlt (§ 253 Abs. 3 Nr. 3 ZPO, Sollvorschrift).",
-              "grundlage": "laut Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-024",
-              "status": "offen",
-              "relevanz": "mittel",
-              "text": "Der Gerichtskostenvorschuss ist noch nicht eingegangen (§ 12 Abs. 1 GKG).",
-              "grundlage": "laut Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-025",
+              "merkmalId": "L13",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Keine Anhaltspunkte für eine obligatorische Streitschlichtung nach Landesrecht.",
               "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L14",
+              "status": "keine_anhaltspunkte",
+              "text": "Nur auf Rüge zu prüfen; keine Anhaltspunkte für eine Schiedsvereinbarung.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L15",
+              "status": "keine_anhaltspunkte",
+              "text": "Nur auf Rüge zu prüfen; kein Vorprozess bekannt.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L16",
+              "status": "keine_anhaltspunkte",
+              "text": "Nur auf Rüge zu prüfen; Klagepartei mit Sitz im Inland.",
+              "relevanz": "niedrig",
               "fundstellen": []
             }
           ]
@@ -3478,47 +1746,14 @@
           "geprueftAm": "2026-09-25T10:06:00",
           "ergebnisse": [
             {
-              "merkmalId": "m-001",
+              "merkmalId": "L01",
               "status": "erfuellt",
+              "text": "Die Klageschrift enthält Parteien, Gericht, bestimmten Antrag und Klagegrund; keine Auffälligkeiten zu Form und Vertretung.",
               "relevanz": "niedrig",
-              "text": "Gericht, Parteien und gesetzliche Vertretung sind vollständig bezeichnet (Immobilien Rhein GmbH ./. Gebäudereinigung Falk GmbH).",
-              "grundlage": "Regelprüfung",
               "fundstellen": []
             },
             {
-              "merkmalId": "m-002",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Der Klageantrag ist beziffert und vollstreckungsfähig formuliert.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-003",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Der Lebenssachverhalt ist mit Datum, Beteiligten und Beweisangeboten individualisiert dargestellt.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-004",
-              "status": "nicht_anwendbar",
-              "relevanz": "niedrig",
-              "text": "Dieser Prüfpunkt gilt nur vor dem Landgericht.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-005",
-              "status": "nicht_anwendbar",
-              "relevanz": "niedrig",
-              "text": "Beim Eingang der Klage nicht anwendbar.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-006",
+              "merkmalId": "L02",
               "status": "keine_anhaltspunkte",
               "relevanz": "niedrig",
               "text": "Keine Anhaltspunkte für eine Befreiung von der deutschen Gerichtsbarkeit.",
@@ -3526,7 +1761,7 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-007",
+              "merkmalId": "L03",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Bürgerliche Rechtsstreitigkeit, der ordentliche Rechtsweg ist eröffnet (§ 13 GVG).",
@@ -3534,20 +1769,31 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-008",
+              "merkmalId": "L04",
+              "status": "keine_anhaltspunkte",
+              "text": "Kein Auslandsbezug erkennbar.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L05",
               "status": "mangel",
-              "relevanz": "hoch",
-              "text": "Nach dem Klageantrag ist das Landgericht zuständig (§ 71 Abs. 1 GVG).",
-              "grundlage": "laut Klageschrift",
+              "text": "Nach dem Klageantrag ist das Landgericht zuständig (§ 71 Abs. 1 GVG). Streitwert im XJustiz-Datensatz (4.800,00 €) weicht vom Antrag (48.000,00 €) ab.",
               "fundstellen": [
                 {
                   "dokumentId": "fall-0007-klageschrift",
                   "zitat": "48.000,00 €"
+                },
+                {
+                  "dokumentId": "fall-0007-klageschrift",
+                  "zitat": "48.000,00 €"
                 }
-              ]
+              ],
+              "relevanz": "hoch",
+              "grundlage": "laut Klageschrift"
             },
             {
-              "merkmalId": "m-009",
+              "merkmalId": "L06",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Amtsgericht Köln, allgemeiner Gerichtsstand der beklagten Partei in Köln (§§ 12, 13, 17 ZPO).",
@@ -3555,7 +1801,14 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-010",
+              "merkmalId": "L07",
+              "status": "erfuellt",
+              "text": "Erstinstanzliche Zivilsache; zugewiesener Spruchkörper funktionell zuständig.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L08",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Beide Parteien sind parteifähig (§ 50 ZPO).",
@@ -3563,7 +1816,7 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-011",
+              "merkmalId": "L09",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Keine Anhaltspunkte für fehlende Prozessfähigkeit; juristische Personen sind ordnungsgemäß vertreten.",
@@ -3571,7 +1824,7 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-012",
+              "merkmalId": "L10",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Die klagende Partei macht ein eigenes Recht im eigenen Namen geltend.",
@@ -3579,7 +1832,14 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-013",
+              "merkmalId": "L11",
+              "status": "keine_anhaltspunkte",
+              "text": "Keine Anhaltspunkte für einen nicht klagbaren Anspruch.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L12",
               "status": "keine_anhaltspunkte",
               "relevanz": "niedrig",
               "text": "Abgleich mit dem Verfahrensregister ohne Treffer.",
@@ -3587,104 +1847,32 @@
               "fundstellen": []
             },
             {
-              "merkmalId": "m-014",
-              "status": "keine_anhaltspunkte",
-              "relevanz": "niedrig",
-              "text": "Abgleich mit dem Verfahrensregister ohne rechtskräftige Entscheidung zum selben Streitgegenstand.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-015",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Leistungsklage, Rechtsschutzbedürfnis regelmäßig gegeben.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-016",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Die geltend gemachten Ansprüche können verbunden werden (§ 260 ZPO).",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-017",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Eingang über beA, sicherer Übermittlungsweg (§ 130a Abs. 3 ZPO).",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-018",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Anwaltlicher Schriftsatz elektronisch übermittelt (§ 130d ZPO).",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-019",
-              "status": "pruefen",
-              "relevanz": "mittel",
-              "text": "Streitwert im XJustiz-Datensatz (4.800,00 €) weicht vom Antrag (48.000,00 €) ab.",
-              "grundlage": "laut Klageschrift",
-              "fundstellen": [
-                {
-                  "dokumentId": "fall-0007-klageschrift",
-                  "zitat": "48.000,00 €"
-                }
-              ]
-            },
-            {
-              "merkmalId": "m-020",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Ladungsfähige Anschrift der beklagten Partei ist angegeben.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-021",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Streitwert mit 48.000,00 € angegeben.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-022",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Angaben zur außergerichtlichen Konfliktbeilegung sind enthalten.",
-              "grundlage": "Auswertung Klageschrift",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-023",
-              "status": "nicht_anwendbar",
-              "relevanz": "niedrig",
-              "text": "Dieser Prüfpunkt gilt nur vor dem Landgericht.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-024",
-              "status": "erfuellt",
-              "relevanz": "niedrig",
-              "text": "Der Gerichtskostenvorschuss ist eingegangen.",
-              "grundlage": "Regelprüfung",
-              "fundstellen": []
-            },
-            {
-              "merkmalId": "m-025",
+              "merkmalId": "L13",
               "status": "erfuellt",
               "relevanz": "niedrig",
               "text": "Keine Anhaltspunkte für eine obligatorische Streitschlichtung nach Landesrecht.",
               "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L14",
+              "status": "keine_anhaltspunkte",
+              "text": "Nur auf Rüge zu prüfen; keine Anhaltspunkte für eine Schiedsvereinbarung.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L15",
+              "status": "keine_anhaltspunkte",
+              "text": "Nur auf Rüge zu prüfen; kein Vorprozess bekannt.",
+              "relevanz": "niedrig",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L16",
+              "status": "keine_anhaltspunkte",
+              "text": "Nur auf Rüge zu prüfen; Klagepartei mit Sitz im Inland.",
+              "relevanz": "niedrig",
               "fundstellen": []
             }
           ]
