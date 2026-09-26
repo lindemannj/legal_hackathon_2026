@@ -72,6 +72,12 @@
       "gerichtId": "lg-koeln",
       "bezeichnung": "25. Zivilkammer",
       "zustaendigkeit": "Streitigkeiten aus Heilbehandlungen"
+    },
+    {
+      "id": "ag-koeln-abt-150",
+      "gerichtId": "ag-koeln",
+      "bezeichnung": "Zivilabteilung 150",
+      "zustaendigkeit": "Entlastungsabteilung: allgemeine Zivil- und Wohnraummietsachen mit Eingangsnummer auf 0"
     }
   ],
   "benutzer": [
@@ -129,9 +135,35 @@
         "lg-koeln-zk-25"
       ],
       "demoKonto": false
+    },
+    {
+      "id": "richterin-seidel",
+      "kennung": "h.seidel",
+      "name": "Dr. Hanna Seidel",
+      "amtsbezeichnung": "Richterin am Amtsgericht",
+      "rolle": "richter",
+      "einheitIds": [
+        "ag-koeln-abt-150"
+      ],
+      "demoKonto": true
     }
   ],
   "gvpRegeln": [
+    {
+      "id": "agk-2026-4-5",
+      "gerichtId": "ag-koeln",
+      "einheitId": "ag-koeln-abt-150",
+      "regelText": "GVP 2026, § 4 Abs. 5 · Entlastungsabteilung 150 · Allgemeine Zivil- und Wohnraummietsachen, deren Eingangsnummer auf 0 endet",
+      "kurzText": "Abteilung 150 nach GVP § 4 Abs. 5 (Endziffer 0)",
+      "vorrang": 1,
+      "bedingung": {
+        "sachgebiet": "allgemein",
+        "sachgebieteZusaetzlich": [
+          "wohnraummiete"
+        ],
+        "eingangsnummerEndziffer": "0"
+      }
+    },
     {
       "id": "agk-2026-3-1",
       "gerichtId": "ag-koeln",
@@ -1878,6 +1910,879 @@
           ]
         },
         "formulierungsvorschlag": "In dem Rechtsstreit Immobilien Rhein GmbH ./. Gebäudereinigung Falk GmbH, 142 C 1240/26, weist das Gericht auf Folgendes hin:\n\n1. Sachliche Zuständigkeit (§§ 23, 71 GVG, §§ 38-40 ZPO): Nach dem Klageantrag ist das Landgericht zuständig (§ 71 Abs. 1 GVG).\n\nEs wird angeregt, einen Antrag auf Verweisung des Rechtsstreits an das zuständige Gericht zu stellen (§ 281 ZPO).\n\nDer Klagepartei wird Gelegenheit zur Stellungnahme innerhalb der gesetzten Frist gegeben."
+      }
+    },
+    {
+      "id": "fall-0008",
+      "gerichtId": "ag-koeln",
+      "vorlaeufigesAz": "150 C 1250/26",
+      "nurSimulation": false,
+      "eingang": {
+        "eingangAm": "2026-09-18T14:20:00",
+        "uebermittlungsweg": "beA",
+        "kostenvorschuss": "bezahlt",
+        "xjustizXml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xjustiz:nachricht.gds.uebermittlungSchriftgutobjekte\n    xmlns:xjustiz=\"http://www.xjustiz.de\" version=\"3.5.1\">\n  <nachrichtenkopf>\n    <erstellungszeitpunkt>2026-09-18T14:20:00</erstellungszeitpunkt>\n    <empfaenger>Amtsgericht Köln</empfaenger>\n    <uebermittlungsweg>beA</uebermittlungsweg>\n  </nachrichtenkopf>\n  <fachdaten>\n    <verfahrensdaten>\n      <aktenzeichen.vorlaeufig>150 C 1250/26</aktenzeichen.vorlaeufig>\n      <sachgebiet>Kaufrecht / allgemeine Zivilsache</sachgebiet>\n      <streitwert einheit=\"EUR\">4860.00</streitwert>\n    </verfahrensdaten>\n    <beteiligter rolle=\"Klaeger\">\n      <bezeichnung>Klägerin laut Rubrum</bezeichnung>\n    </beteiligter>\n    <beteiligter rolle=\"Beklagter\">\n      <bezeichnung>Beklagter laut Rubrum</bezeichnung>\n    </beteiligter>\n  </fachdaten>\n</xjustiz:nachricht.gds.uebermittlungSchriftgutobjekte>",
+        "dokumente": [
+          {
+            "id": "fall-0008-klageschrift",
+            "typ": "klageschrift",
+            "name": "Klageschrift",
+            "seiten": 3,
+            "text": "[SEITEN 1 BIS 3 DER KAUFPREISKLAGE HIER EINFÜGEN, EINSCHLIESSLICH RUBRUM, ANTRÄGEN UND NR. 1 BIS 10]\n\n3. Ersatz der vorgerichtlichen Rechtsanwaltskosten\n\n11. Die Beauftragung der Prozessbevollmächtigten war zur zweckentsprechenden Rechtsverfolgung erforderlich. Der Beklagte hatte trotz Fälligkeit und mehrfacher Zahlungsaufforderung nicht geleistet. Die Klägerin durfte deshalb anwaltliche Hilfe in Anspruch nehmen. Die geltend gemachten EUR 492,54 entsprechen einer 1,3-Geschäftsgebühr aus einem Gegenstandswert von EUR 4.860,00 zuzüglich Auslagenpauschale und Umsatzsteuer nach dem Rechtsanwaltsvergütungsgesetz.\n\nBeweis: Kostenrechnung der Kanzlei Heller & Born vom 25. Juni 2026, Anlage K 7.\n\nC. Schlussbemerkung\n\n12. Die Klägerin hat den Kaufvertrag erfüllt. Der Beklagte hat die gelieferte Ware behalten, den hierfür geschuldeten Kaufpreis jedoch trotz Fälligkeit und wiederholter Aufforderung nicht entrichtet. Der Klage ist daher in vollem Umfang stattzugeben.\n\nKöln, den 18. September 2026\nKanzlei Heller & Born\nRechtsanwältin Dr. Eva Heller\n\nAnlagenverzeichnis\nAnlage K 1: Bestellung des Beklagten vom 21. März 2026\nAnlage K 2: Auftragsbestätigung vom 22. März 2026\nAnlage K 3: Lieferschein Nr. RB-240328\nAnlage K 4: Rechnung Nr. RB-240329\nAnlage K 5: E-Mail-Korrespondenz\nAnlage K 6: Mahnschreiben vom 7. Mai 2026\nAnlage K 7: Kostenrechnung vom 25. Juni 2026"
+          },
+          {
+            "id": "fall-0008-k1",
+            "typ": "anlage",
+            "name": "K1 Bestellung des Beklagten vom 21. März 2026",
+            "seiten": 1
+          },
+          {
+            "id": "fall-0008-k2",
+            "typ": "anlage",
+            "name": "K2 Auftragsbestätigung vom 22. März 2026",
+            "seiten": 1
+          },
+          {
+            "id": "fall-0008-k3",
+            "typ": "anlage",
+            "name": "K3 Lieferschein Nr. RB-240328",
+            "seiten": 1
+          },
+          {
+            "id": "fall-0008-k4",
+            "typ": "anlage",
+            "name": "K4 Rechnung Nr. RB-240329",
+            "seiten": 1
+          },
+          {
+            "id": "fall-0008-k5",
+            "typ": "anlage",
+            "name": "K5 E-Mail-Korrespondenz",
+            "seiten": 1
+          },
+          {
+            "id": "fall-0008-k6",
+            "typ": "anlage",
+            "name": "K6 Mahnschreiben vom 7. Mai 2026",
+            "seiten": 1
+          },
+          {
+            "id": "fall-0008-k7",
+            "typ": "anlage",
+            "name": "K7 Kostenrechnung vom 25. Juni 2026",
+            "seiten": 1
+          }
+        ]
+      },
+      "erwartet": {
+        "extraktion": {
+          "klaeger": [
+            {
+              "name": "Klägerin laut Rubrum",
+              "art": "juristisch"
+            }
+          ],
+          "beklagte": [
+            {
+              "name": "Beklagter laut Rubrum",
+              "art": "natuerlich"
+            }
+          ],
+          "sachgebiet": "allgemein",
+          "streitwertCent": 486000,
+          "gegenstand": "Zahlung des Kaufpreises",
+          "prozessbevollmaechtigter": "Kanzlei Heller & Born, Kaiserforum 21, 50667 Köln"
+        },
+        "xjustizFelder": {
+          "Absender": "Kanzlei Heller & Born (beA-Postfach)",
+          "Übermittlungsweg": "beA, § 130a Abs. 4 Nr. 2 ZPO",
+          "Gericht": "Amtsgericht Köln",
+          "Klagepartei": "Klägerin laut Rubrum",
+          "Beklagte Partei": "Beklagter laut Rubrum",
+          "Streitwert": "4.860,00 €",
+          "Sachgebiet": "Kaufrecht / allgemeine Zivilsache"
+        },
+        "xjustizAbweichungen": [],
+        "zuweisung": {
+          "einheitId": "ag-koeln-abt-150",
+          "richterId": "richterin-seidel",
+          "regelId": "agk-2026-4-5"
+        },
+        "auswertung": {
+          "geprueftAm": "2026-09-18T14:21:00",
+          "ergebnisse": [
+            {
+              "merkmalId": "L01",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Parteien, Gericht, Antrag und Klagegrund sind angegeben; Vertretung durch Rechtsanwältin (§§ 253, 78 ZPO).",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L02",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Anhaltspunkt für eine Befreiung von der deutschen Gerichtsbarkeit (§§ 18-20 GVG).",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L03",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Bürgerliche Rechtsstreitigkeit, ordentlicher Rechtsweg (§ 13 GVG).",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L04",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Auslandsbezug erkannt.",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L05",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Streitwert laut Klageschrift 4.860,00 €, unter der Grenze von 10.000 € (§ 23 Nr. 1 GVG).",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L06",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Wohnsitz des Beklagten laut Rubrum im Bezirk des Amtsgerichts Köln (§§ 12, 13 ZPO).",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L07",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Erstinstanzliche Zivilsache, Abteilung 150 funktionell zuständig.",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L08",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Parteien laut Rubrum parteifähig (§ 50 ZPO).",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L09",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Anhaltspunkt für fehlende Prozessfähigkeit oder Vertretungsmängel (§§ 51 ff. ZPO).",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L10",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Eigene Ansprüche der Klagepartei, kein Anhaltspunkt gegen die Prozessführungsbefugnis.",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L11",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Anhaltspunkt gegen die Klagbarkeit des Anspruchs.",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L12",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Im Verfahrensregister kein paralleles Verfahren gefunden (§ 261 Abs. 3 Nr. 1 ZPO).",
+              "grundlage": "Abgleich Verfahrensregister",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L13",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Fall des obligatorischen Schlichtungsverfahrens erkannt (§ 15a EGZPO, GüSchlG NRW).",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L14",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Anhaltspunkt erkannt, Prüfung nur auf Rüge.",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L15",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Anhaltspunkt erkannt, Prüfung nur auf Rüge.",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L16",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Anhaltspunkt erkannt, Prüfung nur auf Rüge.",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            }
+          ]
+        },
+        "formulierungsvorschlag": ""
+      }
+    },
+    {
+      "id": "fall-0009",
+      "gerichtId": "ag-koeln",
+      "vorlaeufigesAz": "150 C 1260/26",
+      "nurSimulation": false,
+      "eingang": {
+        "eingangAm": "2026-09-23T09:10:00",
+        "uebermittlungsweg": "beA",
+        "kostenvorschuss": "bezahlt",
+        "xjustizXml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xjustiz:nachricht.gds.uebermittlungSchriftgutobjekte\n    xmlns:xjustiz=\"http://www.xjustiz.de\" version=\"3.5.1\">\n  <nachrichtenkopf>\n    <erstellungszeitpunkt>2026-09-23T09:10:00</erstellungszeitpunkt>\n    <empfaenger>Amtsgericht Köln</empfaenger>\n    <uebermittlungsweg>beA</uebermittlungsweg>\n  </nachrichtenkopf>\n  <fachdaten>\n    <verfahrensdaten>\n      <aktenzeichen.vorlaeufig>150 C 1260/26</aktenzeichen.vorlaeufig>\n      <sachgebiet>Wohnraummiete</sachgebiet>\n      <streitwert einheit=\"EUR\">2400.00</streitwert>\n    </verfahrensdaten>\n    <beteiligter rolle=\"Klaeger\">\n      <bezeichnung>Lea Morgen</bezeichnung>\n    </beteiligter>\n    <beteiligter rolle=\"Beklagter\">\n      <bezeichnung>Rheinbogen Wohnraum GmbH</bezeichnung>\n    </beteiligter>\n  </fachdaten>\n</xjustiz:nachricht.gds.uebermittlungSchriftgutobjekte>",
+        "dokumente": [
+          {
+            "id": "fall-0009-klageschrift",
+            "typ": "klageschrift",
+            "name": "Klageschrift",
+            "seiten": 3,
+            "text": "KLAGE\nwegen Rückzahlung einer Mietkaution\n\nAn das Amtsgericht Köln\nGerichtsplatz 7\n50668 Köln\n\nKöln, den 23. September 2026\nUnser Zeichen: HB/26-083-MK\nGeschäftsnummer: wird erbeten\nSekretariat: Herr Albers\n\nIn dem Rechtsstreit\n\nFrau Lea Morgen, Lindenpfad 8, 50931 Köln\n– Klägerin –\nProzessbevollmächtigte: Kanzlei Heller & Born, Kaiserforum 21, 50667 Köln\n\ngegen\n\nRheinbogen Wohnraum GmbH, vertreten durch den Geschäftsführer Herrn Paul Merz, Uferstraße 41, 50668 Köln\n– Beklagte –\n\nwegen: Rückzahlung der Mietkaution\nvorläufiger Streitwert: EUR 2.400,00\n\nKlageanträge\n1. die Beklagte zu verurteilen, an die Klägerin EUR 2.400,00 nebst Zinsen in Höhe von fünf Prozentpunkten über dem jeweiligen Basiszinssatz seit dem 1. September 2026 zu zahlen;\n2. die Beklagte zu verurteilen, der Klägerin eine Abrechnung über die von ihr geleistete Mietkaution zu erteilen;\n3. der Beklagten die Kosten des Rechtsstreits aufzuerlegen;\n4. das Urteil für vorläufig vollstreckbar zu erklären.\n\nDie Klägerin regt die Anordnung des schriftlichen Vorverfahrens an. Für den Fall der Säumnis wird beantragt, die gesetzlichen Folgen eintreten zu lassen.\n\nA. Tatsächliche Grundlagen\n\nI. Mietverhältnis und Kautionsleistung\n\n1. Die Klägerin mietete von der Beklagten die Zwei-Zimmer-Wohnung im zweiten Obergeschoss des Hauses am Parkring 16, 50931 Köln. Der Mietvertrag wurde am 12. Januar 2021 geschlossen und begann am 1. März 2021. Die monatliche Nettokaltmiete betrug zuletzt EUR 930,00.\n\n2. Nach § 8 des Mietvertrages war eine Mietsicherheit in Höhe von EUR 2.400,00 zu leisten. Die Klägerin überwies diesen Betrag am 15. Februar 2021 auf das von der Beklagten benannte Kautionskonto. Die Beklagte bestätigte den Eingang der Kaution schriftlich.\n\nBeweis: Mietvertrag vom 12. Januar 2021, Anlage M 1; Überweisungsbeleg vom 15. Februar 2021, Anlage M 2; Bestätigung der Beklagten vom 18. Februar 2021, Anlage M 3.\n\nII. Beendigung des Mietverhältnisses und Rückgabe\n\n3. Die Klägerin kündigte das Mietverhältnis mit Schreiben vom 27. Februar 2026 ordentlich zum 31. Mai 2026. Die Beklagte bestätigte die Beendigung. Am 31. Mai 2026 räumte die Klägerin die Wohnung vollständig, übergab sämtliche Schlüssel und fertigte gemeinsam mit dem Hausmeister ein Übergabeprotokoll an.\n\n4. Im Übergabeprotokoll wurden keine Beschädigungen festgestellt. Die Wohnung war besenrein und entsprach dem vertragsgemäßen Zustand. Die Beklagte nahm die Schlüssel ohne Vorbehalt entgegen. Mietrückstände bestanden nicht. Auch die Betriebskostenvorauszahlungen waren bis einschließlich Mai 2026 vollständig geleistet.\n\nBeweis: Kündigungsschreiben vom 27. Februar 2026, Anlage M 4; Übergabeprotokoll vom 31. Mai 2026, Anlage M 5; Zeugnis des Hausmeisters Herrn Anton Reimann, zu laden über die Beklagte.\n\nIII. Vergebliche Aufforderungen\n\n5. Nach der Rückgabe forderte die Klägerin die Beklagte mit Schreiben vom 12. Juni 2026 und erneut mit Schreiben vom 19. August 2026 zur Abrechnung und Auszahlung der Kaution auf. Die Beklagte reagierte nicht. Eine Abrechnung wurde nicht erteilt; insbesondere machte die Beklagte keine konkreten Gegenforderungen wegen Schäden oder Mietrückständen geltend.\n\nBeweis: Aufforderungsschreiben vom 12. Juni und 19. August 2026, Anlage M 6; Kontoauszug der Klägerin, Anlage M 7.\n\n6. Die Beklagte hält die Kaution inzwischen seit fast vier Monaten nach Ende des Mietverhältnisses zurück. Ein nachvollziehbarer Sicherungszweck besteht nicht mehr. Auch eine noch offene Betriebskostenabrechnung rechtfertigt unter den gegebenen Umständen nicht die vollständige Zurückbehaltung des gesamten Kautionsbetrags.\n\nB. Rechtliche Würdigung\n\nI. Zulässigkeit der Klage\n\n7. Das Amtsgericht Köln ist für die Klage örtlich zuständig, weil sich die streitgegenständliche Wohnung im Gerichtsbezirk befindet. Die sachliche Zuständigkeit folgt aus §§ 23 Nr. 1, 71 Abs. 1 GVG, da der Wert des Streitgegenstands EUR 2.400,00 und damit EUR 10.000,00 nicht übersteigt. Die Parteien sind im Rubrum vollständig bezeichnet und prozessfähig.\n\nII. Anspruch auf Rückzahlung der Kaution\n\n8. Die Klägerin hat gegen die Beklagte einen Anspruch auf Rückzahlung der Mietsicherheit aus dem beendeten Mietverhältnis in Verbindung mit § 551 Abs. 3 BGB und den allgemeinen Vorschriften über die Rückabwicklung des Mietverhältnisses. Die Kaution dient ausschließlich der Sicherung etwaiger Ansprüche der Vermieterin aus dem Mietverhältnis. Nach Beendigung des Mietverhältnisses und Ablauf einer angemessenen Prüfungsfrist ist sie abzurechnen und der verbleibende Betrag auszuzahlen.\n\n9. Das Mietverhältnis ist beendet, die Wohnung wurde ordnungsgemäß zurückgegeben und offene Mietforderungen bestehen nicht. Die Beklagte hat im Übergabeprotokoll keine Schäden dokumentiert und bis heute keine konkrete Gegenforderung substantiiert. Damit ist der Sicherungszweck der Kaution entfallen.\n\nIII. Keine Berechtigung zur vollständigen Zurückbehaltung\n\n10. Die Beklagte kann sich nicht pauschal auf eine mögliche Betriebskostenabrechnung berufen. Selbst wenn eine Nachforderung noch nicht abschließend ausgeschlossen werden könnte, müsste die Beklagte den hierfür erforderlichen Betrag nachvollziehbar bestimmen. Eine vollständige Zurückbehaltung von EUR 2.400,00 ohne Abrechnung und ohne konkrete Forderung ist nicht gerechtfertigt.\n\n11. Die Klägerin hat der Beklagten ausreichend Gelegenheit gegeben, etwaige Ansprüche zu prüfen und abzurechnen. Seit der Rückgabe sind mehrere Monate vergangen. Die Beklagte hat die Kaution dennoch weder abgerechnet noch ausgekehrt. Die Klägerin kann daher Auszahlung des gesamten Kautionsbetrags verlangen.\n\nIV. Verzugszinsen\n\n12. Die Beklagte befindet sich jedenfalls seit dem 1. September 2026 mit der Rückzahlung in Verzug. Nach der Aufforderung vom 19. August 2026 war sie zur Abrechnung und Zahlung aufgefordert und hatte eine angemessene Frist. Der Zinsanspruch folgt aus §§ 280 Abs. 1 und 2, 286, 288 Abs. 1 BGB.\n\nC. Schlussbemerkung\n\n13. Die Beklagte hat die Kaution trotz Beendigung des Mietverhältnisses, ordnungsgemäßer Rückgabe der Wohnung und mehrfacher Aufforderung nicht abgerechnet und ausgezahlt. Die Klage ist daher begründet.\n\nKöln, den 23. September 2026\nKanzlei Heller & Born\nRechtsanwältin Dr. Eva Heller\n\nAnlagenverzeichnis\nAnlage M 1: Mietvertrag vom 12. Januar 2021\nAnlage M 2: Überweisungsbeleg der Kaution\nAnlage M 3: Bestätigung des Kautionseingangs\nAnlage M 4: Kündigungsschreiben vom 27. Februar 2026\nAnlage M 5: Übergabeprotokoll vom 31. Mai 2026\nAnlage M 6: Aufforderungsschreiben vom 12. Juni und 19. August 2026\nAnlage M 7: Kontoauszug der Klägerin"
+          },
+          {
+            "id": "fall-0009-m1",
+            "typ": "anlage",
+            "name": "M1 Mietvertrag vom 12. Januar 2021",
+            "seiten": 1
+          },
+          {
+            "id": "fall-0009-m2",
+            "typ": "anlage",
+            "name": "M2 Überweisungsbeleg der Kaution",
+            "seiten": 1
+          },
+          {
+            "id": "fall-0009-m3",
+            "typ": "anlage",
+            "name": "M3 Bestätigung des Kautionseingangs",
+            "seiten": 1
+          },
+          {
+            "id": "fall-0009-m4",
+            "typ": "anlage",
+            "name": "M4 Kündigungsschreiben vom 27. Februar 2026",
+            "seiten": 1
+          },
+          {
+            "id": "fall-0009-m5",
+            "typ": "anlage",
+            "name": "M5 Übergabeprotokoll vom 31. Mai 2026",
+            "seiten": 1
+          },
+          {
+            "id": "fall-0009-m6",
+            "typ": "anlage",
+            "name": "M6 Aufforderungsschreiben vom 12. Juni und 19. August 2026",
+            "seiten": 1
+          },
+          {
+            "id": "fall-0009-m7",
+            "typ": "anlage",
+            "name": "M7 Kontoauszug der Klägerin",
+            "seiten": 1
+          }
+        ]
+      },
+      "erwartet": {
+        "extraktion": {
+          "klaeger": [
+            {
+              "name": "Lea Morgen",
+              "art": "natuerlich",
+              "anschrift": "Lindenpfad 8, 50931 Köln"
+            }
+          ],
+          "beklagte": [
+            {
+              "name": "Rheinbogen Wohnraum GmbH",
+              "art": "juristisch",
+              "anschrift": "Uferstraße 41, 50668 Köln",
+              "vertretenDurch": "Geschäftsführer Paul Merz"
+            }
+          ],
+          "sachgebiet": "wohnraummiete",
+          "streitwertCent": 240000,
+          "gegenstand": "Rückzahlung der Mietkaution",
+          "prozessbevollmaechtigter": "Kanzlei Heller & Born, Kaiserforum 21, 50667 Köln"
+        },
+        "xjustizFelder": {
+          "Absender": "Kanzlei Heller & Born (beA-Postfach)",
+          "Übermittlungsweg": "beA, § 130a Abs. 4 Nr. 2 ZPO",
+          "Gericht": "Amtsgericht Köln",
+          "Klagepartei": "Lea Morgen",
+          "Beklagte Partei": "Rheinbogen Wohnraum GmbH",
+          "Streitwert": "2.400,00 €",
+          "Sachgebiet": "Wohnraummiete"
+        },
+        "xjustizAbweichungen": [],
+        "zuweisung": {
+          "einheitId": "ag-koeln-abt-150",
+          "richterId": "richterin-seidel",
+          "regelId": "agk-2026-4-5"
+        },
+        "auswertung": {
+          "geprueftAm": "2026-09-23T09:11:00",
+          "ergebnisse": [
+            {
+              "merkmalId": "L01",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Parteien, Gericht, Antrag und Klagegrund sind angegeben; Vertretung durch Rechtsanwältin (§§ 253, 78 ZPO).",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L02",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Anhaltspunkt für eine Befreiung von der deutschen Gerichtsbarkeit (§§ 18-20 GVG).",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L03",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Bürgerliche Rechtsstreitigkeit, ordentlicher Rechtsweg (§ 13 GVG).",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L04",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Auslandsbezug erkannt.",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L05",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Wohnraummietsache, Zuständigkeit des Amtsgerichts unabhängig vom Streitwert (§ 23 Nr. 2 a GVG). Die Klageschrift stützt sich auf § 23 Nr. 1 GVG, im Ergebnis keine Auffälligkeit.",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L06",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Die Wohnung Parkring 16, 50931 Köln liegt im Bezirk, ausschließlicher Gerichtsstand nach § 29a ZPO.",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L07",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Erstinstanzliche Zivilsache, Abteilung 150 funktionell zuständig.",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L08",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Parteien laut Rubrum parteifähig (§ 50 ZPO).",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L09",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Anhaltspunkt für fehlende Prozessfähigkeit oder Vertretungsmängel (§§ 51 ff. ZPO).",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L10",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Eigene Ansprüche der Klagepartei, kein Anhaltspunkt gegen die Prozessführungsbefugnis.",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L11",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Anhaltspunkt gegen die Klagbarkeit des Anspruchs.",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L12",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Im Verfahrensregister kein paralleles Verfahren gefunden (§ 261 Abs. 3 Nr. 1 ZPO).",
+              "grundlage": "Abgleich Verfahrensregister",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L13",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Fall des obligatorischen Schlichtungsverfahrens erkannt (§ 15a EGZPO, GüSchlG NRW).",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L14",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Anhaltspunkt erkannt, Prüfung nur auf Rüge.",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L15",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Anhaltspunkt erkannt, Prüfung nur auf Rüge.",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L16",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Anhaltspunkt erkannt, Prüfung nur auf Rüge.",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            }
+          ]
+        },
+        "formulierungsvorschlag": ""
+      }
+    },
+    {
+      "id": "fall-0010",
+      "gerichtId": "ag-koeln",
+      "vorlaeufigesAz": "150 C 1270/26",
+      "nurSimulation": false,
+      "eingang": {
+        "eingangAm": "2026-09-24T11:30:00",
+        "uebermittlungsweg": "beA",
+        "kostenvorschuss": "bezahlt",
+        "xjustizXml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xjustiz:nachricht.gds.uebermittlungSchriftgutobjekte\n    xmlns:xjustiz=\"http://www.xjustiz.de\" version=\"3.5.1\">\n  <nachrichtenkopf>\n    <erstellungszeitpunkt>2026-09-24T11:30:00</erstellungszeitpunkt>\n    <empfaenger>Amtsgericht Köln</empfaenger>\n    <uebermittlungsweg>beA</uebermittlungsweg>\n  </nachrichtenkopf>\n  <fachdaten>\n    <verfahrensdaten>\n      <aktenzeichen.vorlaeufig>150 C 1270/26</aktenzeichen.vorlaeufig>\n      <sachgebiet>Verkehrsunfall / allgemeine Zivilsache</sachgebiet>\n      <streitwert einheit=\"EUR\">3280.00</streitwert>\n    </verfahrensdaten>\n    <beteiligter rolle=\"Klaeger\">\n      <bezeichnung>Daniel Reuter</bezeichnung>\n    </beteiligter>\n    <beteiligter rolle=\"Beklagter\">\n      <bezeichnung>Mara Beck, Rheinische Allgemeine Versicherung AG</bezeichnung>\n    </beteiligter>\n  </fachdaten>\n</xjustiz:nachricht.gds.uebermittlungSchriftgutobjekte>",
+        "dokumente": [
+          {
+            "id": "fall-0010-klageschrift",
+            "typ": "klageschrift",
+            "name": "Klageschrift",
+            "seiten": 3,
+            "text": "KLAGE\nwegen Schadensersatzes aus Verkehrsunfall\n\nAn das Amtsgericht Köln\nGerichtsplatz 7\n50668 Köln\n\nKöln, den 24. September 2026\nUnser Zeichen: HB/26-096-VU\nGeschäftsnummer: wird erbeten\nSekretariat: Frau Klee\n\nIn dem Rechtsstreit\n\nHerr Daniel Reuter, Wiesenstraße 44, 50999 Köln\n– Kläger –\nProzessbevollmächtigte: Kanzlei Heller & Born, Kaiserforum 21, 50667 Köln\n\ngegen\n\n1. Frau Mara Beck, Berrenrather Weg 19, 50937 Köln\n– Beklagte zu 1 –\n2. Rheinische Allgemeine Versicherung AG, Rheinufer 88, 50668 Köln\n– Beklagte zu 2 –\n\nwegen: Schadensersatzes aus Verkehrsunfall\nvorläufiger Streitwert: EUR 3.280,00\n\nKlageanträge\n1. die Beklagten als Gesamtschuldner zu verurteilen, an den Kläger EUR 3.280,00 nebst Zinsen in Höhe von fünf Prozentpunkten über dem jeweiligen Basiszinssatz seit dem 17. September 2026 zu zahlen;\n2. die Beklagten als Gesamtschuldner zu verurteilen, den Kläger von vorgerichtlichen Rechtsanwaltskosten in Höhe von EUR 492,54 freizustellen;\n3. den Beklagten die Kosten des Rechtsstreits aufzuerlegen;\n4. das Urteil für vorläufig vollstreckbar zu erklären.\n\nFür den Fall der Anordnung des schriftlichen Vorverfahrens wird beantragt, bei Vorliegen der gesetzlichen Voraussetzungen im schriftlichen Verfahren zu entscheiden. Der Kläger erklärt sich mit einer Entscheidung durch den Einzelrichter einverstanden.\n\nA. Tatsächliche Grundlagen\n\nI. Unfallhergang\n\n1. Der Kläger befuhr am 16. August 2026 gegen 17:20 Uhr mit seinem Pkw der Marke Lento, amtliches Kennzeichen K-LR 482, die Niehler Straße in Köln in südlicher Richtung. An der Einmündung zur Riehler Allee musste er vor der rot zeigenden Lichtzeichenanlage anhalten.\n\n2. Die Beklagte zu 1 befuhr dieselbe Straße hinter dem Kläger mit ihrem Pkw der Marke Valen, amtliches Kennzeichen K-MB 731. Sie bemerkte den bereits stehenden Kläger zu spät und fuhr mit nicht angepasster Geschwindigkeit auf das Fahrzeug des Klägers auf. Der Kläger konnte den Unfall trotz eigener ordnungsgemäßer Fahrweise nicht vermeiden.\n\nII. Schadensumfang\n\n3. Durch den Aufprall wurden die hintere Stoßfängerverkleidung, die Heckklappe und die Einparkhilfe des klägerischen Fahrzeugs beschädigt. Das von der Werkstatt erstellte Gutachten weist erforderliche Reparaturkosten von EUR 2.650,00 brutto aus. Der Kläger ließ das Fahrzeug fachgerecht reparieren und beglich die Rechnung vollständig.\n\n4. Für die Erstellung des Gutachtens entstanden Kosten in Höhe von EUR 480,00. Wegen der Reparatur war das Fahrzeug außerdem für zwei Tage nicht nutzbar. Der Kläger macht hierfür eine angemessene Nutzungsausfallentschädigung von EUR 150,00 geltend. Der Gesamtschaden beläuft sich damit auf EUR 3.280,00.\n\nIII. Regulierung und Verzug\n\n5. Der Kläger zeigte den Unfall der Beklagten zu 2 als Haftpflichtversicherer der Beklagten zu 1 am 19. August 2026 an und übersandte die Schadensunterlagen. Mit Schreiben vom 5. September 2026 wurde die vollständige Regulierung bis zum 16. September 2026 verlangt. Die Beklagten zahlten nicht. Eine sachliche Begründung für die Ablehnung oder Kürzung des Anspruchs wurde nicht mitgeteilt.\n\nB. Rechtliche Würdigung\n\nI. Zulässigkeit der Klage\n\n6. Das Amtsgericht Köln ist örtlich zuständig, weil sich der Unfall im Bezirk des angerufenen Gerichts ereignet hat und die Beklagten dort ihren allgemeinen Gerichtsstand haben. Die sachliche Zuständigkeit folgt aus §§ 23 Nr. 1, 71 Abs. 1 GVG, da der Wert des Streitgegenstands EUR 3.280,00 und damit EUR 10.000,00 nicht übersteigt. Die Klage ist gegen die Unfallverursacherin und deren Haftpflichtversicherer gerichtet; beide Beklagten sind im Rubrum eindeutig bezeichnet.\n\nII. Haftung der Beklagten zu 1 aus §§ 7, 18 StVG\n\n7. Die Beklagte zu 1 haftet dem Kläger gemäß §§ 7 Abs. 1, 18 Abs. 1 StVG. Der Unfall ereignete sich beim Betrieb des von ihr geführten Kraftfahrzeugs. Das Fahrzeug des Klägers wurde beschädigt. Der Schaden ist durch den Auffahrunfall verursacht worden.\n\n8. Die Beklagte zu 1 hat den Unfall schuldhaft verursacht. Wer mit einem Kraftfahrzeug auf ein an einer roten Ampel stehendes Fahrzeug auffährt, hat regelmäßig gegen § 4 Abs. 1 StVO und gegen die allgemeine Sorgfaltspflicht des § 1 Abs. 2 StVO verstoßen. Anhaltspunkte für ein unabwendbares Ereignis oder ein Mitverschulden des Klägers bestehen nicht. Der Kläger stand ordnungsgemäß vor der Lichtzeichenanlage.\n\nIII. Direkter Anspruch gegen die Beklagte zu 2\n\n9. Die Beklagte zu 2 haftet als Haftpflichtversicherer gemäß § 115 Abs. 1 Satz 1 Nr. 1 VVG unmittelbar neben der Beklagten zu 1. Das versicherte Fahrzeug war am Unfalltag bei der Beklagten zu 2 haftpflichtversichert. Die gesamtschuldnerische Haftung ergibt sich aus §§ 421 ff. BGB.\n\nIV. Höhe des Schadensersatzes\n\n10. Der Kläger kann nach § 249 Abs. 2 Satz 1 BGB den zur Wiederherstellung erforderlichen Geldbetrag verlangen. Die Reparaturkosten von EUR 2.650,00 entsprechen dem Gutachten und der tatsächlich durchgeführten Reparatur. Die Kosten des Sachverständigen in Höhe von EUR 480,00 waren zur zweckentsprechenden Feststellung des Schadens erforderlich und stehen in einem angemessenen Verhältnis zur Schadenshöhe.\n\n11. Für die zweitägige Reparaturdauer steht dem Kläger außerdem Nutzungsausfall in Höhe von EUR 150,00 zu. Er war auf das Fahrzeug angewiesen und konnte es während der Reparatur nicht nutzen. Die geltend gemachte Pauschale ist nach Fahrzeugklasse und Ausfallzeit angemessen.\n\nV. Vorgerichtliche Rechtsanwaltskosten und Zinsen\n\n12. Die vorgerichtliche Beauftragung der Prozessbevollmächtigten war angesichts der Schadenshöhe und der ausbleibenden Regulierung erforderlich. Die Beklagten haben den Kläger von den angefallenen Rechtsanwaltskosten in Höhe von EUR 492,54 freizustellen. Der Zinsanspruch auf die Hauptforderung folgt aus §§ 280 Abs. 1 und 2, 286, 288 Abs. 1 BGB, nachdem die gesetzte Regulierungsfrist am 16. September 2026 abgelaufen war.\n\nC. Schlussbemerkung\n\n13. Der Unfall wurde allein durch den verspäteten Bremsvorgang der Beklagten zu 1 verursacht. Der Schaden ist durch Gutachten und Rechnungen belegt; die Beklagten haben trotz vollständiger Unterlagen nicht reguliert. Der Klage ist daher stattzugeben.\n\nKöln, den 24. September 2026\nKanzlei Heller & Born\nRechtsanwältin Dr. Eva Heller"
+          }
+        ]
+      },
+      "erwartet": {
+        "extraktion": {
+          "klaeger": [
+            {
+              "name": "Daniel Reuter",
+              "art": "natuerlich",
+              "anschrift": "Wiesenstraße 44, 50999 Köln"
+            }
+          ],
+          "beklagte": [
+            {
+              "name": "Mara Beck",
+              "art": "natuerlich",
+              "anschrift": "Berrenrather Weg 19, 50937 Köln"
+            },
+            {
+              "name": "Rheinische Allgemeine Versicherung AG",
+              "art": "juristisch",
+              "anschrift": "Rheinufer 88, 50668 Köln"
+            }
+          ],
+          "sachgebiet": "allgemein",
+          "streitwertCent": 328000,
+          "gegenstand": "Schadensersatz aus Verkehrsunfall",
+          "prozessbevollmaechtigter": "Kanzlei Heller & Born, Kaiserforum 21, 50667 Köln"
+        },
+        "xjustizFelder": {
+          "Absender": "Kanzlei Heller & Born (beA-Postfach)",
+          "Übermittlungsweg": "beA, § 130a Abs. 4 Nr. 2 ZPO",
+          "Gericht": "Amtsgericht Köln",
+          "Klagepartei": "Daniel Reuter",
+          "Beklagte Partei": "Mara Beck, Rheinische Allgemeine Versicherung AG",
+          "Streitwert": "3.280,00 €",
+          "Sachgebiet": "Verkehrsunfall / allgemeine Zivilsache"
+        },
+        "xjustizAbweichungen": [],
+        "zuweisung": {
+          "einheitId": "ag-koeln-abt-150",
+          "richterId": "richterin-seidel",
+          "regelId": "agk-2026-4-5"
+        },
+        "auswertung": {
+          "geprueftAm": "2026-09-24T11:31:00",
+          "ergebnisse": [
+            {
+              "merkmalId": "L01",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Parteien, Gericht, Antrag und Klagegrund sind angegeben; Vertretung durch Rechtsanwältin (§§ 253, 78 ZPO).",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L02",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Anhaltspunkt für eine Befreiung von der deutschen Gerichtsbarkeit (§§ 18-20 GVG).",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L03",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Bürgerliche Rechtsstreitigkeit, ordentlicher Rechtsweg (§ 13 GVG).",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L04",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Auslandsbezug erkannt.",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L05",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Streitwert laut Antrag 3.280,00 €, der Freistellungsantrag zählt als Nebenforderung nicht mit (§ 4 ZPO), unter 10.000 € (§ 23 Nr. 1 GVG).",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L06",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Unfallort Köln (§ 32 ZPO, § 20 StVG), Beklagte mit Wohnsitz bzw. Sitz in Köln (§§ 12, 13, 17 ZPO).",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L07",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Erstinstanzliche Zivilsache, Abteilung 150 funktionell zuständig.",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L08",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Parteien laut Rubrum parteifähig (§ 50 ZPO).",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L09",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Anhaltspunkt für fehlende Prozessfähigkeit oder Vertretungsmängel (§§ 51 ff. ZPO).",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L10",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Eigene Ansprüche der Klagepartei, kein Anhaltspunkt gegen die Prozessführungsbefugnis.",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L11",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Anhaltspunkt gegen die Klagbarkeit des Anspruchs.",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L12",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Im Verfahrensregister kein paralleles Verfahren gefunden (§ 261 Abs. 3 Nr. 1 ZPO).",
+              "grundlage": "Abgleich Verfahrensregister",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L13",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Fall des obligatorischen Schlichtungsverfahrens erkannt (§ 15a EGZPO, GüSchlG NRW).",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L14",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Anhaltspunkt erkannt, Prüfung nur auf Rüge.",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L15",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Anhaltspunkt erkannt, Prüfung nur auf Rüge.",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L16",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Anhaltspunkt erkannt, Prüfung nur auf Rüge.",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            }
+          ]
+        },
+        "formulierungsvorschlag": ""
+      }
+    },
+    {
+      "id": "fall-0011",
+      "gerichtId": "ag-koeln",
+      "vorlaeufigesAz": "150 C 1280/26",
+      "nurSimulation": false,
+      "eingang": {
+        "eingangAm": "2026-09-25T16:45:00",
+        "uebermittlungsweg": "beA",
+        "kostenvorschuss": "bezahlt",
+        "xjustizXml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xjustiz:nachricht.gds.uebermittlungSchriftgutobjekte\n    xmlns:xjustiz=\"http://www.xjustiz.de\" version=\"3.5.1\">\n  <nachrichtenkopf>\n    <erstellungszeitpunkt>2026-09-25T16:45:00</erstellungszeitpunkt>\n    <empfaenger>Amtsgericht Köln</empfaenger>\n    <uebermittlungsweg>beA</uebermittlungsweg>\n  </nachrichtenkopf>\n  <fachdaten>\n    <verfahrensdaten>\n      <aktenzeichen.vorlaeufig>150 C 1280/26</aktenzeichen.vorlaeufig>\n      <sachgebiet>Amtshaftung / allgemeine Zivilsache</sachgebiet>\n      <streitwert einheit=\"EUR\">8500.00</streitwert>\n    </verfahrensdaten>\n    <beteiligter rolle=\"Klaeger\">\n      <bezeichnung>Nora Stein</bezeichnung>\n    </beteiligter>\n    <beteiligter rolle=\"Beklagter\">\n      <bezeichnung>M. K.</bezeichnung>\n    </beteiligter>\n  </fachdaten>\n</xjustiz:nachricht.gds.uebermittlungSchriftgutobjekte>",
+        "dokumente": [
+          {
+            "id": "fall-0011-klageschrift",
+            "typ": "klageschrift",
+            "name": "Klageschrift",
+            "seiten": 3,
+            "text": "KLAGE\nwegen Schadensersatzes wegen Verletzung von Amtspflichten\n\nAn das Amtsgericht Köln\nGerichtsplatz 7\n50668 Köln\n\nKöln, den 25. September 2026\n\nIn dem Rechtsstreit\n\nFrau Nora Stein, Venloer Straße 215, 50823 Köln\n– Klägerin –\nProzessbevollmächtigte: Kanzlei Heller & Born, Kaiserforum 21, 50667 Köln\n\ngegen\n\nHerrn M. K., zuständiger Sachbearbeiter der Stadt Köln\n– Beklagter –\n\nwegen: Schadensersatzes wegen Verletzung von Amtspflichten\nvorläufiger Streitwert: EUR 8.500,00\n\nKlageanträge\nDer Beklagte wird verurteilt, den entstandenen Schaden zu ersetzen.\n\nFür den Fall der Anordnung des schriftlichen Vorverfahrens wird beantragt, die gesetzlichen Folgen eintreten zu lassen.\n\nDie sachliche Zuständigkeit des angerufenen Gerichts folgt aus der besonderen Zuständigkeitsregel für Ansprüche wegen der Verletzung von Amtspflichten. Der geltend gemachte Anspruch richtet sich persönlich gegen den als zuständigen Sachbearbeiter bezeichneten Beklagten wegen der Überschreitung seiner amtlichen Befugnisse und der pflichtwidrigen Unterlassung gebotener Amtshandlungen.\n\nA. Tatsächliche Grundlagen\n\nI. Geschehen am 14. August 2026\n\n1. Die Klägerin ging am 14. August 2026 gegen 8:10 Uhr auf dem Gehweg der Worringer Allee in Köln in Richtung Innenstadt. In Höhe der dort eingerichteten Baustelle war der öffentliche Gehweg durch Absperrgitter verengt. Ein Teil der Absicherung war umgestürzt und ragte in den Gehbereich hinein. Eine Beleuchtung oder ein sonstiger Warnhinweis war nicht vorhanden.\n\n2. Die Klägerin stürzte über das in den Gehweg ragende Absperrelement. Dabei beschädigte sie ihr Fahrrad und stürzte auf eine mitgeführte Tasche. Außerdem zog sie sich schmerzhafte Verletzungen am rechten Handgelenk und am Knie zu. Die Klägerin musste noch am selben Tag ärztlich behandelt werden.\n\nII. Kenntnis der zuständigen Stelle\n\n3. Die Klägerin hatte die beschädigte Absperrung bereits am Vorabend telefonisch bei der auf dem Baustellenschild angegebenen städtischen Stelle gemeldet. Am Morgen des Unfalltages war die Absperrung weiterhin nicht gesichert. Die Baustelle wurde von Beschäftigten der Stadt Köln kontrolliert und im Rahmen der öffentlichen Verkehrssicherung betreut. Der Beklagte war als zuständiger Sachbearbeiter mit der Überwachung der Baustelle und der Veranlassung der erforderlichen Sicherungsmaßnahmen betraut.\n\n4. Nach dem Unfall verständigte die Klägerin den Rettungsdienst und ließ die Unfallstelle fotografieren. Die Mitarbeiter der Stadt Köln entfernten das umgestürzte Gitter erst im weiteren Verlauf des Vormittags. Eine schriftliche Schadensmeldung der Klägerin vom 21. August 2026 blieb ohne abschließende Antwort.\n\nIII. Schaden\n\n5. Durch den Sturz entstanden der Klägerin Kosten für die Reparatur des Fahrrads, für beschädigte persönliche Gegenstände und für die medizinische Behandlung. Die genaue Schadensaufstellung wird nach vollständiger Zusammenstellung der Belege vorgelegt. Die Klägerin behält sich eine Ergänzung und Bezifferung des Antrags vor.\n\nB. Rechtliche Würdigung\n\nI. Verantwortlichkeit des Beklagten\n\n6. Der Beklagte war als zuständiger Sachbearbeiter der Stadt Köln mit der Kontrolle und Sicherung des öffentlichen Gehwegs und der Baustelle betraut. Zu den ihm obliegenden Amtspflichten gehörte es, erkennbare Gefahrenstellen zu beseitigen oder so abzusichern, dass Fußgänger vor Schäden geschützt werden. Ein umgestürztes Absperrgitter, das in den Gehweg hineinragt, stellt eine erhebliche und vermeidbare Gefahrenquelle dar.\n\n7. Der Beklagte hatte aufgrund der vorherigen Meldung und der erkennbaren Situation Anlass, die Absperrung zu kontrollieren und wieder ordnungsgemäß aufstellen zu lassen. Dies unterließ er pflichtwidrig. Die Klägerin konnte die Gefahrenstelle bei den gegebenen Licht- und Verkehrsverhältnissen nicht rechtzeitig erkennen.\n\nII. Amtshaftungsanspruch\n\n8. Der Beklagte haftet der Klägerin persönlich aus § 839 Abs. 1 BGB auf Ersatz des durch die Verletzung seiner Amtspflichten entstandenen Schadens. Die Verkehrssicherungspflicht wurde im Rahmen hoheitlicher Aufgaben wahrgenommen. Durch die pflichtwidrige Unterlassung der gebotenen Sicherungsmaßnahme wurde die Klägerin an Körper, Gesundheit und Eigentum verletzt. Zwischen der Pflichtverletzung und den eingetretenen Schäden besteht ein unmittelbarer ursächlicher Zusammenhang. Der Beklagte überschritt dabei die ihm übertragenen amtlichen Befugnisse und unterließ trotz konkreter Kenntnis die gebotene Amtshandlung.\n\n9. Die Klägerin hat sich selbst ordnungsgemäß verhalten. Sie benutzte den freigegebenen Gehweg und musste nicht damit rechnen, dass ein Absperrgitter in den Laufweg hineinragt. Ein anspruchsminderndes Mitverschulden liegt nicht vor.\n\nIII. Ersatzfähige Schäden\n\n10. Zu ersetzen sind die erforderlichen Aufwendungen zur Wiederherstellung des Fahrrads, der Wert der beschädigten Gegenstände, die unfallbedingten Behandlungskosten sowie weitere durch die Verletzung verursachte Nachteile. Die Klägerin wird die Schadenspositionen nach Eingang sämtlicher Rechnungen und Bescheinigungen zusammenstellen.\n\n11. Die Klägerin hat den Beklagten außergerichtlich zur Regulierung aufgefordert. Eine vollständige Regulierung ist nicht erfolgt. Der Beklagte ist daher auch zum Ersatz der weiteren erforderlichen Rechtsverfolgungskosten verpflichtet.\n\nC. Schlussbemerkung\n\n12. Die Klägerin wurde durch eine nicht gesicherte Gefahrenstelle auf einem öffentlichen Gehweg verletzt und erlitt hierdurch Sach- und Gesundheitsschäden. Der Beklagte hat trotz Kenntnis der Gefahrenlage keine ausreichenden Sicherungsmaßnahmen getroffen. Die Klägerin hält an ihren Anträgen fest.\n\nKöln, den 25. September 2026\nKanzlei Heller & Born\nRechtsanwältin Dr. Eva Heller"
+          }
+        ]
+      },
+      "erwartet": {
+        "extraktion": {
+          "klaeger": [
+            {
+              "name": "Nora Stein",
+              "art": "natuerlich",
+              "anschrift": "Venloer Straße 215, 50823 Köln"
+            }
+          ],
+          "beklagte": [
+            {
+              "name": "M. K.",
+              "art": "natuerlich"
+            }
+          ],
+          "sachgebiet": "allgemein",
+          "streitwertCent": 850000,
+          "gegenstand": "Schadensersatz wegen Amtspflichtverletzung",
+          "prozessbevollmaechtigter": "Kanzlei Heller & Born, Kaiserforum 21, 50667 Köln"
+        },
+        "xjustizFelder": {
+          "Absender": "Kanzlei Heller & Born (beA-Postfach)",
+          "Übermittlungsweg": "beA, § 130a Abs. 4 Nr. 2 ZPO",
+          "Gericht": "Amtsgericht Köln",
+          "Klagepartei": "Nora Stein",
+          "Beklagte Partei": "M. K.",
+          "Streitwert": "8.500,00 €",
+          "Sachgebiet": "Amtshaftung / allgemeine Zivilsache"
+        },
+        "xjustizAbweichungen": [],
+        "zuweisung": {
+          "einheitId": "ag-koeln-abt-150",
+          "richterId": "richterin-seidel",
+          "regelId": "agk-2026-4-5"
+        },
+        "auswertung": {
+          "geprueftAm": "2026-09-25T16:46:00",
+          "ergebnisse": [
+            {
+              "merkmalId": "L01",
+              "status": "mangel",
+              "relevanz": "hoch",
+              "text": "Die beklagte Partei ist nur mit Initialen und ohne ladungsfähige Anschrift bezeichnet (§ 253 Abs. 2 Nr. 1 ZPO). Der Antrag ist nicht beziffert, die Schadensaufstellung soll erst nachgereicht werden (§ 253 Abs. 2 Nr. 2 ZPO).",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": [
+                {
+                  "dokumentId": "fall-0011-klageschrift",
+                  "zitat": "Herrn M. K., zuständiger Sachbearbeiter der Stadt Köln"
+                },
+                {
+                  "dokumentId": "fall-0011-klageschrift",
+                  "zitat": "Der Beklagte wird verurteilt, den entstandenen Schaden zu ersetzen."
+                }
+              ]
+            },
+            {
+              "merkmalId": "L02",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Anhaltspunkt für eine Befreiung von der deutschen Gerichtsbarkeit (§§ 18-20 GVG).",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L03",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Amtshaftung, ordentlicher Rechtsweg (Art. 34 Satz 3 GG).",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L04",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Auslandsbezug erkannt.",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L05",
+              "status": "mangel",
+              "relevanz": "hoch",
+              "text": "Die Klage macht Ansprüche gegen einen Beamten wegen Überschreitung amtlicher Befugnisse und pflichtwidriger Unterlassung von Amtshandlungen geltend. Dafür kommt unabhängig vom Streitwert eine ausschließliche Zuständigkeit des Landgerichts in Betracht (§ 71 Abs. 2 Nr. 2 GVG), eingereicht wurde beim Amtsgericht.",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": [
+                {
+                  "dokumentId": "fall-0011-klageschrift",
+                  "zitat": "An das Amtsgericht Köln"
+                },
+                {
+                  "dokumentId": "fall-0011-klageschrift",
+                  "zitat": "Die sachliche Zuständigkeit des angerufenen Gerichts folgt aus der besonderen Zuständigkeitsregel für Ansprüche wegen der Verletzung von Amtspflichten."
+                }
+              ]
+            },
+            {
+              "merkmalId": "L06",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Unfallort Worringer Allee in Köln (§ 32 ZPO).",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L07",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Erstinstanzliche Zivilsache, Abteilung 150 funktionell zuständig.",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L08",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Parteien laut Rubrum parteifähig (§ 50 ZPO).",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L09",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Anhaltspunkt für fehlende Prozessfähigkeit oder Vertretungsmängel (§§ 51 ff. ZPO).",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L10",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Eigene Ansprüche der Klagepartei, kein Anhaltspunkt gegen die Prozessführungsbefugnis.",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L11",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Anhaltspunkt gegen die Klagbarkeit des Anspruchs.",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L12",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Im Verfahrensregister kein paralleles Verfahren gefunden (§ 261 Abs. 3 Nr. 1 ZPO).",
+              "grundlage": "Abgleich Verfahrensregister",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L13",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Fall des obligatorischen Schlichtungsverfahrens erkannt (§ 15a EGZPO, GüSchlG NRW).",
+              "grundlage": "Auswertung Klageschrift",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L14",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Anhaltspunkt erkannt, Prüfung nur auf Rüge.",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L15",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Anhaltspunkt erkannt, Prüfung nur auf Rüge.",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            },
+            {
+              "merkmalId": "L16",
+              "status": "erfuellt",
+              "relevanz": "niedrig",
+              "text": "Kein Anhaltspunkt erkannt, Prüfung nur auf Rüge.",
+              "grundlage": "Regelprüfung",
+              "fundstellen": []
+            }
+          ]
+        },
+        "formulierungsvorschlag": "Hinweis gemäß § 139 ZPO\n1. Die beklagte Partei ist nur mit Initialen bezeichnet, eine ladungsfähige Anschrift fehlt. Die Klägerin wird gebeten, den vollständigen Namen und eine ladungsfähige Anschrift mitzuteilen (§ 253 Abs. 2 Nr. 1 ZPO).\n2. Der Klageantrag ist nicht beziffert. Es wird angeregt, den geltend gemachten Schaden zu beziffern (§ 253 Abs. 2 Nr. 2 ZPO).\n3. Für Ansprüche gegen Beamte wegen Überschreitung ihrer amtlichen Befugnisse oder wegen pflichtwidriger Unterlassung von Amtshandlungen dürfte ausschließlich das Landgericht zuständig sein (§ 71 Abs. 2 Nr. 2 GVG). Es wird Gelegenheit gegeben, einen Verweisungsantrag nach § 281 ZPO zu stellen.\n4. Ergänzend wird darauf hingewiesen, dass bei Amtspflichtverletzungen in Ausübung hoheitlicher Tätigkeit die Verantwortlichkeit nach Art. 34 Satz 1 GG grundsätzlich die Körperschaft trifft, in deren Dienst der Amtsträger steht.\nFrist zur Stellungnahme zwei Wochen."
       }
     }
   ]

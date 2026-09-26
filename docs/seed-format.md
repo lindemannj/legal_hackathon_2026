@@ -9,7 +9,7 @@ Ein JSON-Dokument (UTF-8, Endung .txt). Validiert durch das zod-Schema in `src/t
 | `gerichte[]` | `id`, `art` (`AG`/`LG`), `name`, `bezirk`. |
 | `einheiten[]` | Abteilungen und Kammern: `id`, `gerichtId`, `bezeichnung`, `zustaendigkeit`. |
 | `benutzer[]` | `id`, `kennung`, `name`, `amtsbezeichnung`, `rolle` (`richter`/`geschaeftsstelle`/`admin`), `einheitIds[]`, `demoKonto`. Keine Passwörter. |
-| `gvpRegeln[]` | `id`, `gerichtId`, `einheitId`, `regelText`, `bedingung` (`sachgebiet`, optional `beklagteAnfangsbuchstaben` wie `"A-K"`). |
+| `gvpRegeln[]` | `id`, `gerichtId`, `einheitId`, `regelText`, optional `kurzText` (Zuständigkeitsblock) und `vorrang` (kleiner = vorrangig), `bedingung` (`sachgebiet`, optional `sachgebieteZusaetzlich[]`, `eingangsnummerEndziffer`, `beklagteAnfangsbuchstaben` wie `"A-K"`). |
 | `merkmale[]` | 16 Prüfpunkte nach Lorenz: `id` (`L01` … `L16`), `nr`, `kategorie` (`allgemein`/`hindernis`), `titel`, `norm`, `quelle` (`regel`/`ki`/`manuell`), `beschreibung`, `gerichte[]`, `nurAufRuege`, `aktiv`. |
 | `verfahrensregister[]` | `az`, `gerichtId`, `parteien`, `status`, optional `zugestelltAm` (ISO-Datum). |
 | `faelle[]` | siehe unten |
