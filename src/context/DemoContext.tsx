@@ -106,7 +106,10 @@ interface DemoContextValue {
   hydriert: boolean;
 }
 
-const Ctx = createContext<DemoContextValue | null>(null);
+// Über Hot-Reloads hinweg dieselbe Context-Instanz behalten, sonst verliert
+// ein neu geladenes Modul die Verbindung zum bestehenden Provider.
+const g = globalThis as { __klarisDemoCtx?: React.Context<DemoContextValue | null> };
+const Ctx = (g.__klarisDemoCtx ??= createContext<DemoContextValue | null>(null));
 
 export function DemoProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<DemoState>(() => initialState());
