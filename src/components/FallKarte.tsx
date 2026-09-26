@@ -2,7 +2,7 @@ import { ChevronDown, ChevronUp, Download, Info } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { toast } from "sonner";
 
-import { DokumentAnsicht } from "@/components/DokumentAnsicht";
+import { DokumentAnsicht, type Sprung } from "@/components/DokumentAnsicht";
 import { PruefDashboard } from "@/components/PruefDashboard";
 import {
   BeanstandungDialog,
@@ -65,11 +65,9 @@ export function FallKarte({ fall, offen, onToggle, registerRef }: Props) {
         ? "bg-warn"
         : "bg-err";
 
-  function imDokumentZeigen(punktId: string) {
-    setAktiverPunkt(punktId);
-    const el = document.getElementById(`marker-${punktId}`);
-    el?.scrollIntoView({ behavior: "smooth", block: "center" });
-    window.setTimeout(() => setAktiverPunkt(null), 1500);
+  const [sprung, setSprung] = useState<Sprung | null>(null);
+  function imDokumentZeigen(punktId: string, index: number) {
+    setSprung({ punktId, index, nonce: Date.now() });
   }
 
   return (
@@ -99,7 +97,7 @@ export function FallKarte({ fall, offen, onToggle, registerRef }: Props) {
             {bilanz.mangel > 0 ? (
               <StatusChip
                 status="mangel"
-                text={`${bilanz.mangel} ${bilanz.mangel === 1 ? "Mangel" : "Mängel"}`}
+                text={`${bilanz.mangel} ${bilanz.mangel === 1 ? "Auffälligkeit" : "Auffälligkeiten"}`}
               />
             ) : null}
             {bilanz.pruefen > 0 ? (
@@ -108,7 +106,12 @@ export function FallKarte({ fall, offen, onToggle, registerRef }: Props) {
             {bilanz.offen > 0 ? (
               <StatusChip status="offen" text={`${bilanz.offen} offen`} />
             ) : null}
-            <StatusChip status="erfuellt" text={`${bilanz.erfuellt} erfüllt`} />
+            <StatusChip status="erfuellt" text={`${bilanz.erfuellt} unauffällig`} />
+            {fall.kostenvorschuss === "offen" ? (
+              <span className="inline-flex items-center rounded border border-warn px-2 py-0.5 text-[13px] font-medium text-warn">
+                Kostenvorschuss offen
+              </span>
+            ) : null}
 
             <Popover>
               <PopoverTrigger asChild>
@@ -187,6 +190,7 @@ export function FallKarte({ fall, offen, onToggle, registerRef }: Props) {
               fall={fall}
               ergebnisse={ergebnisse}
               aktiverPunkt={aktiverPunkt}
+              sprung={sprung}
               onMarkerKlick={(id) => {
                 setAktiverPunkt(id);
                 window.setTimeout(() => setAktiverPunkt(null), 1500);

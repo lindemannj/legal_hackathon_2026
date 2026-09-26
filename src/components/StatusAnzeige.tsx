@@ -7,7 +7,13 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
-import { quelleLabel, statusLabel, type PruefStatus, type Quelle } from "@/types/domain";
+import {
+  quelleLabel,
+  statusLabel,
+  vorauswertungHinweis,
+  type PruefStatus,
+  type Quelle,
+} from "@/types/domain";
 import { cn } from "@/lib/utils";
 
 interface Darstellung {
@@ -77,6 +83,7 @@ export function StatusChip({
   const Icon = statusDarstellung[status].icon;
   return (
     <span
+      title={vorauswertungHinweis}
       className={cn(
         "inline-flex items-center gap-1.5 rounded px-2 py-0.5 text-[13px] font-medium",
         statusDarstellung[status].chip,
