@@ -180,7 +180,7 @@ export function BeanstandungDialog({
                     }
                   />
                   <Label htmlFor={`m-${e.punkt.id}`} className="font-normal">
-                    Nr. {e.punkt.nr} · {e.punkt.titel} ({e.punkt.norm})
+                    {e.punkt.id} · {e.punkt.titel}{e.punkt.norm ? ` (${e.punkt.norm})` : ""}
                   </Label>
                 </li>
               ))}
