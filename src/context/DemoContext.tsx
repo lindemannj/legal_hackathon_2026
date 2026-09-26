@@ -9,13 +9,8 @@ import {
 } from "react";
 
 import { DemoCtx } from "./demoCtx";
-import type { EigeneBewertung } from "@/lib/pruefung";
-import {
-  AuthService,
-  FallService,
-  PruefService,
-} from "@/services/mockBackend";
-import type { Fall, Nutzer, PruefStatus } from "@/types/domain";
+import { AuthService, FallService } from "@/services/mockBackend";
+import type { Fall, Nutzer } from "@/types/domain";
 
 export const PRODUKTNAME = "Klaris";
 
@@ -40,7 +35,6 @@ export interface FallZustand {
   version: number;
   ablage: FallAblage;
   sichtbar: boolean;
-  eigene: Record<string, EigeneBewertung>;
   verlauf: VerlaufEintrag[];
   verfahrensart?: string | undefined;
   beanstandung?: Beanstandung | undefined;
@@ -62,7 +56,6 @@ function startZustand(fall: Fall): FallZustand {
     version: 1,
     ablage: "eingang",
     sichtbar: !fall.nurSimulation,
-    eigene: {},
     verlauf: [
       { zeit: fall.eingang, text: `Eingang über ${fall.uebermittlungsweg}` },
       {
@@ -86,7 +79,7 @@ function initialState(): DemoState {
   };
 }
 
-const STORAGE_KEY = "klaris-demo-v4";
+const STORAGE_KEY = "klaris-demo-v5";
 
 interface DemoContextValue {
   state: DemoState;
@@ -96,7 +89,6 @@ interface DemoContextValue {
   zuruecksetzen: () => void;
   meineFaelle: (ablage: FallAblage) => Fall[];
   zustand: (fallId: string) => FallZustand;
-  bewerten: (fallId: string, punktId: string, bewertung: EigeneBewertung | null) => void;
   zustellungVerfuegen: (fallId: string, verfahrensart: string) => void;
   beanstanden: (fallId: string, beanstandung: Beanstandung) => void;
   rueckgaengig: (fallId: string) => void;
@@ -171,26 +163,6 @@ export function DemoProvider({ children }: { children: ReactNode }) {
         .sort((a, b) => b.eingang.localeCompare(a.eingang));
     },
     zustand,
-    bewerten: (fallId, punktId, bewertung) => {
-      const z = zustand(fallId);
-      const eigene = { ...z.eigene };
-      const titel =
-        PruefService.merkmal(punktId)?.titel ?? punktId;
-      if (bewertung) eigene[punktId] = bewertung;
-      else delete eigene[punktId];
-      patch(fallId, {
-        eigene,
-        verlauf: [
-          ...z.verlauf,
-          {
-            zeit: jetzt(),
-            text: bewertung
-              ? `Eigene Bewertung zu „${titel}“: ${labelStatus(bewertung.status)}`
-              : `Eigene Bewertung zu „${titel}“ zurückgenommen`,
-          },
-        ],
-      });
-    },
     zustellungVerfuegen: (fallId, verfahrensart) => {
       const z = zustand(fallId);
       patch(fallId, {
@@ -263,10 +235,6 @@ export function DemoProvider({ children }: { children: ReactNode }) {
   };
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
-}
-
-function labelStatus(s: PruefStatus): string {
-  return s === "erfuellt" ? "erfüllt" : s === "mangel" ? "nicht erfüllt" : "offen";
 }
 
 export function useDemo(): DemoContextValue {
