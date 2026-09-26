@@ -17,14 +17,12 @@ import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { kategorien, statusLabel, type Fall, type PruefStatus } from "@/types/domain";
-import { GvpService, PruefService } from "@/services/mockBackend";
-const spruchkoerperById = (id: string) => GvpService.einheit(id);
+import { PruefService, RegisterService } from "@/services/mockBackend";
 const checkliste = PruefService.checkliste();
 const aktivePruefpunkte = PruefService.aktive();
 import { useDemo } from "@/context/DemoContext";
-import { datumZeit } from "@/lib/format";
+import { datum, datumZeit } from "@/lib/format";
 import type { Bilanz, Pruefergebnis } from "@/lib/pruefung";
-import { oertlicheZustaendigkeit, sachlicheZustaendigkeit } from "@/lib/zustaendigkeit";
 import { cn } from "@/lib/utils";
 
 interface Props {
@@ -50,9 +48,6 @@ export function PruefDashboard({
   const [alleHundert, setAlleHundert] = useState(false);
   const z = zustand(fall.id);
 
-  const sachlich = sachlicheZustaendigkeit(fall.streitwert, fall.sachgebiet);
-  const oertlich = oertlicheZustaendigkeit(fall.ortBeklagte, fall.gerichtstyp);
-  const sk = spruchkoerperById(fall.spruchkoerperId);
   const sachlichBefund = ergebnisse.find((e) => e.punkt.id === "m-008")!;
   const oertlichBefund = ergebnisse.find((e) => e.punkt.id === "m-009")!;
 
@@ -110,9 +105,7 @@ export function PruefDashboard({
             <div className="text-sm">
               <p className="font-medium">Sachlich</p>
               <p>
-                {sachlichBefund.status === "mangel"
-                  ? sachlichBefund.begruendung
-                  : `${sachlich.satz} (${sachlich.norm})`}
+{sachlichBefund.begruendung}
               </p>
             </div>
           </li>
@@ -121,9 +114,7 @@ export function PruefDashboard({
             <div className="text-sm">
               <p className="font-medium">Örtlich</p>
               <p>
-                {oertlichBefund.status === "mangel"
-                  ? oertlichBefund.begruendung
-                  : `${oertlich.satz} (${oertlich.norm})`}
+{oertlichBefund.begruendung}
               </p>
             </div>
           </li>
@@ -132,7 +123,7 @@ export function PruefDashboard({
             <div className="text-sm">
               <p className="font-medium">Intern</p>
               <p>
-                {sk?.bezeichnung} nach {sk?.regel.split(":")[0]}
+                {fall.einheit} nach {fall.regelText.split(" · ")[0]?.split(":")[0]}
               </p>
             </div>
           </li>
@@ -304,6 +295,7 @@ function PunktZeile({
               Im Dokument zeigen
             </Button>
           ) : null}
+          {ergebnis.verweisAz ? <RegisterVerweis az={ergebnis.verweisAz} /> : null}
 
           <div>
             <p className="mb-1 text-xs font-medium text-muted-foreground">
@@ -349,3 +341,36 @@ function PunktZeile({
 }
 
 export { StatusChip };
+
+function RegisterVerweis({ az }: { az: string }) {
+  const [offen, setOffen] = useState(false);
+  const eintrag = offen ? RegisterService.eintrag(az) : undefined;
+  return (
+    <div>
+      <Button variant="link" size="sm" className="h-auto p-0" onClick={() => setOffen((o) => !o)}>
+        {offen ? "Registereintrag ausblenden" : `Verfahren ${az} im Register ansehen`}
+      </Button>
+      {offen ? (
+        <div className="mt-2 rounded border border-border bg-muted px-3 py-2 text-xs">
+          {eintrag ? (
+            <dl className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1">
+              <dt className="text-muted-foreground">Aktenzeichen</dt>
+              <dd className="tabular-nums">{eintrag.aktenzeichen}</dd>
+              <dt className="text-muted-foreground">Gericht</dt>
+              <dd>{eintrag.gericht}</dd>
+              <dt className="text-muted-foreground">Parteien</dt>
+              <dd>{eintrag.parteien}</dd>
+              <dt className="text-muted-foreground">Status</dt>
+              <dd>
+                {eintrag.status}
+                {eintrag.zugestelltAm ? `, zugestellt am ${datum(eintrag.zugestelltAm)}` : ""}
+              </dd>
+            </dl>
+          ) : (
+            <p>Kein Eintrag im Verfahrensregister gefunden.</p>
+          )}
+        </div>
+      ) : null}
+    </div>
+  );
+}

@@ -1,8 +1,6 @@
 import { jsPDF } from "jspdf";
 
 import type { Fall } from "@/types/domain";
-import { GvpService } from "@/services/mockBackend";
-const spruchkoerperById = (id: string) => GvpService.einheit(id);
 import { datumZeit, euro } from "@/lib/format";
 import type { Pruefergebnis } from "@/lib/pruefung";
 
@@ -11,7 +9,6 @@ const BREITE = 210 - RAND * 2;
 
 export function exportiereMarkiertesPdf(fall: Fall, ergebnisse: Pruefergebnis[]) {
   const doc = new jsPDF({ unit: "mm", format: "a4" });
-  const sk = spruchkoerperById(fall.spruchkoerperId);
   let y = RAND;
 
   const zeile = (
@@ -38,8 +35,8 @@ export function exportiereMarkiertesPdf(fall: Fall, ergebnisse: Pruefergebnis[])
   zeile(`Gericht: ${fall.gericht}`);
   zeile(`Parteien: ${fall.klaeger} ./. ${fall.beklagte}`);
   zeile(`Streitwert: ${euro(fall.streitwert)}`);
-  zeile(`Zuweisung: ${sk?.bezeichnung ?? ""} · ${sk?.richter ?? ""}`);
-  zeile(`Regel: ${sk?.regel ?? ""}`, 9);
+  zeile(`Zuweisung: ${fall.einheit} · ${fall.richter}`);
+  zeile(`Regel: ${fall.regelText}`, 9);
   zeile(`Automatisch geprüft am ${datumZeit(fall.geprueftAm)}`);
   y += 3;
 

@@ -65,7 +65,7 @@ function startZustand(fall: Fall): FallZustand {
       { zeit: fall.eingang, text: `Eingang über ${fall.uebermittlungsweg}` },
       {
         zeit: fall.eingang,
-        text: `Zuweisung nach Geschäftsverteilungsplan an ${GvpService.einheit(fall.spruchkoerperId)?.bezeichnung ?? ""}`,
+        text: `Zuweisung nach Geschäftsverteilungsplan an ${fall.einheit}`,
       },
       {
         zeit: fall.geprueftAm,
