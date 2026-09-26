@@ -10,21 +10,14 @@ export interface Pruefergebnis {
   /** Prüfpunkt nur auf Rüge, bisher ohne Befund */
   nurAufRuege: boolean;
   verweisAz?: string | undefined;
-  eigen: boolean;
-  notiz?: string | undefined;
   markerNr?: number | undefined;
 }
 
-export type EigeneBewertung = { status: PruefStatus; notiz?: string | undefined };
-
 /**
- * Verbindet die vorberechneten Ergebnisse des Falls mit der Prüfliste und den
- * eigenen Bewertungen. Keine juristische Berechnung im Frontend.
+ * Verbindet die vorberechneten Ergebnisse des Falls mit der Prüfliste.
+ * Keine juristische Berechnung im Frontend.
  */
-export function pruefergebnisse(
-  fall: Fall,
-  eigene: Record<string, EigeneBewertung> = {},
-): Pruefergebnis[] {
+export function pruefergebnisse(fall: Fall): Pruefergebnis[] {
   let marker = 0;
   return PruefService.aktive().map((punkt) => {
     const befund = fall.befunde[punkt.id];
@@ -33,20 +26,16 @@ export function pruefergebnisse(
     const fundstelle = befund?.fundstelle;
     const markerNr =
       fundstelle && (status === "mangel" || status === "pruefen" || status === "offen") ? ++marker : undefined;
-    const eigen = eigene[punkt.id];
     return {
       punkt,
-      status: eigen ? eigen.status : status,
+      status,
       begruendung,
       fundstelle,
       fundstellen: befund?.fundstellen ?? [],
       nurAufRuege:
         punkt.nurAufRuege &&
-        !eigen &&
         (status === "keine_anhaltspunkte" || status === "nicht_anwendbar"),
       verweisAz: befund?.verweisAz,
-      eigen: Boolean(eigen),
-      notiz: eigen?.notiz,
       markerNr,
     };
   });

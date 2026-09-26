@@ -1,11 +1,7 @@
-import { FileSearch, Info } from "lucide-react";
+import { FileSearch } from "lucide-react";
 import { useState } from "react";
 
-import {
-  QuelleBadge,
-  StatusChip,
-  StatusIcon,
-} from "@/components/StatusAnzeige";
+import { StatusChip, StatusIcon } from "@/components/StatusAnzeige";
 import {
   Accordion,
   AccordionContent,
@@ -14,8 +10,6 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
-import { Textarea } from "@/components/ui/textarea";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import {
   kategorien,
   statusLabel,
@@ -47,7 +41,7 @@ export function PruefDashboard({
   aktiverPunkt,
   onImDokumentZeigen,
 }: Props) {
-  const { zustand, bewerten } = useDemo();
+  const { zustand } = useDemo();
   const [nurAuffaellige, setNurAuffaellige] = useState(true);
   const z = zustand(fall.id);
 
@@ -133,8 +127,7 @@ export function PruefDashboard({
           </li>
         </ul>
         <p className="mt-2 text-xs text-muted-foreground">
-          Feste Regeln wenden Gesetz und Geschäftsverteilungsplan an. Keine
-          KI-Entscheidung.
+          Feste Regeln wenden Gesetz und Geschäftsverteilungsplan an.
         </p>
       </section>
 
@@ -188,11 +181,6 @@ export function PruefDashboard({
                         key={e.punkt.id}
                         ergebnis={e}
                         hervorgehoben={aktiverPunkt === e.punkt.id}
-                        eigeneBewertung={z.eigene[e.punkt.id]?.status}
-                        notiz={z.eigene[e.punkt.id]?.notiz}
-                        onBewerten={(status, notiz) =>
-                          bewerten(fall.id, e.punkt.id, status ? { status, notiz } : null)
-                        }
                         onImDokumentZeigen={(i) => onImDokumentZeigen(e.punkt.id, i)}
                       />
                     ))}
@@ -225,16 +213,10 @@ export function PruefDashboard({
 function PunktZeile({
   ergebnis,
   hervorgehoben,
-  eigeneBewertung,
-  notiz,
-  onBewerten,
   onImDokumentZeigen,
 }: {
   ergebnis: Pruefergebnis;
   hervorgehoben: boolean;
-  eigeneBewertung?: PruefStatus | undefined;
-  notiz?: string | undefined;
-  onBewerten: (status: PruefStatus | null, notiz?: string | undefined) => void;
   onImDokumentZeigen: (index: number) => void;
 }) {
   const [offen, setOffen] = useState(false);
@@ -246,7 +228,6 @@ function PunktZeile({
     setSprungNr(naechste);
     onImDokumentZeigen(naechste);
   }
-  const [notizText, setNotizText] = useState(notiz ?? "");
 
   return (
     <li
@@ -270,17 +251,9 @@ function PunktZeile({
             {ergebnis.punkt.norm ? `${ergebnis.punkt.norm} · ` : ""}
             {ergebnis.nurAufRuege
               ? "Nur auf Rüge"
-              : ergebnis.eigen
-                ? ergebnis.status === "erfuellt"
-                  ? "erfüllt"
-                  : ergebnis.status === "mangel"
-                    ? "nicht erfüllt"
-                    : statusLabel[ergebnis.status]
-                : statusLabel[ergebnis.status]}
-            {ergebnis.eigen ? " · Eigene Bewertung" : ""}
+              : statusLabel[ergebnis.status]}
           </span>
         </span>
-        <QuelleBadge quelle={ergebnis.punkt.quelle} />
       </button>
       {zeigeSprung ? (
         <div className="flex items-center gap-2 px-2 pb-2 pl-8">
@@ -316,44 +289,6 @@ function PunktZeile({
             </blockquote>
           ))}
           {ergebnis.verweisAz ? <RegisterVerweis az={ergebnis.verweisAz} /> : null}
-
-          <div>
-            <p className="mb-1 text-xs font-medium text-muted-foreground">
-              Eigene Bewertung
-            </p>
-            <ToggleGroup
-              type="single"
-              value={eigeneBewertung ?? ""}
-              onValueChange={(v) =>
-                onBewerten((v || null) as PruefStatus | null, notizText || undefined)
-              }
-              variant="outline"
-              size="sm"
-            >
-              <ToggleGroupItem value="erfuellt">erfüllt</ToggleGroupItem>
-              <ToggleGroupItem value="mangel">nicht erfüllt</ToggleGroupItem>
-              <ToggleGroupItem value="offen">offen</ToggleGroupItem>
-            </ToggleGroup>
-            <Textarea
-              className="mt-2"
-              rows={2}
-              placeholder="Notiz (optional)"
-              value={notizText}
-              onChange={(e) => setNotizText(e.target.value)}
-              onBlur={() =>
-                eigeneBewertung
-                  ? onBewerten(eigeneBewertung, notizText || undefined)
-                  : undefined
-              }
-            />
-            {ergebnis.eigen ? (
-              <p className="mt-2 flex items-center gap-1 text-xs text-muted-foreground">
-                <Info className="size-3.5" aria-hidden="true" />
-                Ihre Bewertung überschreibt den automatischen Vorschlag (
-                {statusLabel[ergebnis.status]}).
-              </p>
-            ) : null}
-          </div>
         </div>
       ) : null}
     </li>

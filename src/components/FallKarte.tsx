@@ -41,10 +41,7 @@ const sachgebietLabel: Record<string, string> = {
 export function FallKarte({ fall, offen, onToggle, registerRef }: Props) {
   const { zustand, zustellungVerfuegen, beanstanden, rueckgaengig } = useDemo();
   const z = zustand(fall.id);
-  const ergebnisse = useMemo(
-    () => pruefergebnisse(fall, z.eigene),
-    [fall, z.eigene],
-  );
+  const ergebnisse = useMemo(() => pruefergebnisse(fall), [fall]);
   const bilanz = useMemo(() => berechneBilanz(ergebnisse), [ergebnisse]);
 
   const [aktiverPunkt, setAktiverPunkt] = useState<string | null>(null);
@@ -127,8 +124,7 @@ export function FallKarte({ fall, offen, onToggle, registerRef }: Props) {
                 <p className="font-medium">Warum mir zugewiesen?</p>
                 <p className="mt-2">{fall.regelText}</p>
                 <p className="mt-2 text-xs text-muted-foreground">
-                  Automatische Anwendung des Geschäftsverteilungsplans. Keine
-                  KI-Entscheidung.
+                  Automatische Anwendung des Geschäftsverteilungsplans.
                 </p>
               </PopoverContent>
             </Popover>
