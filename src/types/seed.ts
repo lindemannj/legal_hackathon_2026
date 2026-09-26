@@ -75,15 +75,15 @@ export const seedSchema = z.object({
   ),
   merkmale: z.array(
     z.object({
-      id: z.string().regex(/^m-\d{3}$/),
+      id: z.string().regex(/^L\d{2}$/),
       nr: z.number().int().positive(),
-      kategorie: z.enum(["A", "B", "C", "D", "E", "F", "G"]),
+      kategorie: z.enum(["allgemein", "hindernis"]),
       titel: z.string().min(1),
       norm: z.string(),
       quelle: z.enum(["regel", "ki", "manuell"]),
       beschreibung: z.string().default(""),
       gerichte: z.array(gerichtstyp).min(1),
-      platzhalter: z.boolean(),
+      nurAufRuege: z.boolean().default(false),
       aktiv: z.boolean(),
     }),
   ),

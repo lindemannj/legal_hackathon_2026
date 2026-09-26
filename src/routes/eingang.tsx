@@ -170,7 +170,7 @@ function Posteingang() {
             >
               <ToggleGroupItem value="alle">Alle</ToggleGroupItem>
               <ToggleGroupItem value="auffaellig">Mit Auffälligkeiten</ToggleGroupItem>
-              <ToggleGroupItem value="ohne">Ohne Beanstandung</ToggleGroupItem>
+              <ToggleGroupItem value="ohne">Ohne Auffälligkeit</ToggleGroupItem>
             </ToggleGroup>
           </div>
         </div>
