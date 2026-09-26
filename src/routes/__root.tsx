@@ -133,8 +133,33 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+function SeedFehlerAnzeige() {
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+      <div className="w-full max-w-2xl rounded border border-border bg-surface p-6">
+        <h1 className="text-lg font-semibold text-foreground">
+          Demo-Daten konnten nicht geladen werden
+        </h1>
+        <p className="mt-1 text-sm text-muted-foreground">
+          Die Datei seed/demo-daten.txt entspricht nicht dem erwarteten Format.
+        </p>
+        <ul className="mt-4 space-y-2 text-sm">
+          {seedFehler.slice(0, 20).map((f, i) => (
+            <li key={i} className="rounded bg-muted px-3 py-2">
+              <code className="font-mono text-xs text-destructive">{f.pfad}</code>
+              <span className="ml-2 text-foreground">{f.meldung}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  if (seedFehler.length > 0) return <SeedFehlerAnzeige />;
 
   return (
     <QueryClientProvider client={queryClient}>
