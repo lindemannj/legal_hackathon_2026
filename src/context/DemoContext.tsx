@@ -271,6 +271,14 @@ function labelStatus(s: PruefStatus): string {
 
 export function useDemo(): DemoContextValue {
   const ctx = useContext(Ctx);
-  if (!ctx) throw new Error("useDemo muss innerhalb von DemoProvider genutzt werden");
+  if (!ctx) {
+    // Nach einem Hot-Reload kann der Provider kurzzeitig fehlen: einmal neu laden statt weißer Seite.
+    if (import.meta.env.DEV && typeof window !== "undefined" && !sessionStorage.getItem("klaris-reload")) {
+      sessionStorage.setItem("klaris-reload", "1");
+      window.location.reload();
+    }
+    throw new Error("useDemo muss innerhalb von DemoProvider genutzt werden");
+  }
+  if (typeof window !== "undefined") sessionStorage.removeItem("klaris-reload");
   return ctx;
 }
