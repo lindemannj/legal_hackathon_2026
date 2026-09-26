@@ -1,6 +1,6 @@
 # Seed-Format `seed/demo-daten.txt`
 
-Ein JSON-Dokument (UTF-8, Endung .txt). Validiert durch das zod-Schema in `src/types/seed.ts`; zusätzlich werden alle id-Verweise geprüft. Beziehungen laufen ausschließlich über stabile, sprechende ids.
+Ein JSON-Dokument (UTF-8, Endung .txt). Im Frontend durch das zod-Schema in `src/types/seed.ts`, im Python-Backend durch Pydantic-Modelle in `backend/app/seed.py` validiert; zusätzlich werden alle id-Verweise geprüft. Beziehungen laufen ausschließlich über stabile, sprechende ids.
 
 | Schlüssel | Inhalt |
 |---|---|

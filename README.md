@@ -24,3 +24,7 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+## Python-Backend
+
+Der separate API-Server ist in [`backend/README.md`](backend/README.md) beschrieben. Die aktuelle React-Demo verwendet weiterhin den lokalen Browser-Mock.

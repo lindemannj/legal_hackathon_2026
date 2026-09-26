@@ -1,6 +1,6 @@
 # API-Vertrag (Entwurf)
 
-Der Prototyp nutzt einen Mock (`src/services/mockBackend.ts`), der sich wie diese API verhält. Alle Stammdaten stammen aus `seed/demo-daten.txt`. Der Mock berechnet nichts Juristisches; er setzt Fälle aus `eingang` und `erwartet` zusammen und löst Namen über ids auf.
+Der Prototyp nutzt in der Oberfläche weiterhin einen Mock (`src/services/mockBackend.ts`), der sich wie diese API verhält. Der separate Python-Server unter `backend/` implementiert derzeit die Endpunkte für Login, Demo-Konten, aktuelles Konto und Fälle sowie `/health`. Die übrigen hier beschriebenen Endpunkte sind noch Entwurf. Alle Stammdaten stammen aus `seed/demo-daten.txt`. Der Mock berechnet nichts Juristisches; er setzt Fälle aus `eingang` und `erwartet` zusammen und löst Namen über ids auf.
 
 ## Authentifizierung
 
