@@ -15,7 +15,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import type { Beanstandung } from "@/context/DemoContext";
-import type { Fall } from "@/data/faelle";
+import type { Fall } from "@/types/domain";
 import { euro, fristDatum } from "@/lib/format";
 import type { Bilanz, Pruefergebnis } from "@/lib/pruefung";
 

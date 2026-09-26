@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { aktivePruefpunkte } from "@/data/checklist";
+import { PruefService } from "@/services/mockBackend";
 import { useDemo } from "@/context/DemoContext";
 
 export const Route = createFileRoute("/einstellungen")({
@@ -57,7 +57,7 @@ function Einstellungen() {
         </p>
 
         <ul className="mt-6 divide-y divide-border rounded border border-border bg-surface">
-          {aktivePruefpunkte.map((p) => (
+          {PruefService.aktive().map((p) => (
             <li key={p.id} className="flex items-start gap-4 px-4 py-3">
               <Switch
                 checked={!state.deaktivierte.includes(p.id)}

@@ -7,8 +7,7 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
-import { statusLabel, type PruefStatus, type Quelle } from "@/data/checklist";
-import { quelleLabel } from "@/data/checklist";
+import { quelleLabel, statusLabel, type PruefStatus, type Quelle } from "@/types/domain";
 import { cn } from "@/lib/utils";
 
 interface Darstellung {

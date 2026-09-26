@@ -16,15 +16,11 @@ import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
-import {
-  aktivePruefpunkte,
-  checkliste,
-  kategorien,
-  statusLabel,
-  type PruefStatus,
-} from "@/data/checklist";
-import type { Fall } from "@/data/faelle";
-import { spruchkoerperById } from "@/data/gvp";
+import { kategorien, statusLabel, type Fall, type PruefStatus } from "@/types/domain";
+import { GvpService, PruefService } from "@/services/mockBackend";
+const spruchkoerperById = (id: string) => GvpService.einheit(id);
+const checkliste = PruefService.checkliste();
+const aktivePruefpunkte = PruefService.aktive();
 import { useDemo } from "@/context/DemoContext";
 import { datumZeit } from "@/lib/format";
 import type { Bilanz, Pruefergebnis } from "@/lib/pruefung";

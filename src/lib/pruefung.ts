@@ -1,9 +1,5 @@
-import {
-  aktivePruefpunkte,
-  type Pruefpunkt,
-  type PruefStatus,
-} from "@/data/checklist";
-import type { Fall } from "@/data/faelle";
+import { PruefService } from "@/services/mockBackend";
+import type { Fall, Pruefpunkt, PruefStatus } from "@/types/domain";
 import { euro } from "@/lib/format";
 import {
   oertlicheZustaendigkeit,
@@ -92,7 +88,7 @@ export function pruefergebnisse(
   eigene: Record<string, EigeneBewertung> = {},
 ): Pruefergebnis[] {
   let marker = 0;
-  return aktivePruefpunkte.map((punkt) => {
+  return PruefService.aktive().map((punkt) => {
     const befund = fall.befunde[punkt.id];
     let status: PruefStatus;
     let begruendung: string;

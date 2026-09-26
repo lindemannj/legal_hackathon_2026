@@ -16,8 +16,9 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { useDemo } from "@/context/DemoContext";
-import type { Fall } from "@/data/faelle";
-import { spruchkoerperById } from "@/data/gvp";
+import type { Fall } from "@/types/domain";
+import { GvpService } from "@/services/mockBackend";
+const spruchkoerperById = (id: string) => GvpService.einheit(id);
 import { eingangLabel, euro } from "@/lib/format";
 import { exportiereMarkiertesPdf } from "@/lib/pdfExport";
 import { bilanz as berechneBilanz, pruefergebnisse } from "@/lib/pruefung";
