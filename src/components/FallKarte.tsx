@@ -41,10 +41,7 @@ const sachgebietLabel: Record<string, string> = {
 export function FallKarte({ fall, offen, onToggle, registerRef }: Props) {
   const { zustand, zustellungVerfuegen, beanstanden, rueckgaengig } = useDemo();
   const z = zustand(fall.id);
-  const ergebnisse = useMemo(
-    () => pruefergebnisse(fall, z.eigene),
-    [fall, z.eigene],
-  );
+  const ergebnisse = useMemo(() => pruefergebnisse(fall), [fall]);
   const bilanz = useMemo(() => berechneBilanz(ergebnisse), [ergebnisse]);
 
   const [aktiverPunkt, setAktiverPunkt] = useState<string | null>(null);

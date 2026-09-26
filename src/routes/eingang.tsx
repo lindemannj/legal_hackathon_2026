@@ -79,7 +79,7 @@ function Posteingang() {
       )
       .filter((f) => {
         if (filter === "alle") return true;
-        const b = berechneBilanz(pruefergebnisse(f, zustand(f.id).eigene));
+        const b = berechneBilanz(pruefergebnisse(f));
         return filter === "auffaellig"
           ? b.gesamtStatus !== "ok"
           : b.gesamtStatus === "ok";
