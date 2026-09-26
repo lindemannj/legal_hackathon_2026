@@ -5,7 +5,8 @@ import { Fusszeile } from "@/components/Kopfzeile";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { PRODUKTNAME, nutzer, useDemo } from "@/context/DemoContext";
+import { PRODUKTNAME, useDemo } from "@/context/DemoContext";
+import { AuthService } from "@/services/mockBackend";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,13 +32,18 @@ function Anmeldung() {
   const { anmelden, aktuellerNutzer } = useDemo();
   const navigate = useNavigate();
   const [kennung, setKennung] = useState("");
+  const [fehler, setFehler] = useState<string | null>(null);
+  const demoKonten = AuthService.demoKonten();
 
   useEffect(() => {
     if (aktuellerNutzer) navigate({ to: "/eingang" });
   }, [aktuellerNutzer, navigate]);
 
-  function einloggen(id: string) {
-    anmelden(id);
+  function einloggen(k: string) {
+    if (!anmelden(k)) {
+      setFehler("Unbekannte Benutzerkennung.");
+      return;
+    }
     navigate({ to: "/eingang" });
   }
 
@@ -54,7 +60,7 @@ function Anmeldung() {
             className="mt-6 space-y-4"
             onSubmit={(e) => {
               e.preventDefault();
-              einloggen(nutzer[0]!.id);
+              einloggen(kennung);
             }}
           >
             <div className="space-y-1.5">
@@ -70,29 +76,41 @@ function Anmeldung() {
               <Label htmlFor="passwort">Passwort</Label>
               <Input id="passwort" type="password" autoComplete="current-password" />
             </div>
+            {fehler ? (
+              <p role="alert" className="text-sm text-destructive">
+                {fehler}
+              </p>
+            ) : null}
             <Button type="submit" className="w-full">
               Anmelden
             </Button>
           </form>
 
-          <div className="mt-8 border-t border-border pt-6">
+          <p className="mt-3 text-center text-xs text-muted-foreground">
+            Demo-Modus · beliebiges Passwort
+          </p>
+
+          {demoKonten.length > 0 ? (
+          <div className="mt-6 border-t border-border pt-6">
             <h2 className="text-sm font-semibold">Demo-Zugänge</h2>
             <div className="mt-3 space-y-2">
-              {nutzer.map((n) => (
+              {demoKonten.map((n) => (
                 <Button
                   key={n.id}
                   variant="outline"
                   className="h-auto w-full flex-col items-start gap-0.5 py-3 text-left"
-                  onClick={() => einloggen(n.id)}
+                  onClick={() => einloggen(n.kennung)}
                 >
                   <span className="font-medium">{n.name}</span>
                   <span className="text-xs font-normal text-muted-foreground">
-                    {n.amtsbezeichnung} · {n.gericht} · {n.spruchkoerperKurz}
+                    {n.amtsbezeichnung} · {n.gericht} ·{" "}
+                    {n.einheiten.map((e) => e.bezeichnung).join(", ")}
                   </span>
                 </Button>
               ))}
             </div>
           </div>
+          ) : null}
         </div>
       </main>
       <Fusszeile />

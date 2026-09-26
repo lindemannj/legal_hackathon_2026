@@ -8,40 +8,18 @@ import {
   type ReactNode,
 } from "react";
 
-import { aktivePruefpunkte, type PruefStatus } from "@/data/checklist";
-import { faelle, type Fall } from "@/data/faelle";
-import { spruchkoerperById } from "@/data/gvp";
 import type { EigeneBewertung } from "@/lib/pruefung";
+import {
+  AuthService,
+  FallService,
+  GvpService,
+  PruefService,
+} from "@/services/mockBackend";
+import type { Fall, Nutzer, PruefStatus } from "@/types/domain";
 
 export const PRODUKTNAME = "Klaris";
 
-export interface Nutzer {
-  id: string;
-  name: string;
-  amtsbezeichnung: string;
-  gericht: string;
-  spruchkoerperId: string;
-  spruchkoerperKurz: string;
-}
-
-export const nutzer: Nutzer[] = [
-  {
-    id: "hoffmann",
-    name: "Dr. Julia Hoffmann",
-    amtsbezeichnung: "Richterin am Amtsgericht",
-    gericht: "Amtsgericht Köln",
-    spruchkoerperId: "ag-koeln-142",
-    spruchkoerperKurz: "Zivilabteilung 142",
-  },
-  {
-    id: "wendt",
-    name: "Tobias Wendt",
-    amtsbezeichnung: "Richter am Landgericht",
-    gericht: "Landgericht Köln",
-    spruchkoerperId: "lg-koeln-5",
-    spruchkoerperKurz: "5. Zivilkammer",
-  },
-];
+export type { Nutzer };
 
 export type FallAblage = "eingang" | "beanstandet" | "erledigt";
 
@@ -87,11 +65,11 @@ function startZustand(fall: Fall): FallZustand {
       { zeit: fall.eingang, text: `Eingang über ${fall.uebermittlungsweg}` },
       {
         zeit: fall.eingang,
-        text: `Zuweisung nach Geschäftsverteilungsplan an ${spruchkoerperById(fall.spruchkoerperId)?.bezeichnung ?? ""}`,
+        text: `Zuweisung nach Geschäftsverteilungsplan an ${GvpService.einheit(fall.spruchkoerperId)?.bezeichnung ?? ""}`,
       },
       {
         zeit: fall.geprueftAm,
-        text: `Automatische Vorprüfung, ${aktivePruefpunkte.length} Prüfpunkte ausgewertet`,
+        text: `Automatische Vorprüfung, ${PruefService.aktive().length} Prüfpunkte ausgewertet`,
       },
     ],
   };
@@ -100,18 +78,18 @@ function startZustand(fall: Fall): FallZustand {
 function initialState(): DemoState {
   return {
     nutzerId: null,
-    faelle: Object.fromEntries(faelle.map((f) => [f.id, startZustand(f)])),
+    faelle: {},
     deaktivierte: [],
     eigenePruefpunkte: [],
   };
 }
 
-const STORAGE_KEY = "klaris-demo-v1";
+const STORAGE_KEY = "klaris-demo-v2";
 
 interface DemoContextValue {
   state: DemoState;
   aktuellerNutzer: Nutzer | null;
-  anmelden: (id: string) => void;
+  anmelden: (kennung: string) => boolean;
   abmelden: () => void;
   zuruecksetzen: () => void;
   meineFaelle: (ablage: FallAblage) => Fall[];
@@ -148,13 +126,13 @@ export function DemoProvider({ children }: { children: ReactNode }) {
   }, [state, hydriert]);
 
   const aktuellerNutzer = useMemo(
-    () => nutzer.find((n) => n.id === state.nutzerId) ?? null,
+    () => AuthService.me(state.nutzerId),
     [state.nutzerId],
   );
 
   const zustand = useCallback(
     (fallId: string): FallZustand => {
-      const fall = faelle.find((f) => f.id === fallId)!;
+      const fall = FallService.fall(fallId)!;
       return state.faelle[fallId] ?? startZustand(fall);
     },
     [state.faelle],
@@ -162,7 +140,7 @@ export function DemoProvider({ children }: { children: ReactNode }) {
 
   const patch = useCallback((fallId: string, änderung: Partial<FallZustand>) => {
     setState((s) => {
-      const fall = faelle.find((f) => f.id === fallId)!;
+      const fall = FallService.fall(fallId)!;
       const alt = s.faelle[fallId] ?? startZustand(fall);
       return { ...s, faelle: { ...s.faelle, [fallId]: { ...alt, ...änderung } } };
     });
@@ -172,14 +150,17 @@ export function DemoProvider({ children }: { children: ReactNode }) {
     state,
     aktuellerNutzer,
     hydriert,
-    anmelden: (id) => setState((s) => ({ ...s, nutzerId: id })),
+    anmelden: (kennung) => {
+      const n = AuthService.anmelden(kennung);
+      if (!n) return false;
+      setState((s) => ({ ...s, nutzerId: n.id }));
+      return true;
+    },
     abmelden: () => setState((s) => ({ ...s, nutzerId: null })),
     zuruecksetzen: () =>
       setState((s) => ({ ...initialState(), nutzerId: s.nutzerId })),
     meineFaelle: (ablage) => {
-      if (!aktuellerNutzer) return [];
-      return faelle
-        .filter((f) => f.spruchkoerperId === aktuellerNutzer.spruchkoerperId)
+      return FallService.faelle(state.nutzerId)
         .filter((f) => {
           const z = zustand(f.id);
           return z.sichtbar && z.ablage === ablage;
@@ -191,7 +172,7 @@ export function DemoProvider({ children }: { children: ReactNode }) {
       const z = zustand(fallId);
       const eigene = { ...z.eigene };
       const titel =
-        aktivePruefpunkte.find((p) => p.id === punktId)?.titel ?? punktId;
+        PruefService.merkmal(punktId)?.titel ?? punktId;
       if (bewertung) eigene[punktId] = bewertung;
       else delete eigene[punktId];
       patch(fallId, {
@@ -245,7 +226,7 @@ export function DemoProvider({ children }: { children: ReactNode }) {
       });
     },
     simulierenEingang: () => {
-      const ziel = faelle.find((f) => f.nurSimulation);
+      const ziel = FallService.simulationsFall(state.nutzerId);
       if (!ziel) return null;
       setState((s) => ({
         ...s,

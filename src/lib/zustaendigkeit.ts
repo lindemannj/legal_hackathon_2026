@@ -1,13 +1,8 @@
-import { anfangsbuchstabe, spruchkoerper, type Gerichtstyp } from "@/data/gvp";
 import { euro } from "@/lib/format";
+import { GvpService } from "@/services/mockBackend";
+import type { Gerichtstyp, Sachgebiet, Spruchkoerper } from "@/types/domain";
 
-export type Sachgebiet =
-  | "allgemein"
-  | "wohnraummiete"
-  | "nachbarrecht"
-  | "heilbehandlung"
-  | "veroeffentlichung"
-  | "vergabe";
+export type { Sachgebiet };
 
 export interface SachlichErgebnis {
   gerichtstyp: Gerichtstyp;
@@ -66,18 +61,11 @@ export function sachlicheZustaendigkeit(
   };
 }
 
-const bezirke: Record<string, { AG: string; LG: string }> = {
-  Köln: { AG: "Amtsgericht Köln", LG: "Landgericht Köln" },
-  Bonn: { AG: "Amtsgericht Bonn", LG: "Landgericht Bonn" },
-  München: { AG: "Amtsgericht München", LG: "Landgericht München I" },
-};
-
 export function oertlicheZustaendigkeit(
   ortBeklagte: string,
   gerichtstyp: Gerichtstyp,
 ): { gericht: string | null; satz: string; norm: string } {
-  const eintrag = bezirke[ortBeklagte];
-  const gericht = eintrag ? eintrag[gerichtstyp] : null;
+  const gericht = GvpService.gericht(ortBeklagte, gerichtstyp)?.name ?? null;
   return {
     gericht,
     satz: gericht
@@ -87,26 +75,50 @@ export function oertlicheZustaendigkeit(
   };
 }
 
+const rechtsformen = [
+  "GmbH & Co. KG",
+  "GmbH",
+  "AG",
+  "UG (haftungsbeschränkt)",
+  "KG",
+  "OHG",
+  "e.V.",
+  "eG",
+  "SE",
+];
+
+/** Erster Buchstabe des Nachnamens bzw. des Firmennamens ohne Rechtsform. */
+export function anfangsbuchstabe(name: string): string {
+  let n = name.trim();
+  for (const rf of rechtsformen) {
+    n = n.replace(new RegExp(`\\s*${rf.replace(/[.()]/g, "\\$&")}\\s*`, "gi"), " ");
+  }
+  n = n.replace(/^(Eheleute|Herr|Frau|Dr\.|Prof\.)\s+/i, "").trim();
+  const teile = n.split(/\s+/).filter(Boolean);
+  const wort =
+    teile.length > 1 && /^[A-ZÄÖÜ]/.test(teile[teile.length - 1]!)
+      ? teile[teile.length - 1]!
+      : (teile[0] ?? "A");
+  return wort.charAt(0).toUpperCase();
+}
+
+/** Interne Zuweisung nach den GVP-Regeln des Gerichts. */
 export function interneZuweisung(
   gericht: string,
-  gerichtstyp: Gerichtstyp,
   sachgebiet: Sachgebiet,
   ersteBeklagtePartei: string,
-) {
-  const kandidaten = spruchkoerper.filter((s) => s.gericht === gericht);
-  if (gerichtstyp === "AG") {
-    if (sachgebiet === "wohnraummiete") {
-      return kandidaten.find((s) => s.id === "ag-koeln-118") ?? kandidaten[0]!;
-    }
-    const buchstabe = anfangsbuchstabe(ersteBeklagtePartei);
-    const bisK = buchstabe <= "K";
-    return (
-      kandidaten.find((s) => s.id === (bisK ? "ag-koeln-142" : "ag-koeln-143")) ??
-      kandidaten[0]!
-    );
-  }
-  if (sachgebiet === "heilbehandlung") {
-    return kandidaten.find((s) => s.id === "lg-koeln-25") ?? kandidaten[0]!;
-  }
-  return kandidaten.find((s) => s.id === "lg-koeln-5") ?? kandidaten[0]!;
+): Spruchkoerper | undefined {
+  const kandidaten = GvpService.spruchkoerper().filter((s) => s.gericht === gericht);
+  const regeln = GvpService.regeln();
+  const buchstabe = anfangsbuchstabe(ersteBeklagtePartei);
+  const passt = (sg: Sachgebiet) =>
+    kandidaten.find((s) => {
+      const r = regeln.find((x) => x.id === s.regelId)!;
+      if (r.bedingung.sachgebiet !== sg) return false;
+      const b = r.bedingung.beklagteAnfangsbuchstaben;
+      if (!b) return true;
+      const [von, bis] = b.split("-");
+      return buchstabe >= von! && buchstabe <= bis!;
+    });
+  return passt(sachgebiet) ?? passt("allgemein") ?? kandidaten[0];
 }

@@ -1,9 +1,5 @@
-import {
-  aktivePruefpunkte,
-  type Pruefpunkt,
-  type PruefStatus,
-} from "@/data/checklist";
-import type { Fall } from "@/data/faelle";
+import { PruefService } from "@/services/mockBackend";
+import type { Fall, Pruefpunkt, PruefStatus } from "@/types/domain";
 import { euro } from "@/lib/format";
 import {
   oertlicheZustaendigkeit,
@@ -22,65 +18,65 @@ export interface Pruefergebnis {
 
 export type EigeneBewertung = { status: PruefStatus; notiz?: string | undefined };
 
-const keineAnhaltspunkte = new Set(["p6", "p13", "p14"]);
+const keineAnhaltspunkte = new Set(["m-006", "m-013", "m-014"]);
 
 function standardBegruendung(punkt: Pruefpunkt, fall: Fall): string {
   switch (punkt.id) {
-    case "p1":
+    case "m-001":
       return `Gericht, Parteien und gesetzliche Vertretung sind vollständig bezeichnet (${fall.klaeger} ./. ${fall.beklagte}).`;
-    case "p2":
+    case "m-002":
       return "Der Klageantrag ist beziffert und vollstreckungsfähig formuliert.";
-    case "p3":
+    case "m-003":
       return "Der Lebenssachverhalt ist mit Datum, Beteiligten und Beweisangeboten individualisiert dargestellt.";
-    case "p4":
+    case "m-004":
       return "Die Klage ist durch eine zugelassene Rechtsanwältin bzw. einen zugelassenen Rechtsanwalt erhoben.";
-    case "p5":
+    case "m-005":
       return "Beim Eingang der Klage nicht anwendbar.";
-    case "p6":
+    case "m-006":
       return "Keine Anhaltspunkte für eine Befreiung von der deutschen Gerichtsbarkeit.";
-    case "p7":
+    case "m-007":
       return "Bürgerliche Rechtsstreitigkeit, der ordentliche Rechtsweg ist eröffnet (§ 13 GVG).";
-    case "p8": {
+    case "m-008": {
       const s = sachlicheZustaendigkeit(fall.streitwert, fall.sachgebiet);
       return `${s.satz} (${s.norm}).`;
     }
-    case "p9": {
+    case "m-009": {
       const o = oertlicheZustaendigkeit(fall.ortBeklagte, fall.gerichtstyp);
       return `${o.satz} (${o.norm}).`;
     }
-    case "p10":
+    case "m-010":
       return "Beide Parteien sind parteifähig (§ 50 ZPO).";
-    case "p11":
+    case "m-011":
       return "Keine Anhaltspunkte für fehlende Prozessfähigkeit; juristische Personen sind ordnungsgemäß vertreten.";
-    case "p12":
+    case "m-012":
       return "Die klagende Partei macht ein eigenes Recht im eigenen Namen geltend.";
-    case "p13":
+    case "m-013":
       return "Abgleich mit dem Verfahrensregister ohne Treffer.";
-    case "p14":
+    case "m-014":
       return "Abgleich mit dem Verfahrensregister ohne rechtskräftige Entscheidung zum selben Streitgegenstand.";
-    case "p15":
+    case "m-015":
       return "Leistungsklage, Rechtsschutzbedürfnis regelmäßig gegeben.";
-    case "p16":
+    case "m-016":
       return "Die geltend gemachten Ansprüche können verbunden werden (§ 260 ZPO).";
-    case "p17":
+    case "m-017":
       return `Eingang über ${fall.uebermittlungsweg}, sicherer Übermittlungsweg (§ 130a Abs. 3 ZPO).`;
-    case "p18":
+    case "m-018":
       return fall.prozessbevollmaechtigte
         ? "Anwaltlicher Schriftsatz elektronisch übermittelt (§ 130d ZPO)."
         : "Keine anwaltliche Vertretung, die Nutzungspflicht gilt nicht.";
-    case "p19":
+    case "m-019":
       return "XJustiz-Datensatz vorhanden, Angaben stimmen mit der Klageschrift überein.";
-    case "p20":
+    case "m-020":
       return "Ladungsfähige Anschrift der beklagten Partei ist angegeben.";
-    case "p21":
+    case "m-021":
       return `Streitwert mit ${euro(fall.streitwert)} angegeben.`;
-    case "p22":
+    case "m-022":
       return "Angaben zur außergerichtlichen Konfliktbeilegung sind enthalten.";
-    case "p23":
+    case "m-023":
       return "Eine Äußerung zur Entscheidung durch den Einzelrichter ist enthalten.";
-    case "p24":
+    case "m-024":
       return "Der Gerichtskostenvorschuss ist eingegangen.";
-    case "p25":
+    case "m-025":
       return "Keine Anhaltspunkte für eine obligatorische Streitschlichtung nach Landesrecht.";
     default:
       return "Keine Auffälligkeiten festgestellt.";
@@ -92,15 +88,15 @@ export function pruefergebnisse(
   eigene: Record<string, EigeneBewertung> = {},
 ): Pruefergebnis[] {
   let marker = 0;
-  return aktivePruefpunkte.map((punkt) => {
+  return PruefService.aktive().map((punkt) => {
     const befund = fall.befunde[punkt.id];
     let status: PruefStatus;
     let begruendung: string;
 
-    if (!punkt.gerichte.includes(fall.gerichtstyp) || punkt.id === "p5") {
+    if (!punkt.gerichte.includes(fall.gerichtstyp) || punkt.id === "m-005") {
       status = "nicht_anwendbar";
       begruendung =
-        punkt.id === "p5"
+        punkt.id === "m-005"
           ? "Beim Eingang der Klage nicht anwendbar."
           : `Dieser Prüfpunkt gilt nur vor dem ${punkt.gerichte.includes("LG") ? "Landgericht" : "Amtsgericht"}.`;
     } else if (befund) {

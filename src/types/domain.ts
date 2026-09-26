@@ -1,0 +1,144 @@
+/** Fachliche Typen und feste Beschriftungen des Frontends (keine Stammdaten). */
+
+export type Gerichtstyp = "AG" | "LG";
+
+export type Sachgebiet =
+  | "allgemein"
+  | "wohnraummiete"
+  | "nachbarrecht"
+  | "heilbehandlung"
+  | "veroeffentlichung"
+  | "vergabe";
+
+export type Quelle = "regel" | "ki" | "manuell";
+
+export type PruefStatus =
+  | "erfuellt"
+  | "mangel"
+  | "pruefen"
+  | "offen"
+  | "keine_anhaltspunkte"
+  | "nicht_anwendbar";
+
+export interface Pruefpunkt {
+  id: string;
+  nr: number;
+  kategorie: string;
+  titel: string;
+  norm: string;
+  quelle: Quelle;
+  beschreibung: string;
+  gerichte: Gerichtstyp[];
+  platzhalter: boolean;
+}
+
+export interface Spruchkoerper {
+  id: string;
+  gerichtId: string;
+  gericht: string;
+  gerichtstyp: Gerichtstyp;
+  bezeichnung: string;
+  richterId: string;
+  richter: string;
+  amtsbezeichnung: string;
+  zustaendigkeit: string;
+  regelId: string;
+  regel: string;
+}
+
+export interface Befund {
+  status: PruefStatus;
+  begruendung: string;
+  fundstelle?: string | undefined;
+}
+
+export interface XJustizFeld {
+  label: string;
+  wert: string;
+  abweichung?: boolean | undefined;
+}
+
+export interface Anlage {
+  bezeichnung: string;
+  titel: string;
+  seiten: number;
+}
+
+export interface Fall {
+  id: string;
+  aktenzeichen: string;
+  gericht: string;
+  gerichtstyp: Gerichtstyp;
+  /** id der zugewiesenen Einheit (Abteilung/Kammer) */
+  spruchkoerperId: string;
+  klaeger: string;
+  beklagte: string;
+  ortBeklagte: string;
+  gegenstand: string;
+  sachgebiet: Sachgebiet;
+  streitwert: number;
+  streitwertXJustiz?: number | undefined;
+  eingang: string;
+  uebermittlungsweg: string;
+  prozessbevollmaechtigte: string | null;
+  kostenvorschuss: "bezahlt" | "offen";
+  geprueftAm: string;
+  klageschrift: string;
+  anlagen: Anlage[];
+  xjustiz: XJustizFeld[];
+  xml: string;
+  befunde: Record<string, Befund>;
+  nurSimulation?: boolean | undefined;
+}
+
+export interface VerfahrensregisterEintrag {
+  aktenzeichen: string;
+  parteien: string;
+  status: string;
+}
+
+export interface Einheit {
+  id: string;
+  bezeichnung: string;
+}
+
+/** Antwort von GET /me */
+export interface Nutzer {
+  id: string;
+  kennung: string;
+  name: string;
+  amtsbezeichnung: string;
+  gerichtId: string;
+  gericht: string;
+  einheiten: Einheit[];
+}
+
+/** Antwort von GET /auth/demo-konten */
+export type DemoKonto = Nutzer;
+
+export const kategorieLabel: Record<string, string> = {
+  A: "A · Ordnungsgemäße Klageerhebung",
+  B: "B · Gerichtsbezogene Sachurteilsvoraussetzungen",
+  C: "C · Parteibezogene Sachurteilsvoraussetzungen",
+  D: "D · Streitgegenstandsbezogene Sachurteilsvoraussetzungen",
+  E: "E · Rechtsschutzbedürfnis",
+  F: "F · Objektive Klagehäufung",
+  G: "G · Eingangsformalien",
+};
+
+export const kategorien = Object.values(kategorieLabel);
+
+export const statusLabel: Record<PruefStatus, string> = {
+  erfuellt: "Erfüllt",
+  mangel: "Mangel",
+  pruefen: "Bitte prüfen",
+  offen: "Offen",
+  keine_anhaltspunkte: "Keine Anhaltspunkte",
+  nicht_anwendbar: "Nicht anwendbar",
+};
+
+export const quelleLabel: Record<Quelle, string> = {
+  regel: "Regel",
+  ki: "KI-Hinweis",
+  manuell: "Manuell",
+};

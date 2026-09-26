@@ -1,7 +1,8 @@
 import { jsPDF } from "jspdf";
 
-import type { Fall } from "@/data/faelle";
-import { spruchkoerperById } from "@/data/gvp";
+import type { Fall } from "@/types/domain";
+import { GvpService } from "@/services/mockBackend";
+const spruchkoerperById = (id: string) => GvpService.einheit(id);
 import { datumZeit, euro } from "@/lib/format";
 import type { Pruefergebnis } from "@/lib/pruefung";
 

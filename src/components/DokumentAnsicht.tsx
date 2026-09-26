@@ -15,7 +15,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import type { Fall } from "@/data/faelle";
+import type { Fall } from "@/types/domain";
 import type { Pruefergebnis } from "@/lib/pruefung";
 import { cn } from "@/lib/utils";
 
