@@ -123,9 +123,9 @@ const checkliste: Pruefpunkt[] = [...seed.merkmale]
     quelle: m.quelle,
     beschreibung: m.beschreibung,
     gerichte: m.gerichte,
-    platzhalter: m.platzhalter,
+    nurAufRuege: m.nurAufRuege,
   }));
-const aktiveIds = new Set(seed.merkmale.filter((m) => m.aktiv && !m.platzhalter).map((m) => m.id));
+const aktiveIds = new Set(seed.merkmale.filter((m) => m.aktiv).map((m) => m.id));
 
 const spruchkoerper: Spruchkoerper[] = seed.gvpRegeln.map((r) => {
   const e = einheitById.get(r.einheitId)!;
@@ -204,6 +204,7 @@ const faelle: Fall[] = seed.faelle.map((f) => {
           relevanz: e.relevanz,
           grundlage: e.grundlage,
           fundstelle: e.fundstellen[0]?.zitat,
+          fundstellen: e.fundstellen.map((fs) => fs.zitat),
           dokumentId: e.fundstellen[0]?.dokumentId,
           verweisAz: e.verweisAz,
         },

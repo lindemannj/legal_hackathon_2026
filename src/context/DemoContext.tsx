@@ -86,7 +86,7 @@ function initialState(): DemoState {
   };
 }
 
-const STORAGE_KEY = "klaris-demo-v3";
+const STORAGE_KEY = "klaris-demo-v4";
 
 interface DemoContextValue {
   state: DemoState;
@@ -266,7 +266,7 @@ export function DemoProvider({ children }: { children: ReactNode }) {
 }
 
 function labelStatus(s: PruefStatus): string {
-  return s === "erfuellt" ? "erfüllt" : s === "mangel" ? "Mangel" : "offen";
+  return s === "erfuellt" ? "erfüllt" : s === "mangel" ? "nicht erfüllt" : "offen";
 }
 
 export function useDemo(): DemoContextValue {

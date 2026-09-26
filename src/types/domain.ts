@@ -29,7 +29,7 @@ export interface Pruefpunkt {
   quelle: Quelle;
   beschreibung: string;
   gerichte: Gerichtstyp[];
-  platzhalter: boolean;
+  nurAufRuege: boolean;
 }
 
 export interface Spruchkoerper {
@@ -52,6 +52,7 @@ export interface Befund {
   relevanz?: "hoch" | "mittel" | "niedrig" | undefined;
   grundlage?: string | undefined;
   fundstelle?: string | undefined;
+  fundstellen: string[];
   dokumentId?: string | undefined;
   verweisAz?: string | undefined;
 }
@@ -140,20 +141,15 @@ export interface Nutzer {
 export type DemoKonto = Nutzer;
 
 export const kategorieLabel: Record<string, string> = {
-  A: "A · Ordnungsgemäße Klageerhebung",
-  B: "B · Gerichtsbezogene Sachurteilsvoraussetzungen",
-  C: "C · Parteibezogene Sachurteilsvoraussetzungen",
-  D: "D · Streitgegenstandsbezogene Sachurteilsvoraussetzungen",
-  E: "E · Rechtsschutzbedürfnis",
-  F: "F · Objektive Klagehäufung",
-  G: "G · Eingangsformalien",
+  allgemein: "Allgemeine Prozessvoraussetzungen",
+  hindernis: "Prozesshindernisse",
 };
 
 export const kategorien = Object.values(kategorieLabel);
 
 export const statusLabel: Record<PruefStatus, string> = {
-  erfuellt: "Erfüllt",
-  mangel: "Mangel",
+  erfuellt: "Unauffällig",
+  mangel: "Auffälligkeit",
   pruefen: "Bitte prüfen",
   offen: "Offen",
   keine_anhaltspunkte: "Keine Anhaltspunkte",
@@ -165,3 +161,6 @@ export const quelleLabel: Record<Quelle, string> = {
   ki: "KI-Hinweis",
   manuell: "Manuell",
 };
+
+/** Hinweis auf allen automatischen Ampel-Badges. */
+export const vorauswertungHinweis = "Automatische Vorauswertung, keine richterliche Feststellung.";

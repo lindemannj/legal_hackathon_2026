@@ -45,8 +45,8 @@ export function exportiereMarkiertesPdf(fall: Fall, ergebnisse: Pruefergebnis[])
   );
   zeile(
     auffaellig.length === 0
-      ? "Ergebnis: Keine Beanstandungen"
-      : `Ergebnis: ${ergebnisse.filter((e) => e.status === "mangel").length} Mängel, ${ergebnisse.filter((e) => e.status === "pruefen").length} Punkte bitte prüfen, ${ergebnisse.filter((e) => e.status === "offen").length} offen`,
+      ? "Ergebnis: Keine Auffälligkeiten"
+      : `Ergebnis: ${ergebnisse.filter((e) => e.status === "mangel").length} Auffälligkeiten, ${ergebnisse.filter((e) => e.status === "pruefen").length} Punkte bitte prüfen, ${ergebnisse.filter((e) => e.status === "offen").length} offen`,
     12,
     "bold",
     7,
@@ -54,7 +54,7 @@ export function exportiereMarkiertesPdf(fall: Fall, ergebnisse: Pruefergebnis[])
 
   for (const e of auffaellig) {
     zeile(
-      `Nr. ${e.punkt.nr} · ${e.punkt.titel} (${e.punkt.norm})`,
+      `${e.punkt.id} · ${e.punkt.titel} (${e.punkt.norm})`,
       10,
       "bold",
       5,
@@ -66,7 +66,7 @@ export function exportiereMarkiertesPdf(fall: Fall, ergebnisse: Pruefergebnis[])
 
   y += 4;
   zeile(
-    "Hinweis: Automatische Vorprüfung, keine richterliche Entscheidung.",
+    "Hinweis: Automatische Vorauswertung, keine richterliche Feststellung.",
     9,
     "bold",
   );
@@ -78,8 +78,8 @@ export function exportiereMarkiertesPdf(fall: Fall, ergebnisse: Pruefergebnis[])
   doc.setFontSize(11);
 
   const markierungen = ergebnisse
-    .filter((e) => e.fundstelle && e.markerNr)
-    .map((e) => ({ text: e.fundstelle!, nr: e.markerNr!, status: e.status }));
+    .filter((e) => e.markerNr)
+    .flatMap((e) => e.fundstellen.map((text) => ({ text, nr: e.markerNr!, status: e.status })));
 
   for (const absatz of fall.klageschrift.split("\n")) {
     const zeilen = doc.splitTextToSize(absatz || " ", BREITE) as string[];

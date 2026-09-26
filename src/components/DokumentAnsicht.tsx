@@ -1,5 +1,5 @@
 import { Download, Minus, Plus } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
@@ -19,10 +19,17 @@ import type { Fall } from "@/types/domain";
 import type { Pruefergebnis } from "@/lib/pruefung";
 import { cn } from "@/lib/utils";
 
+export interface Sprung {
+  punktId: string;
+  index: number;
+  nonce: number;
+}
+
 interface Props {
   fall: Fall;
   ergebnisse: Pruefergebnis[];
   aktiverPunkt: string | null;
+  sprung: Sprung | null;
   onMarkerKlick: (punktId: string) => void;
   onPdf: () => void;
 }
@@ -30,12 +37,15 @@ interface Props {
 interface Segment {
   text: string;
   treffer?: Pruefergebnis;
+  index?: number;
 }
 
 function segmentiere(text: string, marken: Pruefergebnis[]): Segment[] {
   const stellen = marken
-    .map((m) => ({ m, index: text.indexOf(m.fundstelle!) }))
-    .filter((s) => s.index >= 0)
+    .flatMap((m) =>
+      m.fundstellen.map((zitat, nr) => ({ m, zitat, nr, index: text.indexOf(zitat) })),
+    )
+    .filter((s) => s.index >= 0 && s.zitat.length > 0)
     .sort((a, b) => a.index - b.index);
 
   const segmente: Segment[] = [];
@@ -43,8 +53,8 @@ function segmentiere(text: string, marken: Pruefergebnis[]): Segment[] {
   for (const s of stellen) {
     if (s.index < cursor) continue;
     segmente.push({ text: text.slice(cursor, s.index) });
-    segmente.push({ text: s.m.fundstelle!, treffer: s.m });
-    cursor = s.index + s.m.fundstelle!.length;
+    segmente.push({ text: s.zitat, treffer: s.m, index: s.nr });
+    cursor = s.index + s.zitat.length;
   }
   segmente.push({ text: text.slice(cursor) });
   return segmente;
@@ -54,14 +64,33 @@ export function DokumentAnsicht({
   fall,
   ergebnisse,
   aktiverPunkt,
+  sprung,
   onMarkerKlick,
   onPdf,
 }: Props) {
   const [zoom, setZoom] = useState(100);
   const [markierungen, setMarkierungen] = useState(true);
+  const [reiter, setReiter] = useState("klageschrift");
+  const [leuchtet, setLeuchtet] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!sprung) return;
+    setReiter("klageschrift");
+    setMarkierungen(true);
+    const id = `marker-${sprung.punktId}-${sprung.index}`;
+    const t1 = window.setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "center" });
+      setLeuchtet(id);
+    }, 60);
+    const t2 = window.setTimeout(() => setLeuchtet(null), 1300);
+    return () => {
+      window.clearTimeout(t1);
+      window.clearTimeout(t2);
+    };
+  }, [sprung]);
 
   const marken = useMemo(
-    () => ergebnisse.filter((e) => e.fundstelle && e.markerNr),
+    () => ergebnisse.filter((e) => e.fundstellen.length > 0 && e.markerNr),
     [ergebnisse],
   );
   const segmente = useMemo(
@@ -71,7 +100,7 @@ export function DokumentAnsicht({
 
   return (
     <div className="flex h-full flex-col">
-      <Tabs defaultValue="klageschrift" className="flex h-full flex-col">
+      <Tabs value={reiter} onValueChange={setReiter} className="flex h-full flex-col">
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border px-4 py-2">
           <TabsList>
             <TabsTrigger value="klageschrift">Klageschrift</TabsTrigger>
@@ -128,7 +157,7 @@ export function DokumentAnsicht({
                     <Tooltip key={i}>
                       <TooltipTrigger asChild>
                         <mark
-                          id={`marker-${seg.treffer.punkt.id}`}
+                          id={`marker-${seg.treffer.punkt.id}-${seg.index ?? 0}`}
                           tabIndex={0}
                           role="button"
                           onClick={() => onMarkerKlick(seg.treffer!.punkt.id)}
@@ -143,7 +172,9 @@ export function DokumentAnsicht({
                             seg.treffer.status === "mangel"
                               ? "bg-mark-err decoration-err"
                               : "bg-mark-warn decoration-warn",
-                            aktiverPunkt === seg.treffer.punkt.id && "mark-flash",
+                            (aktiverPunkt === seg.treffer.punkt.id ||
+                              leuchtet === `marker-${seg.treffer.punkt.id}-${seg.index ?? 0}`) &&
+                              "mark-flash",
                           )}
                         >
                           <sup className="mr-1 -ml-7 inline-block w-5 rounded bg-neutral-bg text-center text-[11px] font-sans text-muted-foreground">
@@ -154,7 +185,7 @@ export function DokumentAnsicht({
                       </TooltipTrigger>
                       <TooltipContent className="max-w-sm">
                         <p className="font-medium">
-                          Nr. {seg.treffer.punkt.nr} · {seg.treffer.punkt.titel}
+                          {seg.treffer.punkt.id} · {seg.treffer.punkt.titel}
                         </p>
                         <p className="mt-1 text-xs">{seg.treffer.begruendung}</p>
                       </TooltipContent>

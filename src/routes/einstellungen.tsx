@@ -62,14 +62,16 @@ function Einstellungen() {
               <Switch
                 checked={!state.deaktivierte.includes(p.id)}
                 onCheckedChange={() => togglePruefpunkt(p.id)}
-                aria-label={`Prüfpunkt ${p.nr} aktivieren`}
+                aria-label={`Prüfpunkt ${p.id} aktivieren`}
               />
               <div className="flex-1 text-sm">
                 <p className="font-medium">
-                  Nr. {p.nr} · {p.titel}
+                  {p.id} · {p.titel}
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  {p.kategorie} · {p.norm}
+                  {p.kategorie}
+                  {p.norm ? ` · ${p.norm}` : ""}
+                  {p.nurAufRuege ? " · Nur auf Rüge" : ""}
                 </p>
               </div>
               <QuelleBadge quelle={p.quelle} />
@@ -86,6 +88,10 @@ function Einstellungen() {
             </li>
           ))}
         </ul>
+
+        <p className="mt-2 text-xs text-muted-foreground">
+          Prüfschema nach Prof. Dr. Stephan Lorenz, Normen aktualisiert
+        </p>
 
         <form
           className="mt-6 flex flex-wrap items-end gap-3 rounded border border-border bg-surface p-4"

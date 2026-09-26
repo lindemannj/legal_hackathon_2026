@@ -92,7 +92,7 @@ export function ZustellungDialog({
               />
               <span>
                 Trotz offener Punkte bestätigen ({bilanz.mangel}{" "}
-                {bilanz.mangel === 1 ? "Mangel" : "Mängel"} festgestellt)
+                {bilanz.mangel === 1 ? "Auffälligkeit" : "Auffälligkeiten"})
               </span>
             </label>
           ) : null}
@@ -132,7 +132,7 @@ export function BeanstandungDialog({
     [ergebnisse],
   );
   const zustaendigkeitsmangel = auffaellige.some(
-    (e) => (e.punkt.id === "m-008" || e.punkt.id === "m-009") && e.status === "mangel",
+    (e) => (e.punkt.id === "L05" || e.punkt.id === "L06") && e.status === "mangel",
   );
 
   const [gewaehlt, setGewaehlt] = useState<string[]>([]);
@@ -164,7 +164,7 @@ export function BeanstandungDialog({
 
         <div className="space-y-5">
           <fieldset>
-            <legend className="mb-2 text-sm font-medium">Festgestellte Mängel</legend>
+            <legend className="mb-2 text-sm font-medium">Auffälligkeiten</legend>
             <ul className="space-y-2">
               {auffaellige.map((e) => (
                 <li key={e.punkt.id} className="flex items-start gap-2 text-sm">
@@ -180,7 +180,7 @@ export function BeanstandungDialog({
                     }
                   />
                   <Label htmlFor={`m-${e.punkt.id}`} className="font-normal">
-                    Nr. {e.punkt.nr} · {e.punkt.titel} ({e.punkt.norm})
+                    {e.punkt.id} · {e.punkt.titel}{e.punkt.norm ? ` (${e.punkt.norm})` : ""}
                   </Label>
                 </li>
               ))}

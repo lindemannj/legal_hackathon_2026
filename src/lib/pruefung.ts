@@ -6,6 +6,9 @@ export interface Pruefergebnis {
   status: PruefStatus;
   begruendung: string;
   fundstelle?: string | undefined;
+  fundstellen: string[];
+  /** Prüfpunkt nur auf Rüge, bisher ohne Befund */
+  nurAufRuege: boolean;
   verweisAz?: string | undefined;
   eigen: boolean;
   notiz?: string | undefined;
@@ -29,13 +32,18 @@ export function pruefergebnisse(
     const begruendung = befund?.begruendung ?? "Für diesen Prüfpunkt liegt kein Ergebnis vor.";
     const fundstelle = befund?.fundstelle;
     const markerNr =
-      fundstelle && (status === "mangel" || status === "pruefen") ? ++marker : undefined;
+      fundstelle && (status === "mangel" || status === "pruefen" || status === "offen") ? ++marker : undefined;
     const eigen = eigene[punkt.id];
     return {
       punkt,
       status: eigen ? eigen.status : status,
       begruendung,
       fundstelle,
+      fundstellen: befund?.fundstellen ?? [],
+      nurAufRuege:
+        punkt.nurAufRuege &&
+        !eigen &&
+        (status === "keine_anhaltspunkte" || status === "nicht_anwendbar"),
       verweisAz: befund?.verweisAz,
       eigen: Boolean(eigen),
       notiz: eigen?.notiz,
@@ -53,7 +61,8 @@ export interface Bilanz {
 }
 
 export function bilanz(ergebnisse: Pruefergebnis[]): Bilanz {
-  const zaehle = (s: PruefStatus) => ergebnisse.filter((e) => e.status === s).length;
+  const zaehle = (s: PruefStatus) =>
+    ergebnisse.filter((e) => e.status === s && !e.nurAufRuege).length;
   const mangel = zaehle("mangel");
   const pruefen = zaehle("pruefen");
   const offen = zaehle("offen");
