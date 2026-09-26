@@ -8,6 +8,7 @@ import {
   type ReactNode,
 } from "react";
 
+import { DemoCtx } from "./demoCtx";
 import type { EigeneBewertung } from "@/lib/pruefung";
 import {
   AuthService,
@@ -106,10 +107,7 @@ interface DemoContextValue {
   hydriert: boolean;
 }
 
-// Über Hot-Reloads hinweg dieselbe Context-Instanz behalten, sonst verliert
-// ein neu geladenes Modul die Verbindung zum bestehenden Provider.
-const g = globalThis as { __klarisDemoCtx?: React.Context<DemoContextValue | null> };
-const Ctx = (g.__klarisDemoCtx ??= createContext<DemoContextValue | null>(null));
+const Ctx = DemoCtx as React.Context<DemoContextValue | null>;
 
 export function DemoProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<DemoState>(() => initialState());
@@ -273,6 +271,14 @@ function labelStatus(s: PruefStatus): string {
 
 export function useDemo(): DemoContextValue {
   const ctx = useContext(Ctx);
-  if (!ctx) throw new Error("useDemo muss innerhalb von DemoProvider genutzt werden");
+  if (!ctx) {
+    // Nach einem Hot-Reload kann der Provider kurzzeitig fehlen: einmal neu laden statt weißer Seite.
+    if (import.meta.env.DEV && typeof window !== "undefined" && !sessionStorage.getItem("klaris-reload")) {
+      sessionStorage.setItem("klaris-reload", "1");
+      window.location.reload();
+    }
+    throw new Error("useDemo muss innerhalb von DemoProvider genutzt werden");
+  }
+  if (typeof window !== "undefined") sessionStorage.removeItem("klaris-reload");
   return ctx;
 }
