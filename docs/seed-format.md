@@ -5,18 +5,29 @@ Ein JSON-Dokument (UTF-8, Endung .txt). Validiert durch das zod-Schema in `src/t
 | Schlüssel | Inhalt |
 |---|---|
 | `schemaVersion` | Formatversion, aktuell `1`. |
-| `gerichte[]` | `id`, `art` (`AG`/`LG`), `name`, `bezirk` (Ort für die örtliche Zuständigkeit). |
+| `meta` | `regelwerkVersion` (z. B. „GVG/ZPO Stand 01.01.2026“), `modellVersion` (z. B. „Demo“). |
+| `gerichte[]` | `id`, `art` (`AG`/`LG`), `name`, `bezirk`. |
 | `einheiten[]` | Abteilungen und Kammern: `id`, `gerichtId`, `bezeichnung`, `zustaendigkeit`. |
-| `benutzer[]` | `id`, `kennung`, `name`, `amtsbezeichnung`, `rolle` (`richter`/`geschaeftsstelle`/`admin`), `einheitIds[]`, `demoKonto` (erscheint auf der Anmeldeseite). Keine Passwörter. |
-| `gvpRegeln[]` | `id`, `gerichtId`, `einheitId`, `regelText`, `bedingung` mit `sachgebiet` und optional `beklagteAnfangsbuchstaben` (z. B. `"A-K"`). |
-| `merkmale[]` | Prüfliste: `id` (`m-001` …), `nr`, `kategorie` (`A`–`G`), `titel`, `norm`, `quelle` (`regel`/`ki`/`manuell`), `beschreibung`, `gerichte[]`, `platzhalter`, `aktiv`. |
-| `verfahrensregister[]` | `az`, `parteien`, `status`, optional `zugestelltAm` (ISO-Datum). |
+| `benutzer[]` | `id`, `kennung`, `name`, `amtsbezeichnung`, `rolle` (`richter`/`geschaeftsstelle`/`admin`), `einheitIds[]`, `demoKonto`. Keine Passwörter. |
+| `gvpRegeln[]` | `id`, `gerichtId`, `einheitId`, `regelText`, `bedingung` (`sachgebiet`, optional `beklagteAnfangsbuchstaben` wie `"A-K"`). |
+| `merkmale[]` | `id` (`m-001` …), `nr`, `kategorie` (`A`–`G`), `titel`, `norm`, `quelle` (`regel`/`ki`/`manuell`), `beschreibung`, `gerichte[]`, `platzhalter`, `aktiv`. |
+| `verfahrensregister[]` | `az`, `gerichtId`, `parteien`, `status`, optional `zugestelltAm` (ISO-Datum). |
 | `faelle[]` | siehe unten |
 
 ## Fall
 
-- `id` (`fall-0001` …), `gerichtId`, `nurSimulation` (nur über „EGVP-Eingang simulieren“ sichtbar).
-- `eingang` – Rohmaterial: `eingangAm`, `uebermittlungsweg`, `aktenzeichen`, `angaben` (`klaeger`, `beklagte`, `ortBeklagte`, `gegenstand`, `sachgebiet`, `streitwert`, optional `streitwertXJustiz`, `prozessbevollmaechtigte`, `kostenvorschuss`), `klageschriftText`, `xjustizXml`, `xjustizFelder[]` (`label`, `wert`, optional `abweichung`), `anlagen[]` (`bezeichnung`, `titel`, `seiten`).
-- `erwartet` – vorberechnete Demo-Ergebnisse, später Testfälle für das Backend:
-  - `zuweisung`: `einheitId`, `richterId`, `regelId`
-  - `auswertung`: `geprueftAm`, `ergebnisse[]` mit `merkmalId`, `status`, optional `relevanz`, `text`, optional `grundlage`, `fundstellen[]` (`zitat`). Merkmale ohne Eintrag gelten als erfüllt bzw. ohne Anhaltspunkte.
+Direkt am Fall: `id` (`fall-0001` …), `gerichtId`, `vorlaeufigesAz`, `nurSimulation` (erscheint nur über „EGVP-Eingang simulieren“, jeder genau einmal).
+
+### `eingang` – Rohmaterial aus EGVP und Kasse
+- `eingangAm`, `uebermittlungsweg`, `kostenvorschuss` (`bezahlt`/`offen`), `xjustizXml`
+- `dokumente[]`: `id` (z. B. `fall-0002-klageschrift`, `fall-0002-k1`), `typ` (`klageschrift`/`anlage`), `name`, `seiten`, bei der Klageschrift zusätzlich `text`.
+
+### `erwartet` – später vom Backend berechnet, dient dann als Testfall
+- `extraktion`: `klaeger[]` und `beklagte[]` (`name`, `art` `natuerlich`/`juristisch`, optional `anschrift`, `vertretenDurch`), `sachgebiet`, `streitwertCent`, optional `streitwertXJustizCent`, `gegenstand`, `prozessbevollmaechtigter`.
+- `xjustizFelder`: Objekt Beschriftung → Wert.
+- `xjustizAbweichungen[]`: Beschriftungen, deren Wert von der Klageschrift abweicht.
+- `zuweisung`: `einheitId`, `richterId`, `regelId`.
+- `auswertung`: `geprueftAm`, `ergebnisse[]` je aktivem Merkmal mit `merkmalId`, `status`, `relevanz` (`hoch`/`mittel`/`niedrig`), `text`, `grundlage`, `fundstellen[]` (`dokumentId`, `zitat`), optional `verweisAz` (Verweis ins Verfahrensregister).
+- `formulierungsvorschlag`: Text für den Beanstanden-Dialog.
+
+Nicht in der Datei: `version`, `bearbeitungsstatus`, `entscheidung`, `verlauf`. Der Mock setzt sie beim Laden (Version 1, Status Eingang, Verlauf mit Eingang, Zuweisung und Auswertung).
