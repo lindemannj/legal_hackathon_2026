@@ -12,7 +12,6 @@ import type { EigeneBewertung } from "@/lib/pruefung";
 import {
   AuthService,
   FallService,
-  GvpService,
   PruefService,
 } from "@/services/mockBackend";
 import type { Fall, Nutzer, PruefStatus } from "@/types/domain";
@@ -84,7 +83,7 @@ function initialState(): DemoState {
   };
 }
 
-const STORAGE_KEY = "klaris-demo-v2";
+const STORAGE_KEY = "klaris-demo-v3";
 
 interface DemoContextValue {
   state: DemoState;
@@ -99,6 +98,7 @@ interface DemoContextValue {
   beanstanden: (fallId: string, beanstandung: Beanstandung) => void;
   rueckgaengig: (fallId: string) => void;
   simulierenEingang: () => string | null;
+  simulationVerfuegbar: boolean;
   togglePruefpunkt: (punktId: string) => void;
   eigenenPunktHinzufuegen: (titel: string, norm: string) => void;
   hydriert: boolean;
@@ -225,8 +225,13 @@ export function DemoProvider({ children }: { children: ReactNode }) {
         verlauf: [...z.verlauf, { zeit: jetzt(), text: "Verfügung zurückgenommen" }],
       });
     },
+    simulationVerfuegbar: FallService.simulationsFaelle(state.nutzerId).some(
+      (f) => !zustand(f.id).sichtbar,
+    ),
     simulierenEingang: () => {
-      const ziel = FallService.simulationsFall(state.nutzerId);
+      const ziel = FallService.simulationsFaelle(state.nutzerId).find(
+        (f) => !zustand(f.id).sichtbar,
+      );
       if (!ziel) return null;
       setState((s) => ({
         ...s,

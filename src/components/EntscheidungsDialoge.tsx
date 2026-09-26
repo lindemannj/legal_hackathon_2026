@@ -16,6 +16,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import type { Beanstandung } from "@/context/DemoContext";
 import type { Fall } from "@/types/domain";
+import { FallService } from "@/services/mockBackend";
 import { euro, fristDatum } from "@/lib/format";
 import type { Bilanz, Pruefergebnis } from "@/lib/pruefung";
 
@@ -148,7 +149,7 @@ export function BeanstandungDialog({
     const m = zustaendigkeitsmangel ? massnahmen[1].label : massnahmen[0].label;
     setMassnahme(m);
     setWochen("2");
-    setText(entwurf(fall, auffaellige, m));
+    setText("");
   }, [offen, fall, auffaellige, zustaendigkeitsmangel]);
 
   return (
@@ -220,9 +221,19 @@ export function BeanstandungDialog({
             <Label htmlFor="hinweistext" className="text-sm font-medium">
               Begründung / Hinweistext
             </Label>
-            <p className="mb-1 text-xs text-muted-foreground">
-              Entwurf, bitte prüfen
-            </p>
+            <div className="mb-1 flex items-center justify-between gap-2">
+              <p className="text-xs text-muted-foreground">Entwurf, bitte prüfen</p>
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={() =>
+                  setText(FallService.formulierungsvorschlag(fall.id, gewaehlt).text)
+                }
+              >
+                Formulierungsvorschlag einfügen
+              </Button>
+            </div>
             <Textarea
               id="hinweistext"
               rows={10}
@@ -254,25 +265,4 @@ export function BeanstandungDialog({
       </DialogContent>
     </Dialog>
   );
-}
-
-function entwurf(fall: Fall, auffaellige: Pruefergebnis[], massnahme: string): string {
-  const punkte = auffaellige
-    .filter((e) => e.status === "mangel")
-    .map((e, i) => `${i + 1}. ${e.punkt.titel} (${e.punkt.norm}): ${e.begruendung}`)
-    .join("\n");
-
-  return `In dem Rechtsstreit ${fall.klaeger} ./. ${fall.beklagte}, ${fall.aktenzeichen}, weist das Gericht auf Folgendes hin:
-
-${punkte || "Der Klageschrift fehlen Angaben, die vor einer Zustellung zu ergänzen sind."}
-
-${
-  massnahme.includes("281")
-    ? "Es wird angeregt, einen Antrag auf Verweisung des Rechtsstreits an das zuständige Gericht zu stellen (§ 281 ZPO)."
-    : massnahme.includes("Abgabe")
-      ? "Eine Abgabe innerhalb des Gerichts nach dem Geschäftsverteilungsplan wird geprüft."
-      : "Es wird Gelegenheit zur Stellungnahme und Ergänzung gegeben (§ 139 ZPO)."
-}
-
-Der Klagepartei wird Gelegenheit zur Stellungnahme innerhalb der gesetzten Frist gegeben.`;
 }
