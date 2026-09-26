@@ -32,7 +32,7 @@ export function pruefergebnisse(
     const begruendung = befund?.begruendung ?? "Für diesen Prüfpunkt liegt kein Ergebnis vor.";
     const fundstelle = befund?.fundstelle;
     const markerNr =
-      fundstelle && (status === "mangel" || status === "pruefen") ? ++marker : undefined;
+      fundstelle && (status === "mangel" || status === "pruefen" || status === "offen") ? ++marker : undefined;
     const eigen = eigene[punkt.id];
     return {
       punkt,
