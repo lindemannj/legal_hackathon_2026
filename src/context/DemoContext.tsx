@@ -8,6 +8,7 @@ import {
   type ReactNode,
 } from "react";
 
+import { DemoCtx } from "./demoCtx";
 import type { EigeneBewertung } from "@/lib/pruefung";
 import {
   AuthService,
@@ -106,10 +107,7 @@ interface DemoContextValue {
   hydriert: boolean;
 }
 
-// Über Hot-Reloads hinweg dieselbe Context-Instanz behalten, sonst verliert
-// ein neu geladenes Modul die Verbindung zum bestehenden Provider.
-const g = globalThis as { __klarisDemoCtx?: React.Context<DemoContextValue | null> };
-const Ctx = (g.__klarisDemoCtx ??= createContext<DemoContextValue | null>(null));
+const Ctx = DemoCtx as React.Context<DemoContextValue | null>;
 
 export function DemoProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<DemoState>(() => initialState());
