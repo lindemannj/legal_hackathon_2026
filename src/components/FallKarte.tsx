@@ -124,8 +124,7 @@ export function FallKarte({ fall, offen, onToggle, registerRef }: Props) {
                 <p className="font-medium">Warum mir zugewiesen?</p>
                 <p className="mt-2">{fall.regelText}</p>
                 <p className="mt-2 text-xs text-muted-foreground">
-                  Automatische Anwendung des Geschäftsverteilungsplans. Keine
-                  KI-Entscheidung.
+                  Automatische Anwendung des Geschäftsverteilungsplans.
                 </p>
               </PopoverContent>
             </Popover>
