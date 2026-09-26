@@ -121,8 +121,6 @@ function Posteingang() {
         if (prev) setOffenerFall(prev.id);
       } else if (e.key === "Enter" && liste[0]) {
         setOffenerFall((o) => (o ? null : liste[0]!.id));
-      } else if (e.key === "?") {
-        setHilfeOffen(true);
       }
     }
     window.addEventListener("keydown", handler);
