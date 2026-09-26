@@ -3,7 +3,7 @@ import { CheckCircle2, Loader2, Search } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { FallKarte } from "@/components/FallKarte";
-import { Fusszeile, Kopfzeile } from "@/components/Kopfzeile";
+import { Kopfzeile } from "@/components/Kopfzeile";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
@@ -216,9 +216,6 @@ function Posteingang() {
         </div>
 
       </main>
-
-
-      <Fusszeile />
     </div>
   );
 }

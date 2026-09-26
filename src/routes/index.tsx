@@ -1,7 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 
-import { Fusszeile } from "@/components/Kopfzeile";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -113,7 +112,6 @@ function Anmeldung() {
           ) : null}
         </div>
       </main>
-      <Fusszeile />
     </div>
   );
 }
