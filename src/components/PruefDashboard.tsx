@@ -268,7 +268,15 @@ function PunktZeile({
           </span>
           <span className="block text-xs text-muted-foreground">
             {ergebnis.punkt.norm ? `${ergebnis.punkt.norm} · ` : ""}
-            {ergebnis.nurAufRuege ? "Nur auf Rüge" : statusLabel[ergebnis.status]}
+            {ergebnis.nurAufRuege
+              ? "Nur auf Rüge"
+              : ergebnis.eigen
+                ? ergebnis.status === "erfuellt"
+                  ? "erfüllt"
+                  : ergebnis.status === "mangel"
+                    ? "nicht erfüllt"
+                    : statusLabel[ergebnis.status]
+                : statusLabel[ergebnis.status]}
             {ergebnis.eigen ? " · Eigene Bewertung" : ""}
           </span>
         </span>
