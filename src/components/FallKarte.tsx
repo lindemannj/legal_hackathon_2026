@@ -17,8 +17,6 @@ import {
 } from "@/components/ui/popover";
 import { useDemo } from "@/context/DemoContext";
 import type { Fall } from "@/types/domain";
-import { GvpService } from "@/services/mockBackend";
-const spruchkoerperById = (id: string) => GvpService.einheit(id);
 import { eingangLabel, euro } from "@/lib/format";
 import { exportiereMarkiertesPdf } from "@/lib/pdfExport";
 import { bilanz as berechneBilanz, pruefergebnisse } from "@/lib/pruefung";
@@ -48,7 +46,6 @@ export function FallKarte({ fall, offen, onToggle, registerRef }: Props) {
     [fall, z.eigene],
   );
   const bilanz = useMemo(() => berechneBilanz(ergebnisse), [ergebnisse]);
-  const sk = spruchkoerperById(fall.spruchkoerperId);
 
   const [aktiverPunkt, setAktiverPunkt] = useState<string | null>(null);
   const [zustellungOffen, setZustellungOffen] = useState(false);
@@ -119,13 +116,13 @@ export function FallKarte({ fall, offen, onToggle, registerRef }: Props) {
                   type="button"
                   className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[13px] text-muted-foreground hover:bg-muted"
                 >
-                  Zugewiesen: {sk?.bezeichnung} · {sk?.richter}
+                  Zugewiesen: {fall.einheit} · {fall.richter}
                   <Info className="size-3.5" aria-hidden="true" />
                 </button>
               </PopoverTrigger>
               <PopoverContent className="w-96 text-sm">
                 <p className="font-medium">Warum mir zugewiesen?</p>
-                <p className="mt-2">{sk?.regel}</p>
+                <p className="mt-2">{fall.regelText}</p>
                 <p className="mt-2 text-xs text-muted-foreground">
                   Automatische Anwendung des Geschäftsverteilungsplans. Keine
                   KI-Entscheidung.

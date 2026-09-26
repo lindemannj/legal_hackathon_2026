@@ -49,7 +49,18 @@ export interface Spruchkoerper {
 export interface Befund {
   status: PruefStatus;
   begruendung: string;
+  relevanz?: "hoch" | "mittel" | "niedrig" | undefined;
+  grundlage?: string | undefined;
   fundstelle?: string | undefined;
+  dokumentId?: string | undefined;
+  verweisAz?: string | undefined;
+}
+
+export interface Partei {
+  name: string;
+  art: "natuerlich" | "juristisch";
+  anschrift?: string | undefined;
+  vertretenDurch?: string | undefined;
 }
 
 export interface XJustizFeld {
@@ -59,6 +70,7 @@ export interface XJustizFeld {
 }
 
 export interface Anlage {
+  id: string;
   bezeichnung: string;
   titel: string;
   seiten: number;
@@ -67,32 +79,43 @@ export interface Anlage {
 export interface Fall {
   id: string;
   aktenzeichen: string;
+  gerichtId: string;
   gericht: string;
   gerichtstyp: Gerichtstyp;
-  /** id der zugewiesenen Einheit (Abteilung/Kammer) */
-  spruchkoerperId: string;
+  einheitId: string;
+  einheit: string;
+  richterId: string;
+  richter: string;
+  regelId: string;
+  regelText: string;
   klaeger: string;
   beklagte: string;
-  ortBeklagte: string;
-  gegenstand: string;
+  klaegerParteien: Partei[];
+  beklagteParteien: Partei[];
   sachgebiet: Sachgebiet;
   streitwert: number;
   streitwertXJustiz?: number | undefined;
   eingang: string;
   uebermittlungsweg: string;
-  prozessbevollmaechtigte: string | null;
   kostenvorschuss: "bezahlt" | "offen";
   geprueftAm: string;
+  klageschriftId: string;
   klageschrift: string;
   anlagen: Anlage[];
   xjustiz: XJustizFeld[];
   xml: string;
+  /** vorberechnete Ergebnisse je Merkmal-id */
   befunde: Record<string, Befund>;
+  anzahlAusgewertet: number;
+  anzahlHinweise: number;
   nurSimulation?: boolean | undefined;
 }
 
 export interface VerfahrensregisterEintrag {
   aktenzeichen: string;
+  gerichtId: string;
+  gericht: string;
+  zugestelltAm?: string | undefined;
   parteien: string;
   status: string;
 }

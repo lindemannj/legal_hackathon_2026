@@ -12,7 +12,6 @@ import type { EigeneBewertung } from "@/lib/pruefung";
 import {
   AuthService,
   FallService,
-  GvpService,
   PruefService,
 } from "@/services/mockBackend";
 import type { Fall, Nutzer, PruefStatus } from "@/types/domain";
@@ -37,6 +36,7 @@ export interface Beanstandung {
 }
 
 export interface FallZustand {
+  version: number;
   ablage: FallAblage;
   sichtbar: boolean;
   eigene: Record<string, EigeneBewertung>;
@@ -58,6 +58,7 @@ function jetzt(): string {
 
 function startZustand(fall: Fall): FallZustand {
   return {
+    version: 1,
     ablage: "eingang",
     sichtbar: !fall.nurSimulation,
     eigene: {},
@@ -65,11 +66,11 @@ function startZustand(fall: Fall): FallZustand {
       { zeit: fall.eingang, text: `Eingang über ${fall.uebermittlungsweg}` },
       {
         zeit: fall.eingang,
-        text: `Zuweisung nach Geschäftsverteilungsplan an ${GvpService.einheit(fall.spruchkoerperId)?.bezeichnung ?? ""}`,
+        text: `Zuweisung nach Geschäftsverteilungsplan an ${fall.einheit}`,
       },
       {
         zeit: fall.geprueftAm,
-        text: `Automatische Vorprüfung, ${PruefService.aktive().length} Prüfpunkte ausgewertet`,
+        text: `Automatische Vorprüfung, ${fall.anzahlAusgewertet} Prüfpunkte ausgewertet`,
       },
     ],
   };
@@ -84,7 +85,7 @@ function initialState(): DemoState {
   };
 }
 
-const STORAGE_KEY = "klaris-demo-v2";
+const STORAGE_KEY = "klaris-demo-v3";
 
 interface DemoContextValue {
   state: DemoState;
@@ -99,12 +100,16 @@ interface DemoContextValue {
   beanstanden: (fallId: string, beanstandung: Beanstandung) => void;
   rueckgaengig: (fallId: string) => void;
   simulierenEingang: () => string | null;
+  simulationVerfuegbar: boolean;
   togglePruefpunkt: (punktId: string) => void;
   eigenenPunktHinzufuegen: (titel: string, norm: string) => void;
   hydriert: boolean;
 }
 
-const Ctx = createContext<DemoContextValue | null>(null);
+// Über Hot-Reloads hinweg dieselbe Context-Instanz behalten, sonst verliert
+// ein neu geladenes Modul die Verbindung zum bestehenden Provider.
+const g = globalThis as { __klarisDemoCtx?: React.Context<DemoContextValue | null> };
+const Ctx = (g.__klarisDemoCtx ??= createContext<DemoContextValue | null>(null));
 
 export function DemoProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<DemoState>(() => initialState());
@@ -142,7 +147,7 @@ export function DemoProvider({ children }: { children: ReactNode }) {
     setState((s) => {
       const fall = FallService.fall(fallId)!;
       const alt = s.faelle[fallId] ?? startZustand(fall);
-      return { ...s, faelle: { ...s.faelle, [fallId]: { ...alt, ...änderung } } };
+      return { ...s, faelle: { ...s.faelle, [fallId]: { ...alt, ...änderung, version: (alt.version ?? 1) + 1 } } };
     });
   }, []);
 
@@ -225,8 +230,13 @@ export function DemoProvider({ children }: { children: ReactNode }) {
         verlauf: [...z.verlauf, { zeit: jetzt(), text: "Verfügung zurückgenommen" }],
       });
     },
+    simulationVerfuegbar: FallService.simulationsFaelle(state.nutzerId).some(
+      (f) => !zustand(f.id).sichtbar,
+    ),
     simulierenEingang: () => {
-      const ziel = FallService.simulationsFall(state.nutzerId);
+      const ziel = FallService.simulationsFaelle(state.nutzerId).find(
+        (f) => !zustand(f.id).sichtbar,
+      );
       if (!ziel) return null;
       setState((s) => ({
         ...s,

@@ -9,7 +9,6 @@ import {
   kategorieLabel,
   type DemoKonto,
   type Fall,
-  type Gerichtstyp,
   type Nutzer,
   type Pruefpunkt,
   type Spruchkoerper,
@@ -73,12 +72,20 @@ function lade(): { seed: Seed | null; fehler: SeedFehler[] } {
       fehler.push({ pfad: `faelle.${i}.erwartet.zuweisung.richterId`, meldung: `Unbekannter Benutzer „${z.richterId}“` });
     if (!rIds.has(z.regelId))
       fehler.push({ pfad: `faelle.${i}.erwartet.zuweisung.regelId`, meldung: `Unbekannte GVP-Regel „${z.regelId}“` });
+    const dIds = new Set(f.eingang.dokumente.map((d) => d.id));
     f.erwartet.auswertung.ergebnisse.forEach((e, j) => {
       if (!mIds.has(e.merkmalId))
         fehler.push({
           pfad: `faelle.${i}.erwartet.auswertung.ergebnisse.${j}.merkmalId`,
           meldung: `Unbekanntes Merkmal „${e.merkmalId}“`,
         });
+      e.fundstellen.forEach((fs, k) => {
+        if (!dIds.has(fs.dokumentId))
+          fehler.push({
+            pfad: `faelle.${i}.erwartet.auswertung.ergebnisse.${j}.fundstellen.${k}.dokumentId`,
+            meldung: `Unbekanntes Dokument „${fs.dokumentId}“`,
+          });
+      });
     });
   });
   return { seed: fehler.length ? null : s, fehler };
@@ -89,6 +96,7 @@ export const seedFehler: SeedFehler[] = geladen.fehler;
 
 const leer: Seed = {
   schemaVersion: 1,
+  meta: { regelwerkVersion: "", modellVersion: "" },
   gerichte: [],
   einheiten: [],
   benutzer: [],
@@ -138,40 +146,77 @@ const spruchkoerper: Spruchkoerper[] = seed.gvpRegeln.map((r) => {
   };
 });
 
+const benutzerById = new Map(seed.benutzer.map((b) => [b.id, b]));
+const regelById = new Map(seed.gvpRegeln.map((r) => [r.id, r]));
+const namen = (p: { name: string }[]) => p.map((x) => x.name).join(", ");
+
+/** Baut Fall-Objekte aus eingang + erwartet; keine juristische Berechnung. */
 const faelle: Fall[] = seed.faelle.map((f) => {
   const g = gerichtById.get(f.gerichtId)!;
-  const a = f.eingang.angaben;
+  const x = f.erwartet.extraktion;
+  const z = f.erwartet.zuweisung;
+  const ks = f.eingang.dokumente.find((d) => d.typ === "klageschrift")!;
+  const ergebnisse = f.erwartet.auswertung.ergebnisse;
   return {
     id: f.id,
-    aktenzeichen: f.eingang.aktenzeichen,
+    aktenzeichen: f.vorlaeufigesAz,
+    gerichtId: g.id,
     gericht: g.name,
     gerichtstyp: g.art,
-    spruchkoerperId: f.erwartet.zuweisung.einheitId,
-    klaeger: a.klaeger,
-    beklagte: a.beklagte,
-    ortBeklagte: a.ortBeklagte,
-    gegenstand: a.gegenstand,
-    sachgebiet: a.sachgebiet,
-    streitwert: a.streitwert,
-    streitwertXJustiz: a.streitwertXJustiz,
+    einheitId: z.einheitId,
+    einheit: einheitById.get(z.einheitId)?.bezeichnung ?? "",
+    richterId: z.richterId,
+    richter: benutzerById.get(z.richterId)?.name ?? "",
+    regelId: z.regelId,
+    regelText: regelById.get(z.regelId)?.regelText ?? "",
+    klaeger: namen(x.klaeger),
+    beklagte: namen(x.beklagte),
+    klaegerParteien: x.klaeger,
+    beklagteParteien: x.beklagte,
+    sachgebiet: x.sachgebiet,
+    streitwert: x.streitwertCent / 100,
+    streitwertXJustiz:
+      x.streitwertXJustizCent !== undefined ? x.streitwertXJustizCent / 100 : undefined,
     eingang: f.eingang.eingangAm,
     uebermittlungsweg: f.eingang.uebermittlungsweg,
-    prozessbevollmaechtigte: a.prozessbevollmaechtigte,
-    kostenvorschuss: a.kostenvorschuss,
+    kostenvorschuss: f.eingang.kostenvorschuss,
     geprueftAm: f.erwartet.auswertung.geprueftAm,
-    klageschrift: f.eingang.klageschriftText,
-    anlagen: f.eingang.anlagen,
-    xjustiz: f.eingang.xjustizFelder,
+    klageschriftId: ks.id,
+    klageschrift: ks.text ?? "",
+    anlagen: f.eingang.dokumente
+      .filter((d) => d.typ === "anlage")
+      .map((d) => {
+        const [bez, ...rest] = d.name.split(" ");
+        return { id: d.id, bezeichnung: bez ?? d.name, titel: rest.join(" "), seiten: d.seiten };
+      }),
+    xjustiz: Object.entries(f.erwartet.xjustizFelder).map(([label, wert]) => ({
+      label,
+      wert,
+      abweichung: f.erwartet.xjustizAbweichungen.includes(label),
+    })),
     xml: f.eingang.xjustizXml,
     befunde: Object.fromEntries(
-      f.erwartet.auswertung.ergebnisse.map((e) => [
+      ergebnisse.map((e) => [
         e.merkmalId,
-        { status: e.status, begruendung: e.text, fundstelle: e.fundstellen[0]?.zitat },
+        {
+          status: e.status,
+          begruendung: e.text,
+          relevanz: e.relevanz,
+          grundlage: e.grundlage,
+          fundstelle: e.fundstellen[0]?.zitat,
+          dokumentId: e.fundstellen[0]?.dokumentId,
+          verweisAz: e.verweisAz,
+        },
       ]),
     ),
+    anzahlAusgewertet: ergebnisse.length,
+    anzahlHinweise: ergebnisse.filter((e) =>
+      ["mangel", "pruefen", "offen"].includes(e.status),
+    ).length,
     nurSimulation: f.nurSimulation,
   };
 });
+const vorschlaege = new Map(seed.faelle.map((f) => [f.id, f.erwartet.formulierungsvorschlag]));
 
 function alsNutzer(b: Seed["benutzer"][number]): Nutzer {
   const einheiten = b.einheitIds.map((id) => einheitById.get(id)!).filter(Boolean);
@@ -213,15 +258,19 @@ export const FallService = {
     const me = AuthService.me(benutzerId);
     if (!me) return [];
     const ids = new Set(me.einheiten.map((e) => e.id));
-    return faelle.filter((f) => ids.has(f.spruchkoerperId));
+    return faelle.filter((f) => ids.has(f.einheitId));
   },
   /** GET /faelle/:id */
   fall(id: string): Fall | undefined {
     return faelle.find((f) => f.id === id);
   },
-  /** Mock: nächster simulierter EGVP-Eingang für das Konto */
-  simulationsFall(benutzerId: string | null): Fall | undefined {
-    return FallService.faelle(benutzerId).find((f) => f.nurSimulation);
+  /** Mock: alle simulierbaren EGVP-Eingänge des Kontos */
+  simulationsFaelle(benutzerId: string | null): Fall[] {
+    return FallService.faelle(benutzerId).filter((f) => f.nurSimulation);
+  },
+  /** POST /faelle/{id}/formulierungsvorschlag – im Mock aus erwartet.formulierungsvorschlag */
+  formulierungsvorschlag(id: string, _hinweisIds: string[]): { text: string } {
+    return { text: vorschlaege.get(id) ?? "" };
   },
 };
 
@@ -249,20 +298,33 @@ export const GvpService = {
   regeln() {
     return seed.gvpRegeln;
   },
-  gericht(bezirk: string, art: Gerichtstyp) {
-    return seed.gerichte.find((g) => g.bezirk === bezirk && g.art === art);
-  },
 };
+
+function alsRegisterEintrag(v: Seed["verfahrensregister"][number]): VerfahrensregisterEintrag {
+  return {
+    aktenzeichen: v.az,
+    gerichtId: v.gerichtId,
+    gericht: gerichtById.get(v.gerichtId)?.name ?? "",
+    parteien: v.parteien,
+    status: v.status,
+    zugestelltAm: v.zugestelltAm,
+  };
+}
 
 export const RegisterService = {
   /** GET /verfahrensregister */
   eintraege(): VerfahrensregisterEintrag[] {
-    return seed.verfahrensregister.map((v) => ({
-      aktenzeichen: v.az,
-      parteien: v.parteien,
-      status: v.zugestelltAm
-        ? `${v.status}, zugestellt am ${v.zugestelltAm.split("-").reverse().join(".")}`
-        : v.status,
-    }));
+    return seed.verfahrensregister.map(alsRegisterEintrag);
+  },
+  /** GET /verfahrensregister/{az} */
+  eintrag(az: string): VerfahrensregisterEintrag | undefined {
+    const v = seed.verfahrensregister.find((x) => x.az === az);
+    return v ? alsRegisterEintrag(v) : undefined;
+  },
+};
+
+export const MetaService = {
+  meta() {
+    return seed.meta;
   },
 };
