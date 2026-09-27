@@ -13,13 +13,13 @@ import { bilanz as berechneBilanz, pruefergebnisse } from "@/lib/pruefung";
 export const Route = createFileRoute("/eingang")({
   head: () => ({
     meta: [
-      { title: "Posteingang · Klaris Eingangsprüfung" },
+      { title: "Posteingang · JustKlaris Eingangsprüfung" },
       {
         name: "description",
         content:
           "Geprüfte Klageeingänge mit Prüf-Dashboard, markierten Fundstellen und Entscheidung über Zustellung oder Beanstandung.",
       },
-      { property: "og:title", content: "Posteingang · Klaris Eingangsprüfung" },
+      { property: "og:title", content: "Posteingang · JustKlaris Eingangsprüfung" },
       {
         property: "og:description",
         content:

@@ -80,13 +80,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Klaris · Eingangsprüfung für Zivilgerichte" },
+      { title: "JustKlaris · Eingangsprüfung für Zivilgerichte" },
       {
         name: "description",
         content:
           "Prototyp für die Eingangsprüfung neuer Klagen an Amts- und Landgerichten.",
       },
-      { property: "og:title", content: "Klaris · Eingangsprüfung für Zivilgerichte" },
+      { property: "og:title", content: "JustKlaris · Eingangsprüfung für Zivilgerichte" },
       {
         property: "og:description",
         content:
@@ -110,7 +110,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
     ],
   }),
   shellComponent: RootShell,

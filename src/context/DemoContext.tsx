@@ -12,7 +12,7 @@ import { DemoCtx } from "./demoCtx";
 import { AuthService, FallService } from "@/services/mockBackend";
 import type { Fall, Nutzer } from "@/types/domain";
 
-export const PRODUKTNAME = "Klaris";
+export const PRODUKTNAME = "JustKlaris";
 
 export type { Nutzer };
 

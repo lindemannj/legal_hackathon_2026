@@ -13,13 +13,13 @@ import { useDemo } from "@/context/DemoContext";
 export const Route = createFileRoute("/einstellungen")({
   head: () => ({
     meta: [
-      { title: "Meine Prüfliste · Klaris" },
+      { title: "Meine Prüfliste · JustKlaris" },
       {
         name: "description",
         content:
           "Prüfpunkte der Eingangsprüfung aktivieren, deaktivieren und eigene Punkte ergänzen.",
       },
-      { property: "og:title", content: "Meine Prüfliste · Klaris" },
+      { property: "og:title", content: "Meine Prüfliste · JustKlaris" },
       {
         property: "og:description",
         content: "Sie bestimmen, welche Punkte vorab geprüft werden.",

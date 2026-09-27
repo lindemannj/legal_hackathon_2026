@@ -10,13 +10,13 @@ import { AuthService } from "@/services/mockBackend";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Klaris · Anmeldung zur Eingangsprüfung" },
+      { title: "JustKlaris · Anmeldung zur Eingangsprüfung" },
       {
         name: "description",
         content:
           "Anmeldung zur Eingangsprüfung für Zivilgerichte: automatische Zuweisung nach Geschäftsverteilungsplan und Zulässigkeitsprüfung neuer Klagen.",
       },
-      { property: "og:title", content: "Klaris · Anmeldung zur Eingangsprüfung" },
+      { property: "og:title", content: "JustKlaris · Anmeldung zur Eingangsprüfung" },
       {
         property: "og:description",
         content:
