@@ -11,5 +11,5 @@
 
 ## Projektstruktur
 
-- Alle Stammdaten liegen ausschließlich in `seed/demo-daten.txt` (Schema `src/types/seed.ts`, Doku `docs/seed-format.md`); nur `src/services/mockBackend.ts` liest sie und bietet API-artige Services — das spätere Backend lädt dieselbe Datei. Keine Namen/Gerichte/Einheiten im Code.
+- Alle Stammdaten liegen ausschließlich in `seed/demo-daten.txt` (Schema `src/types/seed.ts`, Doku `docs/seed-format.md`); nur `src/services/mockBackend.ts` liest sie und bietet API-artige Services. Keine Namen/Gerichte/Einheiten im Code.
 - Der gesamte Demo-Zustand läuft über `src/context/DemoContext.tsx` mit localStorage-Persistenz, damit ein Reload die Demo nicht zurücksetzt.
