@@ -10,6 +10,8 @@ When a new claim arrives (simulated EGVP inbox), the prototype:
 - runs a checklist of 16 admissibility criteria and shows each finding with the matching quote from the documents
 - lets the judge either confirm admissibility and order service, or raise objections with a suggested wording
 
+Nothing is decided automatically: the prototype prepares the decision, the judge makes it.
+
 The UI is in German. Everything runs in the browser. There is no backend: all data comes from a single seed file, and the demo state is stored in the browser's `localStorage`.
 
 ## Run locally
